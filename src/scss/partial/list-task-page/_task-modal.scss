@@ -1,0 +1,15 @@
+@use '../../function/space' as space;
+
+.task-modal {
+  .section-body {
+    padding: space.get-space-from-base(8);
+  }
+
+  &__body__title {
+    margin-bottom: space.get-space-from-base(4);
+  }
+
+  &__body__content {
+    font-style: italic;
+  }
+}

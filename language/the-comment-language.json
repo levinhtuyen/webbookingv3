@@ -1,0 +1,11 @@
+{
+    "reviews": "Review(s)",
+    "cleanliness": "Cleanliness",
+    "facilities": "Facilities",
+    "services": "Services",
+    "excellent": "Excellent",
+    "good": "Good",
+    "normal": "Normal",
+    "bad": "Bad",
+    "very_bad": "Very bad"
+}

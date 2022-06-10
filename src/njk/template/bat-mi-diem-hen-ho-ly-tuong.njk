@@ -1,0 +1,137 @@
+{% extends objGlobal.path.njk + '/_layout.njk' %}
+
+{# {% set resManagementData = data.response %} #}
+
+<!-- ===============Body=============== -->
+
+{% block header %}{% endblock %}
+
+{% block body %}
+<div class="app main-container">
+  <div class="bat-mi-diem-hen-ho-ly-tuong-page">
+    <section class="bat-mi-diem-hen-ho-ly-tuong-section">
+      <div class="container">
+        <div class="bat-mi-diem-hen-ho-ly-tuong-block">
+          <div class="block-header">
+            <div class="block-header__logo">
+              <a href="/"><img src="{{ LAYOUT_CONFIG.imageUrl }}/image_landingpage/logo-landing1.jpg" alt=""></a>
+            </div>
+            <div class="block-header__right"></div>
+          </div>
+          <div class="block-banner">
+            <div class="block-banner__image">
+              <img src="{{ LAYOUT_CONFIG.imageUrl }}/image_landingpage/banner-landing1.png" alt="">
+            </div>
+          </div>
+          <div class="block-content-sub">
+            <div class="block-content-sub__title">
+              <p>BẬT MÍ ĐIỂM HẸN HÒ LÝ TƯỞNG CỦA GIỚI TRẺ NGÀY NAY</p>
+            </div>
+            <div class="block-content-sub__content">
+              <p>Ai cũng muốn buổi hẹn hò thật chất lượng và lãng mạn nhưng câu chuyện tình phí luôn khiến cánh mày râu phải đau đầu về việc nên dắt gấu đi đâu? Có thể thấy rằng hẹn hò ngày nay không chỉ đơn giản là cùng nhau đi dạo hay là ngồi uống nước ở vỉa hè mà phải đưa nhau đi ăn tại các quán ăn ngon, nhà hàng nổi tiếng, đi xem phim, du lịch. Ngoài tiền đưa đón, ăn uống thì còn chuyện quà cáp, ngày lễ và các chi phí phát sinh khác. Chính vì vậy các ứng dụng đặt phòng ngắn hạn đang trở thành xu hướng trong giới trẻ trong thời gian gần đây. Điển hình nhất có thể kể đến Go2Joy - được biết đến như là ứng dụng Đặt phòng theo giờ hàng đầu tại Việt Nam.</p>
+            </div>
+          </div>
+          <div class="block-content-about">
+            <div class="block-content-about__text">
+              <p>Go2Joy là ứng dụng đặt khách sạn theo giờ trên điện thoại với hệ thống đối tác khách sạn/nhà nghỉ/ homestay trải dài từ Bắc vào Nam. Dù là sinh sau đẻ muộn trong ngành OTA (Online Travel Agent) nhưng Go2Joy vẫn luôn tạo nên sự khác biệt và nhanh chóng chiếm lĩnh thị trường đặt phòng theo giờ qua app trực tuyến và từng ngày khẳng định thương hiệu của mình tại Việt Nam.</p>
+            </div>
+            <div class="block-content-about__video">
+              <iframe src="https://www.youtube.com/embed/sqiQrflhodU?rel=0&amp;" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" class="block-content-about__video--iframe"></iframe>
+            </div>
+          </div>
+          <div class="block-content-content1">
+            <div class="block-content-content1__image">
+              <img src="{{ LAYOUT_CONFIG.imageUrl }}/image_landingpage/landaudatphong-landing.png" alt="">
+            </div>
+            <div class="block-content-content1__text">
+              <div class="block-content-content1__text--title">
+                <p>Điều gì tạo nên sự khác biệt giữa Go2Joy với các ứng dụng đặt phòng khác?</p>
+              </div>
+              <div class="block-content-content1__text--content">
+                <div class="increase">
+                  <p>1. Đặt khách sạn theo giờ, qua đêm và theo ngày</p>
+                </div>
+                <div class="content">
+                  <p>Người dùng có thể đặt khách sạn với hình thức theo giờ, qua đêm, theo ngày linh hoạt, tùy theo nhu cầu. Với hình thức đặt theo giờ thì giá phòng chỉ từ 45k/h. Nên có thể tiết kiệm được khoản chi phí kha khá cho các bạn nào chỉ có nhu cầu ở vài giờ hay qua đêm thôi.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="block-content-content2">
+            <div class="block-content-content1__increase">
+                <p>2. Nhiều ưu đãi và chương trình khuyến mãi mỗi ngày</p>
+            </div>
+            <div class="block-content-content1__content">
+              <p>Một ứng dụng đặt phòng tuyệt vời thì dĩ nhiên sẽ phải cung cấp giá tốt nhất cho người dùng. Với mục tiêu lấy sự hài lòng của khách hàng làm kim chỉ nam. Go2Joy mong muốn người dùng phải được trải nghiệm những dịch vụ tốt nhất mà không phải sinh thêm một chi phí nào. Trên ứng dụng luôn đầy ấp các chương trình khuyến mãi hấp dẫn mỗi ngày như tặng coupon 2h tặng 1h, flash sale giảm đến 50% hay là tri ân khách hàng trong tháng sinh nhật và hàng ngàn các ưu đãi đặt biệt khác.</p>
+            </div>
+          </div>
+          <div class="block-content-download-app">
+            <div class="block-content-download-app__image-phone">
+              <img src="{{ LAYOUT_CONFIG.imageUrl }}/image_landingpage/phone-landing.png" alt="">
+            </div>
+            <div class="block-content-download-app__download">
+              <div class="block-content-download-app__download--title">
+                <p>
+                  NHANH TAY TẢI APP ĐẶT PHÒNG VÀ NHẬN ƯU ĐÃI HẤP DẪN NGAY
+                </p>
+              </div>
+              <div class="block-content-download-app__download--image">
+                <div class="image-android">
+                  <img src="{{ LAYOUT_CONFIG.imageUrl }}/image_landingpage/AndroidDownload.svg" alt="">
+                </div>
+                <div class="image-ios">
+                  <img src="{{ LAYOUT_CONFIG.imageUrl }}/image_landingpage/IOSDownload.svg" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="block-content-content2">
+            <div class="block-content-content2__increase">
+                <p>3. Giao diện dễ sử dụng</p>
+            </div>
+            <div class="block-content-content2__content">
+              <p>Chỉ cần tải app về điện thoại (IOS hoặc Android) là bạn có thể sử dụng bất kì đâu bạn muốn và điểm đến trong mơ chỉ cách vài nút chạm. Ngoài ra bạn có biết đánh giá khách sạn sẽ giúp bạn tìm được nơi dừng chân lý tưởng? Dù chỉ là một tân binh mới nhưng Go2Joy đạt 35.000 lượng reviews khách sạn trên ứng dụng giúp bạn có nhiều sự lựa chọn phù hợp mình hơn.</p>
+            </div>
+            <div class="block-content-content2__image">
+              <img src="{{ LAYOUT_CONFIG.imageUrl }}/image_landingpage/image-landing3.png" alt="">
+            </div>
+          </div>
+          <div class="block-content-content2">
+            <div class="block-content-content2__increase">
+                <p>4. Công nghệ hỗ trợ định vị và hình ảnh 360 độ</p>
+            </div>
+            <div class="block-content-content2__content">
+              <p>Dù bạn ở đâu, xa hay gần thì Go2Joy vẫn có thể quét khắp nơi để gợi ý các khách sạn gần nhất theo vị trí định vị hiện tại của bạn. Ngoài ra, điều khiến ứng dụng trở nên thú vị hơn là hình ảnh 360 độ giúp người dùng có thể tham khảo khách sạn một cách chân thật và sống động hơn không sợ rằng "mua hàng" thực tế và online. Từ đó người dùng có thể lựa chọn được khách sạn vừa ý và phù hợp với mình hơn</p>
+            </div>
+          </div>
+          <div class="block-content-content2">
+            <div class="section-content-content2__increase">
+                <p>5. Hình thức thanh toán đa dạng</p>
+            </div>
+            <div class="section-content-content2__content">
+              <p>Ngoài hình thức trả tiền trực tiếp tại khách sạn, Go2Joy cũng áp dụng nhiều phương thức thanh toán khác như trả trước bằng thẻ ATM, thẻ tín dụng, thanh toán tại cửa hàng tiện lợi, ví MoMo để giúp khách hàng linh hoạt trong việc thanh toán khi đặt khách sạn trên ứng dụng.</p>
+              <br>
+              <p>Quá nhiều lợi ích trong việc sử dụng ứng dụng Go2Joy để cánh mày râu có thể giảm bớt chi phí nhưng vẫn cho tình thêm thăng hoa, gắn kết yêu thương.</p>
+            </div>
+
+          </div>
+        </div> <!-- .bat-mi-diem-hen-ho-ly-tuong-block -->
+      </div>
+    </section> <!-- .bat-mi-diem-hen-ho-ly-tuong-section -->
+
+    {% include objGlobal.path.njk + "/partial/global/footer-section.njk" %}
+  </div> <!-- .bat-mi-diem-hen-ho-ly-tuong -->
+</div>
+{% endblock %}
+
+{% block footer %}{% endblock %}
+
+{% block script %}
+  <script type="text/javascript">
+    {% if resManagementData %}
+      window.PAGE_INFO.resManagementData = {{ resManagementData | json }};
+    {% endif %}
+
+    window.PAGE_INFO.image_url = "{{ LAYOUT_CONFIG.imageUrl }}";
+  </script>
+{% endblock %}

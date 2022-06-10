@@ -1,0 +1,125 @@
+//====================================
+// category-page
+//====================================
+
+@import "../../var/grid";
+
+@import "./filter-modal.scss";
+
+@import "./empty-category";
+
+@import "../global/component/list-room-category";
+
+@import "../../vars";
+$text-color: #ec6100;
+$primary-color: #ff6400;
+$margin: 30px;
+$btn-size: 30px;
+$bg-btn-color: #efefef;
+$bg-page: #ffffff;
+.category-page {
+  position: relative;
+  min-height: $min-height-page;
+  padding-top: 32px;
+  margin: 0 auto;
+  background-color: $bg-page;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  &__head {
+    display: flex;
+    flex-direction: row;
+    max-height: 36px;
+    align-items: center;
+    margin-bottom: $margin;
+    &--button {
+      flex: 0 0 10%;
+    }
+    &--label {
+      flex: 0 0 80%;
+      height: inherit;
+      display: flex;
+      flex-direction: row;
+      .head-label-container {
+        flex: 0 0 35%;
+        display: flex;
+        &__label {
+          // display: flex;
+          // flex: 1;
+          color: $text-color;
+          width: max-content;
+          padding: 5px 15px;
+          background-color: #fef2dc;
+          // line-height: 36px;
+          border-radius: 10px;
+          font-size: 16px;
+          font-weight: 400;
+        }
+      }
+
+      .show-filter {
+        display: flex;
+        flex-grow: 1;
+        margin-left: 10px;
+        align-items: center;
+        height: inherit;
+        overflow: hidden;
+        position: relative;
+        color: #333;
+        marquee {
+          width: 100%;
+        }
+        &__container {
+          display: flex;
+          flex-direction: row;
+          &--item {
+            color: $text-color;
+            width: max-content;
+            padding: 5px 15px;
+            background-color: #fef2dc;
+            // line-height: 36px;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 400;
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+    &--filter {
+      // flex: 0 0 10%;
+      flex: 1;
+      text-align: right;
+      button {
+        &:hover {
+          color: $primary-color;
+          transform: scale(1.1);
+          transition: all 0.2s;
+        }
+        border-radius: 50%;
+        height: $btn-size;
+        width: $btn-size;
+        cursor: pointer;
+        border: none;
+        background-color: $bg-btn-color;
+      }
+    }
+  }
+  &__container {
+  }
+  &__footer {
+    display: flex;
+    flex: 1;
+    align-items: flex-end;
+    justify-content: center;
+  }
+}
+// @media screen and (max-width: $mz-grid-xxs-min) {
+//   .category-page {
+//     &__container {
+//       &--item {
+//         flex: 0 1 100%;
+//       }
+//     }
+//   }
+// }

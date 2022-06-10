@@ -1,0 +1,50 @@
+{
+  "ts-node": {
+    "transpileOnly": true
+  },
+  "compileOnSave": true,
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "declaration": true,
+    "rootDir": ".",
+    "baseUrl": "app",
+    "allowJs": true,
+    "incremental": true,
+
+    "allowSyntheticDefaultImports": true,
+
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+
+
+    "paths": {
+      "@app/*": ["./*"],
+      "@common/*": ["./common/*"],
+      "@common/enum/*": ["./common/enum/*"],
+      "@common/define/*": ["./common/define/*"],
+      "@common/util/*": ["./common/util/*"],
+      "@common/config/*": ["./common/config/*"],
+      "@common/lib/*": ["./common/lib/*"],
+      "@common/store/*": ["./common/store/*"],
+      "@source-js/*": ["../src/js/*"],
+      "@source-data": ["../src/data/index"],
+      "@src/dummy-data/*": ["../src/dummy-data/*"],
+    },
+    "typeRoots": ["../node_modules/@types", "./common/**/**/*.ts"],
+  },
+
+  "include": [
+    "gulpfile.ts",
+    "./app/**/*.ts",
+  ],
+
+  "exclude": [
+    "node_modules",
+    "dist",
+    "tmp",
+    "src/js",
+    "image",
+    "font",
+  ]
+}

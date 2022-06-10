@@ -1,0 +1,49 @@
+{
+    "nick_name" : "NickName",
+    "email": "Email",
+    "profile": "Profile",
+    "mobile_number": "Mobile Number",
+    "date_of_birth": "Date of Birth",
+    "gender": "Gender",
+    "male": "Male",
+    "female": "Female",
+    "password": "Password",
+    "new_password": "New Password",
+    "confirm_password": "Confirm Password",
+    "change_password": "Change Password",
+    "update": "Update",
+    "vertify_code": {
+        "verification_code"                 : "Verification Code",
+        "verification_code_has_been_sent_to": "Verification code has been sent to",
+        "resend_code"                       : "Resend code",
+        "verify"                            : "Verify",
+        "please_try_again"                  : "Please try again"
+    },
+    "success_popup":{
+      "update": "Update",
+      "update_success" : "Information updated successfully",
+      "back": "Back"
+    },
+    "change_password_popup":{
+      "change_popup": "Change Password",
+      "password" : "Password",
+      "confirm_password": "Confirm Password",
+      "confirm" : "Confirm",
+      "error": "Password or Confirm Password not match.",
+      "required": "Password, new password, confirm password is required !"
+    },
+    "change_password_success_popup":{
+      "change_popup": "Change Password",
+      "password_change_success" : "Password Changed successfully",
+      "back_to_home": "Back to Home"
+    },
+    "validate_value":{
+      "phone_number": "Incorrect phone number",
+      "email": "Incorrect email",
+      "nick_name_required" : "This nick name has required.",
+      "mobile_required": "This mobile number has required.",
+      "password_required": "This password has required.",
+      "new_password_required": "This new password has required.",
+      "confirm_password_required": "This confirm password has required."
+    }
+}

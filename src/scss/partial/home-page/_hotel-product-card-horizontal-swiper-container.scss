@@ -1,0 +1,100 @@
+.hotel-product-card-horizontal__swiper-container {
+  position: relative;
+  padding: 0 get-space-from-base(8);
+  margin: 0 -#{ get-space-from-base(8) };
+
+  &:before,
+  &:after {
+    position: absolute;
+    height: 100%;
+    width: 40px;
+    z-index: 10;
+    top: 0;
+  }
+
+  &:before {
+    left: 0;
+
+    background: -moz-linear-gradient(
+      left,
+      #ffffff 0,
+      #ffffff 20%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    background: -webkit-linear-gradient(
+      left,
+      #ffffff 0,
+      #ffffff 20%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    background: linear-gradient(
+      to right,
+      #ffffff 0,
+      #ffffff 20%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  }
+
+  &:after {
+    right: 0;
+
+    background: -moz-linear-gradient(
+      right,
+      #ffffff 0,
+      #ffffff 20%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    background: -webkit-linear-gradient(
+      right,
+      #ffffff 0,
+      #ffffff 20%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    background: linear-gradient(
+      to left,
+      #ffffff 0,
+      #ffffff 20%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  }
+
+  &.has-readmore {
+    &:before,
+    &:after {
+      content: "";
+    }
+  }
+
+  &.is-readmore-right {
+    &:before {
+      display: none;
+    }
+
+    &:after {
+      display: block;
+    }
+  }
+
+  &.is-readmore-left {
+    &:before {
+      display: block;
+    }
+
+    &:after {
+      display: none;
+    }
+  }
+
+  &.is-readmore-both {
+    &:before,
+    &:after {
+      display: block;
+    }
+  }
+
+  &.disable-click {
+    .swiper-slide {
+      pointer-events: none;
+    }
+  }
+}

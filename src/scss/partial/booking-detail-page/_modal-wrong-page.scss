@@ -1,0 +1,113 @@
+.booking-detail-page {
+  .modal-wrong {
+    .modal-component-class-custom {
+      border-radius: 12px;
+      max-width: 372px;
+      width: 100%;
+    }
+
+    .text-uppercase {
+      font-family: Open Sans;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .modal-header {
+      font-family: Open Sans;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 20px;
+      text-align: center;
+      padding: 16px 0;
+    }
+    .image {
+      margin-top: -85px;
+      position: fixed;
+      margin-left: 6em;
+
+      @media (max-width: 320px) {
+        margin-left: 4.5em;
+      }
+
+      .custom-img {
+        width: 5em;
+        border-radius: 100em;
+        padding: 1em;
+        background: white;
+      }
+    }
+
+    &__body {
+      &--sort {
+        h2 {
+          font-weight: 600;
+          font-size: 18px;
+          text-align: center;
+          margin-bottom: 1em;
+        }
+
+        a {
+          color: #ff6400;
+          text-decoration: underline;
+        }
+      }
+
+      .error-modal {
+        margin: 1em 0em 1.5em;
+        color: #ff0000;
+      }
+    }
+
+    .modal-info-basic {
+      text-align: center;
+      font-size: 1em;
+      font-weight: 500;
+
+      p {
+        text-align: center;
+        font-family: Open Sans;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+      }
+
+      b {
+        font-weight: 600;
+        color: #ff6400;
+      }
+
+      .text-orange {
+        color: #ff6400;
+        font-weight: bold;
+      }
+    }
+
+    .modal-btn-apply {
+      position: static;
+      max-width: 368px;
+      height: 48px;
+      width: 100%;
+      left: 16px;
+      top: 317.44px;
+      outline: 1px solid #ff6400;
+      box-shadow: 0px 8px 16px rgba(19, 17, 17, 0.06);
+      border-radius: 28px;
+      color: #ff6400;
+      font-weight: 600;
+      border: none;
+      text-align: center;
+      background: #ffffff;
+      margin-top: 1em;
+    }
+
+    .btn-active {
+      background: #ff6400;
+      color: white;
+    }
+
+    .modal-btn-apply:hover {
+      cursor: pointer;
+    }
+  } // modal-wrong
+} // booking-detail-page

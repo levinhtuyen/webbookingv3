@@ -1,0 +1,14 @@
+{% extends objGlobal.path.njk + '/_layout.njk' %}
+
+<!-- ===============Body=============== -->
+{% block header %}{% endblock %}
+
+{% block body %}
+  <div id="app" class="main-container"></div>
+
+  {% if MODE_APPLICATION !== 'fast' %}
+    {% include objGlobal.path.njk + '/partial/global/g2j-loading-section.njk' %}
+  {% endif %}
+{% endblock %}
+
+{% block footer %}{% endblock %}

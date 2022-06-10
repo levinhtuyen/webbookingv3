@@ -1,0 +1,18 @@
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script id="gtag__script-tag">
+  window.initGtagScriptTag = function() {
+    const elGtagScriptTag = document.getElementById('gtag__script-tag');
+
+    if(elGtagScriptTag) {
+      let elGtagLoadScript = document.createElement('script');
+      elGtagLoadScript.setAttribute('async', true);
+      elGtagLoadScript.setAttribute('src', 'https://www.googletagmanager.com/gtag/js?id=UA-55111077-7');
+
+      const elGtagExecuteAfterLoadScript = document.createElement('script');
+      elGtagExecuteAfterLoadScript.innerText = "window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-55111077-7');";
+
+      elGtagScriptTag.replaceWith(elGtagLoadScript);
+      elGtagLoadScript.after(elGtagExecuteAfterLoadScript);
+    }
+  }
+</script>

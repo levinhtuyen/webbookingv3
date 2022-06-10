@@ -1,0 +1,21 @@
+{% extends objGlobal.path.njk + '/_layout.njk' %}
+
+{# {% set resManagementData = data.response %} #}
+
+<!-- ===============Body=============== -->
+
+{# {% block header %}{% endblock %} #}
+
+{% block body %}
+  <div id="style-guide">sfasdf</div>
+{% endblock %}
+
+{% block script %}
+  <script type="text/javascript">
+    {% if resManagementData %}
+      window.PAGE_INFO.resManagementData = {{ resManagementData | json }};
+    {% endif %}
+
+    window.PAGE_INFO.image_url = "{{ LAYOUT_CONFIG.imageUrl }}";
+  </script>
+{% endblock %}

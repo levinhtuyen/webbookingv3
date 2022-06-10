@@ -1,0 +1,41 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "declaration": true,
+    "baseUrl": ".",
+    "allowJs": true,
+    "incremental": true,
+    "allowSyntheticDefaultImports": true,
+
+    "paths": {
+      "~jsPath/*": ["./js/*"],
+      "~jsLibPath/*": ["./js/lib/*"],
+      "~jsBasePath/*": ["./js/base/*"],
+      "~jsDefinePath/*": ["./js/define/*"],
+      "~jsHelperPath/*": ["./js/helper/*"],
+      "~jsPartialPath/*": ["./js/partial/*"],
+      "~jsLandingPath/*": ["./js/landing/*"],
+    },
+  },
+
+  "include": [
+    "./js/**/*.js",
+    "./js/**/*.vue",
+    "./js/landing/**/*.js",
+    "./js/landing/**/*.vue",
+  ],
+
+  "exclude": [
+    "node_modules",
+    "dist",
+    "tmp",
+    "image",
+    "font",
+  ],
+
+  "typeAcquisition": {
+    "enable": true,
+  },
+}

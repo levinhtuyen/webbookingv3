@@ -1,0 +1,22 @@
+<script id="script-update-canonical-tag">
+  const elCanonical = document.head.querySelector('[rel="canonical"]');
+
+  if(elCanonical) {
+    let canonicalUrl = '{{BASE_URL}}'+window.location.pathname;
+    let queryString = window.location.search;
+
+    if(
+      /[\/vi\/|\/en\/|\/]+hoteldetail\/[\w-?]+/g.test(canonicalUrl) &&
+      !canonicalUrl.includes('roomTypeSn=') &&
+      queryString
+    ) {
+      let tmpQueryString = [].concat(queryString.match(/hotelSn=[\w]+/g));
+
+      queryString = (tmpQueryString.length && tmpQueryString[0] ? '?'+tmpQueryString[0] : queryString);
+    }
+
+    canonicalUrl+=queryString;
+
+    elCanonical.setAttribute('href', canonicalUrl);
+  }
+</script>

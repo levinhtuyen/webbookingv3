@@ -1,0 +1,84 @@
+@import "../../../mixin/general";
+@import "../../../function/space";
+$flash-sale: #ff0000;
+$special: #edb305;
+$promotion: #8bb821;
+
+.label-remaining-day-container {
+  display: flex;
+  flex: 1;
+  width: inherit;
+  height: inherit;
+  justify-content: flex-end;
+}
+.label-remaining-day {
+  // .flash-sale {
+  //   @include boxshadow(inset 0px 0px 0px 1px rgba($flash-sale, 1));
+  // }
+
+  // .special {
+  //   @include boxshadow(inset 0px 0px 0px 1px rgba($special, 1));
+  // }
+
+  // .promotion {
+  //   @include boxshadow(inset 0px 0px 0px 1px rgba($promotion, 1));
+  // }
+
+  display: flex;
+  overflow: hidden;
+  border-radius: 6px;
+  // @include boxshadow(inset 0px 0px 0px 1px rgba(#ff6500, 1));
+  margin-bottom: get-space-from-base(4);
+  width: auto;
+  font-size: 1.5rem;
+
+  @media (min-width: 375px) {
+    font-size: 1.75rem;
+  }
+
+  &__title {
+    &--flash-sale {
+      background: $flash-sale;
+    }
+    &--special {
+      background: $special;
+    }
+    &--promotion {
+      background: $promotion;
+    }
+
+    &--icon {
+      margin-right: 5px;
+    }
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    padding: get-space-from-base(1) get-space-from-base(2);
+
+    color: #ffffff;
+  }
+  &__content {
+    display: inline-flex;
+    flex: 1 1;
+    min-width: 0;
+    align-items: center;
+    padding: get-space-from-base(1) get-space-from-base(4);
+    &--container {
+      display: inline-block;
+      max-width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+}
+.label-remaining-day-flash-sale {
+  @include boxshadow(inset 0px 0px 0px 1px rgba($flash-sale, 1));
+}
+
+.label-remaining-day-special {
+  @include boxshadow(inset 0px 0px 0px 1px rgba($special, 1));
+}
+.label-remaining-day-promotion {
+  @include boxshadow(inset 0px 0px 0px 1px rgba($promotion, 1));
+}

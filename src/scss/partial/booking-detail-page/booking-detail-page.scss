@@ -1,0 +1,72 @@
+// ===================
+// partial booking-detail-page
+// ===================
+@import "./_booking-detail-page.scss";
+@import "./_booking-detail-agoda-page.scss";
+@import "./_modal-cancel-booking-agoda.scss";
+@import "./_modal-wrong-page.scss";
+@import "../global/component/_g2j-no-data.scss";
+
+.booking-detail-page {
+  padding-top: 16px;
+  background: white;
+  min-height: calc(100vh - #{$g2j-total-padding-top-bottom});
+
+  &__heading {
+    font-weight: bold;
+    font-size: 24px;
+    text-align: center;
+
+    display: flex;
+
+    padding: 1em;
+    align-items: center;
+    box-shadow: 0px 4px 12px rgb(0 0 0 / 6%);
+    margin-bottom: 1.5em;
+
+    i {
+      cursor: pointer;
+    }
+
+    h2 {
+      flex: auto;
+    }
+  }
+
+  .bold {
+    font-weight: bold;
+  }
+
+  .f-1-25em {
+    font-size: 1.25em;
+  }
+
+  .line {
+    border: 1px solid #f2f2f2;
+    margin: 1em 0;
+  }
+
+  .line-3x {
+    border: 3px solid #f2f2f2;
+    margin: 1em 0;
+    background: #f2f2f2;
+  }
+
+  h2 {
+    font-weight: 600;
+    font-size: 24px;
+  }
+
+  b {
+    font-weight: 600;
+  }
+
+  .text-g2j {
+    color: #fd6500;
+  }
+
+  .ft-4x {
+    font-weight: 600;
+    font-size: 28px;
+  }
+}

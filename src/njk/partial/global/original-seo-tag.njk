@@ -1,0 +1,50 @@
+{# {% if not data.title | isEmpty %}
+  <title>{{ data.title }}</title>
+  <meta
+    property="og:title"
+    content="{{ data.title }}"
+  />
+{% endif %}
+{% if not data.desciption | isEmpty %}
+  <meta name="description" content="{{ data.desciption }}" />
+  <meta
+    property="og:description"
+    content="{{ data.desciption }}"
+  />
+  <meta
+    name="twitter:title"
+    content="{{ data.desciption }}"
+  />
+{% endif %} #}
+{# {% if not data.keywords | isEmpty %}
+  <meta name="keywords" content="{{ data.keywords }}">
+{% endif %} #}
+<meta
+  name='viewport'
+  content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'
+/>
+{% if not data.author | isEmpty %}
+  <meta name="author" content="{{ data.author }}" />
+{% endif %}
+{# {% if not data.logo | isEmpty %}
+  <meta property="og:image" content="{{ data.logo }}" />
+{% endif %}
+{% if not data.url | isEmpty %}
+  <meta property="og:url" content="{{ data.url }}" />
+{% endif %}
+{% if not data.site_name | isEmpty %}
+  <meta property="og:site_name" content="{{ data.site_name }}" />
+{% endif %} #}
+<meta name="facebook-domain-verification" content="6r2ezd384utn6kvpb42fzvbrxlllfy" />
+
+{% if ENV_APPLICATION === PRODUCTION %}
+  <meta name='dmca-site-verification' content='MXBsQkpmMWZJcEZhcXFMOXIrNVF6dz090' />
+{% endif %}
+
+{# <link rel="canonical"> #}
+
+{# {% if ENABLE_INDEX %}
+  <meta name="robots" content="index, follow" />
+{% else %}
+  <meta name="robots" content="noindex, follow" />
+{% endif %} #}

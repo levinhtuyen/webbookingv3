@@ -1,0 +1,123 @@
+$line-border-fill: #FF6400;
+$line-border-empty: #FEE1CD;
+$bg-white: #ffffff;
+$cicle-no-active : rgba(253, 101, 0, 0.195094);
+
+.g2j-confirm-information {
+  width: 100%;
+  background: $bg-white;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.06);
+  &__item {
+    width: 100%;
+    display: flex;
+    padding-top: 40px;
+    .confirm-button-back {
+      color: #010F07;
+      font-size: 24px;
+      padding-left: 8px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .confirm-image {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-right: 23px;
+      width: 100%;
+
+      &__image {
+        width: 48px;
+        height: 48px;
+        border: 2px solid #ff6400;
+        border-radius: 50%;
+
+        img {
+          width: 100%;
+          padding: 13px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+  }
+
+  &__text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    padding: 15px 0
+  }
+
+  &__step {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+
+    .progress-container {
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      margin-bottom: 30px;
+      max-width: 100%;
+      width: 142px;
+    }
+
+    .progress-container::before {
+      content: '';
+      background-color: $line-border-empty;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      height: 2px;
+      width: 100%;
+      z-index: 1;
+    }
+
+    .progress {
+      background-color: $line-border-fill;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      height: 2px;
+      width: 0%;
+      z-index: 1;
+      transition: 0.4s ease;
+    }
+
+    .circle {
+      background-color: #fff;
+      color: $cicle-no-active;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.4s ease;
+      z-index: 2;
+
+      i {
+        display: none;
+      }
+
+      .fa-circle {
+        color: $cicle-no-active;
+      }
+    }
+
+    .circle.active {
+      color: #ff6400;
+
+      .active {
+        display: block;
+      }
+    }
+  }
+}

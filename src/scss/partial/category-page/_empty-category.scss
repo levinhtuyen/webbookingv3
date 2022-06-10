@@ -1,0 +1,24 @@
+@import "../../vars";
+
+.empty-category {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 1.5rem;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -ms-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+
+  @media screen and(min-width:$g2j-grid-md-min) {
+    font-size: 2.5rem;
+  }
+  &__img {
+    max-width: 40%;
+  }
+  &__content {
+    text-align: center;
+  }
+}

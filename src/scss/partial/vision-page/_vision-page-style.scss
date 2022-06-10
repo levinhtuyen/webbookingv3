@@ -1,0 +1,75 @@
+@import '../../vars';
+@import '../../function/space';
+
+.vision-page{
+    .back-btn-section {
+      padding: get-space-from-base(8) 0;
+      background: #ffffff;
+    }
+
+    .vision-section {
+      background: #ffffff;
+      padding-bottom: get-space-from-base(8);
+      margin-bottom: get-space-from-base(8);
+    }
+
+    &__banner{
+        padding: 0 0 get-space-from-base(8);
+        &--image{
+            width: 100%;
+
+            img{
+                width: 100%;
+                height: auto;
+                vertical-align: bottom;
+            }
+        }
+    }
+    &__content{
+        margin-bottom: get-space-from-base(8);
+
+        &--title{
+            width: 100%;
+            text-align: center;
+            .title{
+                font-size: 4rem;
+                font-weight: bold;
+                text-align: center;
+                text-transform: uppercase;
+            }
+        }
+    }
+    &__tab{
+        border: 1px solid #FFE7D7;
+        border-radius: 10px;
+        &--tab{
+            display: flex;
+            flex-wrap: wrap;
+            background-color: #FFE7D7;
+            border-radius: 10px 10px 0 0;
+            line-height: 22px;
+            font-size: 20px;
+            font-style: normal;
+            overflow: hidden;
+
+            .tab-vision-mision{
+                flex: 1 3;
+                text-align: center;
+                padding: 8px;
+                cursor: pointer;
+                &.active{
+                    background-color: #fff;
+                    color: #FF6400;
+                }
+            }
+        }
+        &--content{
+            margin: 8px;
+            position: relative;
+            .content-tab{
+                padding: 8px;
+            }
+        }
+
+    }
+}

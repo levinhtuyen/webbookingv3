@@ -1,0 +1,36 @@
+// global style
+//===================
+@import "../../vars";
+@import "../../function/space";
+@import "../../mixin/limit-text-line";
+@import "../global/component/g2j-basic-modal";
+// partial style
+//===================
+@import "./hotel-detail-page-style";
+@import "./label-card-style";
+@import "../global/component/g2j-slide-hotel";
+@import "./hotel-filter-date-time";
+@import "./slide-discount-style";
+@import "./point-card-style";
+@import "./hotel-review-modal-style";
+@import "../global/component/_g2j-slider";
+@import "./_star-style.scss";
+@import "./flash-sale-swiper-hotel-section";
+@import "./horizontal-swiper-hotel-section";
+@import "./horizontal-hotel-card";
+@import "./slide-review-style";
+@import "./block-facilities-style";
+@import "./light-square-card";
+@import "./modal-facilities";
+@import "./modal-nearby";
+
+@import "./modal-langauge-spoken";
+
+@import "./room-type-list-section";
+@import "./light-square-room-card";
+@import "./room-type-list-modal";
+
+@import "../global/component/_g2j-slider-image.scss";
+@import "../global/component/g2j-star-rating.scss";
+
+@import "./modal-checkin-time";

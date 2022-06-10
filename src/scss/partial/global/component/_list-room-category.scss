@@ -1,0 +1,182 @@
+//====================================
+// list-room-category
+//====================================
+@import "../../../var/grid";
+
+$min-height: 380px;
+
+$white-color: #ffffff;
+$primary-color: #ff6500;
+
+$margin: 15px;
+$small-fz: 12px;
+.list-room-category {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 100%;
+  &__container-item {
+    flex: 0 1 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 4%;
+    min-height: $min-height;
+    box-shadow: 1px 3px 10px 2px rgb(0 0 0 / 10%);
+    border-radius: 10px 10px 0 0;
+    position: relative;
+    overflow: hidden;
+
+    &--cover {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      height: 150px;
+      // padding-top: 42%;
+      // background-repeat: no-repeat;
+      // background-position: 50% 50%;
+      // background-size: 100% auto;
+      // position: relative;
+      // background-color: #ccc;
+      // transition: all 0.3s ease;
+      img {
+        object-fit: cover;
+      }
+      cursor: pointer;
+      .label-flash-sale {
+        position: absolute;
+        border-radius: 0 10px 10px 0;
+        color: $white-color;
+        opacity: 0.9;
+        padding: 3px;
+        top: 10px;
+        background-color: red;
+        background: -moz-linear-gradient(right, #f05634 60%, red 40%);
+        background: -o-linear-gradient(right, #f05634 60%, red 40%);
+        background: -ms-linear-gradient(right, #f05634 60%, red 40%);
+        background: -webkit-gradient(linear, right top, left top, color-stop(0.4, #f05634), color-stop(0.6, red));
+      }
+      .label-hotel-hot {
+        position: absolute;
+        border-radius: 0 10px 10px 0;
+        top: 40px;
+        color: $white-color;
+        opacity: 0.9;
+        padding: 3px;
+        background: #fa679b;
+        background-color: #fa679b;
+        background: -moz-linear-gradient(right, #fa679b 60%, #f81364 40%);
+        background: -o-linear-gradient(right, #fa679b 60%, #f81364 40%);
+        background: -ms-linear-gradient(right, #fa679b 60%, #f81364 40%);
+        background: -webkit-gradient(linear, right top, left top, color-stop(0.4, #fa679b), color-stop(0.6, #f81364));
+      }
+      .label-hotel-new {
+        position: absolute;
+        border-radius: 0 10px 10px 0;
+        top: 70px;
+        color: $white-color;
+        opacity: 0.9;
+        padding: 3px;
+        background-color: #029bd6;
+        background: -moz-linear-gradient(right, #54c4ef 60%, #029bd6 40%);
+        background: -o-linear-gradient(right, #54c4ef, #029bd6 40%);
+        background: -ms-linear-gradient(right, #54c4ef 60%, #029bd6 40%);
+        background: -webkit-gradient(linear, right top, left top, color-stop(0.4, #54c4ef), color-stop(0.6, #029bd6));
+      }
+    }
+    &--content {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      padding: 15px;
+      // transition: all 0.3 ease-in-out;
+      .container-title-img {
+        display: flex;
+        .hotel-name {
+          font-size: 16px;
+          font-weight: 500;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 1;
+          line-height: 36px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          margin-bottom: $margin;
+          flex-grow: 1;
+        }
+        .img-go2choice {
+          flex: none;
+          height: 24px;
+          overflow: hidden;
+          border-radius: 24px;
+        }
+      }
+
+      .star-rate {
+        p {
+          color: $primary-color;
+          margin-bottom: 10px;
+          background-color: #fff1dd;
+          padding: 5px 8px;
+          width: max-content;
+        }
+      }
+      .map {
+        .fas {
+          color: #c1c1c1;
+        }
+        a {
+          background-color: #f2f2f2;
+          padding: 5px 8px;
+        }
+      }
+      .label-room {
+        display: flex;
+        justify-content: flex-end;
+        // align-items: flex-end;
+        height: 40px;
+        margin-bottom: 5px;
+      }
+      .list-room-category-label-remaining-day {
+        // display: flex;
+        // justify-content: flex-end;
+        height: 40px;
+        width: inherit;
+      }
+      .container-price {
+        margin: $margin 0;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        flex-direction: column;
+        &__title-first-hours,
+        &__title-overnight,
+        &__title-daily {
+          font-size: $small-fz;
+          margin-right: 4px;
+        }
+        &__first-hours-origin,
+        &__overnight-origin,
+        &__daily-origin {
+          text-decoration: line-through;
+          font-size: $small-fz;
+          margin-right: 4px;
+        }
+        &__first-hours,
+        &__overnight,
+        &__daily {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: $mz-grid-sm-min) {
+  .list-room-category {
+    &__container-item {
+      flex: 0 1 48%;
+      &--cover {
+      }
+    }
+  }
+}

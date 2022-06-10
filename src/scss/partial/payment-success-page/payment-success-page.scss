@@ -1,0 +1,21 @@
+//====================================
+// payment-success-page
+//====================================
+$bg-page: #ffffff;
+@import "../payment-detail-page/payment-detail-page.scss";
+.payment-success {
+  // position: relative;
+  // min-height: calc(100vh - 110px);
+  // padding-top: 32px;
+  // margin: 0 auto;
+  // background-color: $bg-page;
+  &__body {
+    &--icon {
+      width: 21px;
+      margin-right: 10px;
+    }
+    &--timeline {
+      margin: 20px 0;
+    }
+  }
+}

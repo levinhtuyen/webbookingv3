@@ -1,0 +1,113 @@
+//====================================
+// select-product-modal
+//====================================
+@import "../../vars";
+$padding: 8px;
+
+.select-product-modal {
+  .modal-component-class-custom {
+    max-height: 70vh;
+    border-radius: 12px;
+  }
+  @media screen and(min-width:$g2j-grid-xxs-min ) {
+    .modal-component-class-custom {
+      height: auto;
+    }
+  }
+
+  &__header {
+    text-align: center;
+  }
+
+  &__body {
+    width: auto;
+    .select-product-modal-card-item {
+      &:hover {
+        border: 1px solid #ff6400;
+        .card-item {
+          &__name {
+            color: #ff6400;
+          }
+        }
+        .card-item {
+          .fa-minus-circle {
+            // color: red;
+            color: #ff6400;
+
+            opacity: 1;
+          }
+          .fa-plus-circle {
+            // color: #38b70d;
+            color: #ff6400;
+
+            opacity: 1;
+          }
+        }
+      }
+      display: flex;
+      flex: 1;
+      flex-direction: row;
+      // justify-content: space-around;
+      box-shadow: 5px 4px 12px 8px rgb(0 0 0 / 5%);
+      border: 1px solid transparent;
+      border-radius: 12px;
+      // padding: $padding;
+      margin-top: 15px;
+      &__container-img {
+        flex: 0 0 30%;
+        // margin: -$padding;
+        border-radius: 12px 0 0 12px;
+        overflow: hidden;
+        height: 130px;
+        img {
+          object-fit: cover;
+        }
+      }
+      &__content {
+        flex: 0 0 65%;
+        display: flex;
+        padding: $padding;
+        &--item {
+          align-items: flex-end;
+          display: flex;
+          flex: 1;
+          flex-direction: column;
+          justify-content: center;
+          font-size: 16px;
+
+          .card-item {
+            &__name {
+              font-weight: 600;
+            }
+            &__action {
+              display: flex;
+              &--number {
+                margin: 0 4px;
+              }
+              .fa-minus-circle {
+                opacity: 0.5;
+                cursor: pointer;
+              }
+              .fa-plus-circle {
+                opacity: 0.5;
+                cursor: pointer;
+              }
+            }
+          }
+        }
+      }
+    }
+    @media screen and(min-width:$g2j-grid-sm-min ) {
+      width: 610px;
+      height: fit-content;
+      height: -webkit-fit-content;
+    }
+  }
+  &__footer {
+    margin-top: 10px;
+    text-align: center;
+    &--btn-apply {
+      width: auto !important;
+    }
+  }
+}

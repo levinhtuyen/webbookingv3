@@ -1,0 +1,32 @@
+//===========================================
+// base
+//===========================================
+@import "./base";
+
+//===========================================
+// partial global
+//===========================================
+@import "partial/global/vue-transition";
+@import "partial/global/component/g2j-loading-section";
+@import "partial/global/component/g2j-dropdown-box";
+
+@import "partial/global/component/pagination";
+@import "partial/global/component/_back-button-component";
+@import "partial/global/component/g2j-back";
+@import "partial/global/component/_label-room-component";
+@import "partial/global/component/_modal-component";
+@import "partial/global/component/_label-remaining-day";
+@import "partial/global/component/book-now-button";
+@import "partial/global/component/modal-booking-with-login";
+@import "partial/global/component/g2joy-swiper-base";
+
+@import "partial/global/header-sticky-section";
+@import "partial/global/footer-sticky-section";
+
+// css button
+@import "partial/global/g2j-style-button-book";
+
+@import "partial/global/component/g2j-toast";
+
+
+@import 'partial/global/component/g2j-direct-app-notice-modal';

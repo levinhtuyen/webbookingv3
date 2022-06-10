@@ -1,0 +1,37 @@
+{% if metaContent.title | isEmpty %}
+  <!-- title -->
+{% else %}
+  <title>{{ metaContent.title }}</title>
+{% endif %}
+<!-- keywords -->
+{% if metaContent.description | isEmpty %}
+  <!-- description -->
+{% else %}
+  <meta name="description" content="{{ metaContent.description }}">
+{% endif %}
+<!-- og:description -->
+<!-- twitter:title -->
+{% if metaContent.robots | isEmpty %}
+  <!-- robots -->
+{% else %}
+  <meta name="robots" content="{{ metaContent.robots }}">
+{% endif %}
+{% if metaContent.canonical | isEmpty %}
+  <!-- canonical -->
+{% else %}
+  <link rel="canonical" href="{{ metaContent.canonical }}">
+{% endif %}
+<!-- og:type -->
+<!-- og:title -->
+<!-- og:url -->
+<!-- og:site_name -->
+<!-- og:image -->
+<!-- og:image:width -->
+<!-- og:image:height -->
+{% if metaContent.alternate_list | isEmpty %}
+  <!-- alternate -->
+{% else %}
+  {% for alternateItem in metaContent.alternate_list %}
+    <link rel="alternate" hrefLang="{{ alternateItem.href_lang }}" href="{{ alternateItem.href }}" />
+  {% endfor %}
+{% endif %}

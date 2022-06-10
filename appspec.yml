@@ -1,0 +1,17 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /var/www/staging/go2joy-webbooking
+permissions:
+  - object: /var/www
+    owner: nginx
+    group: nginx
+    type:
+      - directory
+      - file
+hooks:
+  AfterInstall:
+    - location: scripts/after_install
+      timeout: 600
+      runas: ec2-user

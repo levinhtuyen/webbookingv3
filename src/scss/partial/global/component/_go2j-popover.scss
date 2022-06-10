@@ -1,0 +1,40 @@
+@import "../../../var/grid";
+
+.my-popover{
+    position: relative;
+    cursor: pointer;
+    .options{
+        position:   absolute;
+        background: white;
+        z-index: 9;
+        display: inline-block;
+        margin-top: 18px;
+        opacity: 0;
+        display: none;
+        &:after{
+            content: "";
+            border-top: 1px solid #e4e4e4;
+            border-right: 1px solid #e4e4e4;
+            width: 10px;
+            height: 10px;
+            transform: rotate(-45deg);
+            position: absolute;
+            z-index: 10;
+            background-color: #fff;
+            top: -6px;
+            left: calc(50% - 10px);
+        }
+        &.is-show{
+            display: block;
+            opacity: 1;
+        }
+    }
+}
+@media (max-width:425px) {
+    .my-popover{
+        .options{
+            left: unset;
+            transform: unset;
+        }
+    }
+}

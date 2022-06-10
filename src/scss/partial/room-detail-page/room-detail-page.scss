@@ -1,0 +1,228 @@
+//====================================
+// room-detail-page
+//====================================
+@import "../hotel-detail-page/hotel-detail-page-facilities_style";
+@import "../global/component/slider-banner";
+
+@import "../../vars";
+@import "../global/component/g2j-basic-modal";
+@import "../global/component/g2j-direct-app-notice-modal";
+
+$mr: 20px;
+.room-detail {
+  padding-top: 32px;
+  background-color: $g2j-background-page;
+  min-height: $min-height-page;
+  height: auto;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+
+  .title-label-room-detail {
+    font-family: "Sans";
+    font-family: Open Sans;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 22px;
+    letter-spacing: 0px;
+    text-align: center;
+  }
+  &__head {
+    display: flex;
+    align-items: center;
+    // margin-bottom: $mr;
+    margin: $mr 0;
+    // &--back-button {
+    //   flex: 0 0 15%;
+    // }
+    &--hotel-name {
+      // padding-right: 15%;
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+      font-size: 20px;
+      font-weight: bold;
+      font-family: "Open Sans";
+    }
+  }
+  &__slide {
+    // padding: 16px 0;
+    // border-bottom: 1px solid #d0d0d0;
+  }
+  &__title-room {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  &__container-label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: $mr;
+    // align-items: center;
+    .label-remaining-day-container,
+    .label-room-component {
+      justify-content: flex-start;
+      flex: none;
+      width: fit-content;
+    }
+    .label-remaining-day-container {
+      .label-remaining-day {
+        margin-bottom: 0 !important;
+      }
+    }
+    .label-room-component {
+      margin-bottom: 10px;
+    }
+    @media (min-width: $g2j-grid-sm-min) {
+      flex-direction: row;
+      .label-room-component {
+        margin-right: 10px;
+        margin-bottom: 0;
+      }
+    }
+  }
+  &__information {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: $mr;
+    &--time {
+      flex: 0 0 45%;
+      margin-bottom: 10px;
+      .first-hours,
+      .next-hours,
+      .overnight,
+      .daily {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+    &--info {
+      flex: 0 0 45%;
+      .square,
+      .bed,
+      .view {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+    @media (min-width: $g2j-grid-sm-min) {
+      flex-direction: row;
+    }
+  }
+  &__description {
+    margin-bottom: $mr;
+  }
+  &__facilities {
+    margin-bottom: $mr;
+    &--content-img {
+      margin-top: 10px;
+      display: flex;
+      flex: 1;
+      flex-direction: row;
+      flex-wrap: wrap;
+      .container-item {
+        display: flex;
+        margin-right: 12px;
+        &__name {
+          display: none;
+        }
+      }
+
+      img {
+        height: 20px;
+        width: 20px;
+      }
+      @media (min-width: $g2j-grid-sm-min) {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        row-gap: 10px;
+        column-gap: 12px;
+        justify-content: space-between;
+        align-items: center;
+        .container-item {
+          &__name {
+            display: flex;
+            flex: 1;
+            align-items: center;
+            margin-left: 8px;
+            font-size: 14px;
+          }
+        }
+        img {
+          height: 40px;
+          width: 40px;
+        }
+      }
+    }
+  }
+
+  //old
+  &__info {
+    margin-top: 30px;
+    &--room-name {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    &--square {
+    }
+    &--bed {
+    }
+    &--view {
+    }
+  }
+
+  &__price {
+    &--label {
+      margin-bottom: 8px;
+    }
+    &--flash-sale {
+      display: flex;
+      flex: 1;
+      width: inherit;
+      justify-content: flex-end;
+    }
+    &--label-remaining {
+      display: flex;
+      flex: 1;
+      width: inherit;
+      justify-content: flex-end;
+    }
+    padding: 16px 0;
+    margin-top: 30px;
+    border-top: 1px solid #d0d0d0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    line-height: 2;
+    flex: 1;
+    width: 100%;
+  }
+  &__facilities {
+    // padding: 16px 0;
+    // margin-top: 30px;
+    // border-top: 1px solid #d0d0d0;
+    // .facilities-title {
+    //   width: 100%;
+    //   font-size: 20px;
+    //   padding: 5px 0;
+    // }
+  }
+  // end old
+  &__footer {
+    display: flex;
+    flex: 1;
+    align-items: flex-end;
+    justify-content: center;
+    &--container-btn {
+      display: flex;
+      flex: 1;
+      width: 100%;
+      .book-now-button {
+        width: 100%;
+      }
+    }
+  }
+}

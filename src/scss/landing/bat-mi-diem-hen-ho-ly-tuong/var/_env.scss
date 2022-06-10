@@ -1,0 +1,11 @@
+// NOTE - Định nghĩa cache version variable, dùng để clear cache font / image được sử dụng trong lúc code scss
+$g2j-cache-ver-suffix: '';
+
+// NOTE - Định nghĩa đường dẫn cho image directory, sử dụng trong lúc định nghĩa url('..') background trong scss
+$g2j-image-url: '';
+$g2j-logo-url: '';
+$g2j-bg-url: '';
+$g2j-icon-url: '';
+
+// NOTE - Định nghĩa đường dẫn cho font directory, sử dụng trong lúc định nghĩa font url
+$g2j-font-url: '';

@@ -1,0 +1,20 @@
+@import "../../vars";
+
+$primary-color: #ff6400;
+
+.modal-sold-out-room{
+  .modal-component-class-custom {
+    max-height: 70vh;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  @media screen and(min-width:$g2j-grid-xxs-min ) {
+    .modal-component-class-custom {
+      height: auto;
+    }
+  }
+  &__body {
+    margin: 20px 0 10px 0;
+  }
+}
+

@@ -1,0 +1,81 @@
+{% set go2joyLoadingImgInfoList = [
+  {
+    src: LAYOUT_CONFIG.imageUrl + '/svg/go2joy-logo.svg',
+    alt: 'go2joy logo'
+  },
+  {
+    src: LAYOUT_CONFIG.imageUrl + '/svg/coupon-logo.svg',
+    alt: 'coupon logo'
+  },
+  {
+    src: LAYOUT_CONFIG.imageUrl + '/svg/promotion-logo.svg',
+    alt: 'promotion logo'
+  },
+  {
+    src: LAYOUT_CONFIG.imageUrl + '/svg/hotel-logo.svg',
+    alt: 'hotel logo'
+  },
+  {
+    src: LAYOUT_CONFIG.imageUrl + '/svg/point-logo.svg',
+    alt: 'point logo'
+  },
+  {
+    src: LAYOUT_CONFIG.imageUrl + '/svg/tem-logo.svg',
+    alt: 'tem logo'
+  },
+  {
+    src: LAYOUT_CONFIG.imageUrl + '/svg/notification-logo.svg',
+    alt: 'notification logo'
+  }
+] %}
+<div
+  id="g2j-loading-section--template-njk"
+  class="g2j-loading-section is-fill"
+>
+  <div class="g2j-loading-wrap">
+    <div class="g2j-loading-wrap__loading-spinner-outer">
+      <div class="g2j-loading-wrap__loading-spinner-line">
+        <span class="g2j-loading-wrap__loading-spinner-item"></span>
+      </div>
+      <div class="g2j-loading-wrap__loading-spinner-line">
+        <span class="g2j-loading-wrap__loading-spinner-item"></span>
+      </div>
+      <div class="g2j-loading-wrap__loading-spinner-line">
+        <span class="g2j-loading-wrap__loading-spinner-item"></span>
+      </div>
+      <div class="g2j-loading-wrap__loading-spinner-line">
+        <span class="g2j-loading-wrap__loading-spinner-item"></span>
+      </div>
+      <div class="g2j-loading-wrap__loading-spinner-line">
+        <span class="g2j-loading-wrap__loading-spinner-item"></span>
+      </div>
+      <div class="g2j-loading-wrap__loading-spinner-line">
+        <span class="g2j-loading-wrap__loading-spinner-item"></span>
+      </div>
+      <div class="g2j-loading-wrap__loading-spinner-line">
+        <span class="g2j-loading-wrap__loading-spinner-item"></span>
+      </div>
+      <div class="g2j-loading-wrap__loading-spinner-line">
+        <span class="g2j-loading-wrap__loading-spinner-item"></span>
+      </div>
+      <div class="g2j-loading-wrap__loading-spinner-line">
+        <span class="g2j-loading-wrap__loading-spinner-item"></span>
+      </div>
+      <div class="g2j-loading-wrap__loading-spinner-line">
+        <span class="g2j-loading-wrap__loading-spinner-item"></span>
+      </div>
+    </div> <!-- .g2j-loading-wrap__loading-snipper-outer -->
+
+    <div class="g2j-loading-wrap__img-outer">
+      {% for go2joyLoadingImgInfoItem in go2joyLoadingImgInfoList %}
+        <img
+          class="g2j-loading-wrap__img"
+          width="100%"
+          height="100%"
+          src="{{ go2joyLoadingImgInfoItem.src }}"
+          alt="{{ go2joyLoadingImgInfoItem.alt }}"
+        >
+      {% endfor %}
+    </div> <!-- .g2j-loading-wrap__img-outer -->
+  </div> <!-- .g2j-loadig-wrap -->
+</div> <!-- .go2joy-loading-section -->

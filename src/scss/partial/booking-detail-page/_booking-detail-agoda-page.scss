@@ -1,0 +1,191 @@
+@import "../../vars";
+
+.booking-detail-page {
+  .agoda {
+    &__user {
+      margin: 0 1.5em;
+
+      @media (min-width: 640px) {
+        margin: 0 2em;
+      }
+      h2 {
+        text-transform: uppercase;
+        margin: 0.4em 0;
+      }
+
+      &--border {
+        margin: 1em 0;
+        span {
+          padding: 8px 16px;
+        }
+
+        .spending {
+          background: #f3f7fe;
+          color: #4485f6;
+        }
+        .confirmed {
+          background: #f1f9f2;
+          color: #14af1f;
+        }
+        .cancelled {
+          background: #fff4f4;
+          color: #ff0000;
+        }
+        .checked-in {
+          background: #fcebce;
+          color: #ff6400;
+        }
+
+        .noshow {
+          background: #fcebce;
+          color: black;
+        }
+
+        .status-error {
+          background: #ff5959;
+          color: #ffffff;
+        }
+      }
+
+      &--address {
+        i {
+          color: #696969;
+        }
+
+        span {
+          margin-left: 0.5em;
+        }
+      }
+
+      &--flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        p {
+          margin: 0.5em 0;
+        }
+      }
+
+      &--table {
+        margin: 1em 0;
+
+        table,
+        td,
+        th {
+          border: 1px solid #c2c2c2;
+          padding: 1em 1.5em;
+        }
+        table {
+          width: 100%;
+
+          border-collapse: collapse;
+          border-radius: 0.5em;
+          border-style: hidden; /* hide standard table (collapsed) border */
+          box-shadow: 0 0 0 1px #c2c2c2; /* this draws the table border  */
+        }
+
+        .datetime {
+          display: flex;
+          gap: 6px;
+          align-items: center;
+
+          @media (max-width: 550px) {
+            display: table-caption;
+          }
+        }
+
+        p:last-child {
+          font-size: large;
+        }
+      }
+    }
+
+    &__refund {
+      margin: 0 1.5em;
+
+      @media (min-width: 640px) {
+        margin: 0 2em;
+      }
+    }
+
+    &__payment {
+      margin: 0 1.5em;
+
+      @media (min-width: 640px) {
+        margin: 0 2em;
+      }
+    }
+
+    &__policy {
+      margin: 0 1.5em;
+
+      @media (min-width: 640px) {
+        margin: 0 2em;
+      }
+
+      h2 {
+        font-size: 18px;
+      }
+
+      p {
+        margin: 0.5em 0;
+      }
+
+      a {
+        font-weight: 600;
+        text-decoration: underline;
+      }
+
+      &--logo {
+        margin: 1em 0;
+        opacity: 0.6;
+
+        display: flex;
+        align-items: center;
+        justify-content: right;
+        gap: 8px;
+      }
+    }
+
+    &__button {
+      margin: 0 1.5em;
+
+      @media (min-width: 640px) {
+        margin: 0 2em;
+      }
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      button {
+        width: 100%;
+        height: 3em;
+
+        background: white;
+        border-radius: 2em;
+        border: 1px solid #a9a9a9;
+
+        font-weight: 600;
+        font-size: 16px;
+
+        cursor: pointer;
+        margin: 2em 0;
+      }
+
+      button:disabled,
+      button[disabled] {
+        font-weight: 600;
+        font-size: 14px;
+
+        background: #dadada;
+        color: white;
+
+        cursor: unset;
+        border: none;
+        border-radius: 28px;
+      }
+    }
+  } // agoda
+} // booking-detail-page

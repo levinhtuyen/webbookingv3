@@ -1,0 +1,91 @@
+
+@use './../../var/grid' as grid;
+.comment-start{
+    display: grid;
+    grid-template-columns:  2fr 4fr 2fr;
+    padding: 20px 0;
+    .comment-start-standard{
+        display: grid;
+        grid-template-columns:  1fr 2fr;
+        &__cicle {
+            &.orange{
+                border: 2px solid #ff6400;
+                color: #ff6400;
+            }
+            &.blue{
+                border: 2px solid #14d878;
+                color: #14d878;
+            }
+            &.primary{
+                border: 2px solid #147ad8;
+                color: #147ad8;
+            }
+            border-radius: 30px;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            &--text{
+                font-size: 18px;
+                &.orange{
+                    color: #ff6400;
+                }
+                &.blue{
+                    color: #14d878;
+                }
+                &.primary{
+                    color: #147ad8;
+                }
+            }
+        }
+        
+        &__title{
+            &--text{
+                font-size: 18px;
+                @media (min-width: grid.$mz-grid-xs)  and (max-width: grid.$mz-grid-sm-max){
+                    font-size: 12px;
+                    line-height: 28px;
+                    padding: 0 5px;
+                }
+            }
+        }
+    }
+    .comment-start-detail {
+        display: grid;
+        grid-template-columns:  1fr 1fr 1fr 1fr 1fr;
+        &__start1{
+            text-align: center;
+            &--start{
+                font-size: 34px;
+                @media (min-width: grid.$mz-grid-xs)  and (max-width: grid.$mz-grid-xxs-max){
+                    font-size: 24px;
+                }
+                display: grid;
+                color: #ff6400;
+                .number{
+                    color: #000;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+    .comment-start-number-total{
+        float: right;
+        &__number{
+            font-size: 24px;
+            text-align: center;
+            @media (min-width: grid.$mz-grid-xs)  and (max-width: grid.$mz-grid-xxs-max){
+                font-size: 18px;
+            }
+            &.orange{
+                color: #ff6400;
+            }
+            &.blue{
+                color: #14d878;
+            }
+            &.primary{
+                color: #147ad8;
+            }
+        }
+    }
+    
+}

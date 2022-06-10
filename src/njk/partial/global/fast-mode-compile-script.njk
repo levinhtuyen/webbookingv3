@@ -1,0 +1,297 @@
+<script type="text/javascript">
+  const _addEvent = (ev) => {
+    if(!ev) {
+      console.error('The event should be undefined!');
+      return;
+    }
+
+    return (function(el, fn) {
+      if (el.addEventListener) {
+        el.addEventListener(ev, fn, false);
+      } else if (el.attachEvent) {
+        el.attachEvent('on' + ev, fn);
+      } else {
+        el['on' + ev] = fn;
+      }
+    })
+  }; // _addEvent()
+
+  const onVisibilityChange = _addEvent('visibilitychange');
+
+  const elAppScript = document.getElementById('{{ strAppFileName }}');
+
+  const curInitKey = '{{curInitKey}}';
+  let curPageKey = '';
+  let pageType = null;
+  let isReadyToReload = false;
+  const enc = new TextDecoder("utf-8");
+
+  if(elAppScript) {
+    elAppScript.addEventListener('load', function() {
+      let G2JRouter = null;
+      let getG2JRoute = null;
+      let asyncInitBrowserSyncFinishInterval = null;
+      const elGlaxCompileProcessLoadingLayout = document.getElementById('glax-compile-process-loading-layout--js');
+
+      async function ajax(url = '') {
+        // Default options are marked with *
+        const response = await fetch(url, {
+          method: 'GET', // *GET, POST, PUT, DELETE, etc.
+          mode: 'cors', // no-cors, *cors, same-origin
+          cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+          credentials: 'same-origin', // include, *same-origin, omit
+          redirect: 'follow', // manual, *follow, error
+          referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+        });
+        return response.json(); // parses JSON response into native JavaScript objects
+      }
+
+      if(
+        !G2JRouter &&
+        window.Go2JoyRouter &&
+        window.RouterComponentFileName
+      ) {
+        G2JRouter = window.Go2JoyRouter();
+      } else {
+        // NOTE - socket for know js files load finish
+        asyncInitBrowserSyncFinishInterval = setInterval(function() {
+          if(window.___browserSync___) {
+            clearInterval(asyncInitBrowserSyncFinishInterval);
+            asyncInitBrowserSyncFinishInterval = null;
+
+            ___browserSync___.socket.emit('registPageType', 'mpa');
+
+            ___browserSync___.socket.on('isJsFilesOnLoadFinish', function(objResponse) {
+              if(
+                objResponse.is_finish &&
+                elGlaxCompileProcessLoadingLayout &&
+                elGlaxCompileProcessLoadingLayout.classList.contains('is-show')
+              ) {
+                elGlaxCompileProcessLoadingLayout.classList.remove('is-show');
+                elGlaxCompileProcessLoadingLayout.classList.add('is-hide');
+
+                setTimeout(function() {
+                  elGlaxCompileProcessLoadingLayout.classList.remove('is-hide');
+                }, 325);
+              }
+            });
+          }
+        });
+        return;
+      }
+
+      let compileJsList = {};
+
+      let _asyncInitFileRequestInterval = setInterval(function() {
+        if(G2JRouter.app) {
+          clearInterval(_asyncInitFileRequestInterval);
+          _asyncInitFileRequestInterval = null;
+
+          const routeName = G2JRouter.app._route.name || window.RouterName['not-found-page'];
+          let isFirstLoad = true;
+          curPageKey = window.RouterInfo[routeName].component_path.file_name.replace(/the-|.js/img, '');
+
+          // NOTE - socket for achive information about compile file from server
+          asyncInitBrowserSyncFinishInterval = setInterval(function() {
+            if(window.___browserSync___) {
+              clearInterval(asyncInitBrowserSyncFinishInterval);
+              asyncInitBrowserSyncFinishInterval = null;
+
+              // NOTE - [***] Check if !document.hidden and socket is exist -> update compiles key
+              if(!document.hidden) {
+                ___browserSync___.socket.emit('updateCompileKeys', {
+                  current_page_key: curPageKey,
+                  current_init_key: curInitKey,
+                });
+              }
+
+              // NOTE - [***] Regist page type
+              ___browserSync___.socket.emit('registPageType', 'spa');
+
+              // NOTE - Browsersync socket updateStatusJSCompileList
+              ___browserSync___.socket.on('updateStatusJSCompileList', function(objResponse) {
+                compileJsList = objResponse;
+              });
+
+              // NOTE - Browsersync socket turnOnCompileProcessLoading
+              ___browserSync___.socket.on('turnOnCompileProcessLoading', function(data) {
+                if(
+                  data.compile_key === curPageKey &&
+                  elGlaxCompileProcessLoadingLayout &&
+                  !elGlaxCompileProcessLoadingLayout.classList.contains('is-show')
+                ) {
+                  elGlaxCompileProcessLoadingLayout.classList.add('is-show');
+                }
+              });
+
+              // NOTE - Browsersync socket readyToUpdate
+              ___browserSync___.socket.on(
+                'readyToUpdate',
+                function(objResponse) {
+                  // NOTE - Debug on ready to update
+                  // console.log('objResponse:', objResponse);
+                  //-- end Debug on ready to update
+                  if(objResponse.is_reload) {
+                    if(objResponse.compile_key === curPageKey) {
+                      isReadyToReload = true;
+
+                      if(!document.hidden) {
+                        history.go(0);
+                      }
+                    }
+                  } else if(
+                    objResponse.type === 'css' &&
+                    objResponse.file_content
+                  ) {
+                    if(objResponse.file_path.includes('vendor')) {
+                      const elVendorStyleRoot = (document.head.querySelector('link[rel="stylesheet"][href*="'+ objResponse.file_path +'"]') || document.getElementById(objResponse.file_path));
+
+                      if(elVendorStyleRoot instanceof HTMLLinkElement) {
+                        const elVendorStyle = document.createElement('style');
+                        elVendorStyle.setAttribute('id', objResponse.file_path);
+                        elVendorStyle.innerText = enc.decode(objResponse.file_content);
+
+                        elVendorStyleRoot.parentNode.insertBefore(elVendorStyle, elVendorStyleRoot.nextSibling);
+
+                        elVendorStyleRoot.remove();
+                      } else {
+                        elVendorStyleRoot.innerText = enc.decode(objResponse.file_content);
+                      }
+                    } else if(arrCssStyle[objResponse.page_style_key]) {
+                      arrCssStyle[objResponse.page_style_key].innerText=arrCssStyle[objResponse.page_style_key].innerText.replace(new RegExp(objResponse.regex_replacement), enc.decode(objResponse.file_content));
+                    }
+                  }
+                }
+              );
+            }
+          });
+
+          // NOTE - Make ajax to confirm file is compiled
+          if(routeName) {
+            ajax('/confirmFileIsCompiled?file_name=' + window.RouterInfo[routeName].component_path.file_name)
+            .then(function(objResponse) {
+              isFirstLoad = false;
+
+              if(
+                objResponse.is_finish &&
+                elGlaxCompileProcessLoadingLayout &&
+                elGlaxCompileProcessLoadingLayout.classList.contains('is-show')
+              ) {
+                elGlaxCompileProcessLoadingLayout.classList.remove('is-show');
+                elGlaxCompileProcessLoadingLayout.classList.add('is-hide');
+
+                setTimeout(function() {
+                  elGlaxCompileProcessLoadingLayout.classList.remove('is-hide');
+                }, 325);
+              }
+            });
+          }
+
+          (function(history) {
+            const pushState = history.pushState;
+            history.pushState = function(state) {
+              if (typeof history.onpushstate == "function") {
+                history.onpushstate({state: state});
+              }
+              // whatever else you want to do
+              // maybe call onhashchange e.handler
+              return pushState.apply(history, arguments);
+            }
+          })(window.history);
+
+          window.onpopstate = history.onpushstate = function(e) {
+            setTimeout(function() {
+              const routeName = G2JRouter.app._route.name;
+              curPageKey = window.RouterInfo[routeName].component_path.file_name.replace(/the-|.js/img, '');
+
+              // NOTE - [***] Check if !document.hidden and socket is exist -> update compiles key
+              if(
+                !document.hidden &&
+                ___browserSync___.socket
+              ) {
+                ___browserSync___.socket.emit('updateCompileKeys', {
+                  current_page_key: curPageKey,
+                  current_init_key: curInitKey,
+                }, function() {
+                  // NOTE - [***] Check if curPageKey exist and is not firstLoad
+                  if(
+                    routeName &&
+                    curPageKey &&
+                    !isFirstLoad
+                  ) {
+                    if(
+                      compileJsList[curPageKey] &&
+                      compileJsList[curPageKey].is_newest &&
+                      elGlaxCompileProcessLoadingLayout &&
+                      !elGlaxCompileProcessLoadingLayout.classList.contains('is-show')
+                    ) {
+                      elGlaxCompileProcessLoadingLayout.classList.add('is-show');
+                    }
+
+                    ajax('/confirmFileIsCompiled?file_name=' + window.RouterInfo[routeName].component_path.file_name+'&is_push_state=1')
+                    .then(function(objResponse) {
+                      if(
+                        objResponse.is_finish &&
+                        elGlaxCompileProcessLoadingLayout &&
+                        elGlaxCompileProcessLoadingLayout.classList.contains('is-show')
+                      ) {
+                        elGlaxCompileProcessLoadingLayout.classList.remove('is-show');
+                        elGlaxCompileProcessLoadingLayout.classList.add('is-hide');
+
+                        setTimeout(function() {
+                          elGlaxCompileProcessLoadingLayout.classList.remove('is-hide');
+                        }, 325);
+                      }
+                    });
+                  }
+                });
+              }
+            });
+          };
+
+          // NOTE - if tab is active again, this event will fired
+          onVisibilityChange(document, function() {
+            // NOTE - Debug on change tab
+            // console.log('document.hidden: '+document.hidden);
+            //-- end Debug on change tab
+
+            if(!document.hidden) {
+              if(
+                isReadyToReload ||
+                (
+                  compileJsList[curPageKey] &&
+                  compileJsList[curPageKey].is_newest
+                )
+              ) {
+                // NOTE - [***] Fast reload page if route compile
+                history.go(0);
+              } else {
+                // NOTE - [***] Check if socket is exist -> update compiles key
+                if(___browserSync___.socket) {
+                  ___browserSync___.socket.emit('updateCompileKeys', {
+                    current_page_key: curPageKey,
+                    current_init_key: curInitKey,
+                  });
+                }
+              }
+            }
+          });
+        }
+      });
+    });
+  } else {
+    const elGlaxCompileProcessLoadingLayout = document.getElementById('glax-compile-process-loading-layout--js');
+
+    if(
+      elGlaxCompileProcessLoadingLayout &&
+      elGlaxCompileProcessLoadingLayout.classList.contains('is-show')
+    ) {
+      elGlaxCompileProcessLoadingLayout.classList.remove('is-show');
+      elGlaxCompileProcessLoadingLayout.classList.add('is-hide');
+
+      setTimeout(function() {
+        elGlaxCompileProcessLoadingLayout.classList.remove('is-hide');
+      }, 325);
+    }
+  }
+</script>

@@ -1,0 +1,50 @@
+.g2j-tooltip-outline {
+    display: inline-block;
+    
+    .g2j-tooltip-outline-content {
+        img{
+            max-width: none;
+            max-height: none;
+        }
+    
+        .tooltip {
+            display: none; /* Hidden by default */
+            position: relative; /* Stay in place */
+            z-index: 2;
+    
+            .tooltip-content {
+                background: #FFEBCE;
+                margin: auto;
+                padding: 20px;
+                max-width: 100%;
+                border-radius: 10px;
+    
+                .description {
+                    font-size: 12px;
+                    line-height: 16px;
+                    font-weight: 700;
+                }
+    
+                .close {
+                    color: #aaaaaa;
+                    float: right;
+                    font-size: 28px;
+                    font-weight: bold;
+                }
+                
+                .close:hover,
+                .close:focus {
+                    color: #000;
+                    text-decoration: none;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    .g2j-tooltip-outline-content:hover .tooltip {
+        display: inline-block; /* Hidden by default */
+        position: absolute; /* Stay in place */
+        left: 0;
+        top: auto;
+    }
+}

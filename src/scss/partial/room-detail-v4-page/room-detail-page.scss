@@ -1,0 +1,20 @@
+//====================================
+// room-detail-page
+//====================================
+
+@import "../hotel-detail-page/hotel-detail-page-facilities_style";
+@import "../global/component/slider-banner";
+
+@import "../../vars";
+@import "../global/component/g2j-basic-modal";
+@import "../global/component/g2j-direct-app-notice-modal";
+@import "./_room-detail-page.scss";
+@import "./_phone-modal.scss";
+@import "./_overlap-modal.scss";
+@import "./_require-pay-modal.scss";
+@import "./_pay-attention-modal.scss";
+@import "./_fill-out-modal.scss";
+@import "../global/component/g2j-flags-component";
+// @import "../global/component/g2j-slide-hotel";
+// @import "./_slider-image.scss";
+@import "../global/component/_g2j-slider-image.scss";

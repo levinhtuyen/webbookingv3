@@ -1,0 +1,51 @@
+$hasPromotion: #8bb821;
+$hasExtraFee: #ff0000;
+$hasGift: #8bb821;
+$hasExtraHours: #8bb821;
+$hasSamePrice: #8bb821;
+
+$height: fit-content;
+.label-room-component {
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  flex: 1;
+  justify-content: flex-end;
+  img {
+    height: 30px;
+  }
+  &__icon {
+    margin-left: 3px;
+  }
+  &__item {
+    display: inline-block;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    border-radius: 4px;
+    border: none;
+    padding: 4px;
+    height: 40px;
+    &.promotion-label,
+    &.gift-label,
+    &.extra-hours-label,
+    &.same-price-label {
+      background: $hasPromotion;
+      color: white;
+      height: $height;
+    }
+    &.extra-fee-label {
+      background: $hasExtraFee;
+      color: white;
+      height: $height;
+    }
+
+    &.promotion-label {
+      background: $hasPromotion;
+      color: white;
+      height: $height;
+    }
+  }
+}

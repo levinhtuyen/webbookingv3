@@ -1,0 +1,18 @@
+{
+    "apply_now": "APPLY NOW",
+    "promotion" : "Promotion",
+    "events": "EVENTS",
+    "promotions" : "HOT PROMOTIONS",
+    "popup_title" : "Install App for more bookings with promotions and benefits",
+    "popup_content": "Install experience a great booking app and receive more promotions",
+    "popup_close": "CLOSE",
+    "apply_coupon_success_popup":{
+      "success": "Notification",
+      "apply_success": "Apply success",
+      "close": "Close"
+    },
+    "apply_coupon_error_popup":{
+      "apply_failed": "Apply failed",
+      "close": "Close"
+    }
+}

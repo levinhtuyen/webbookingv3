@@ -1,0 +1,22 @@
+//===================
+// partial global
+//===================
+@use "../../var/color" as color;
+@import "../global/component/g2j-tooltip";
+@import "../global/component/g2j-slider";
+@import "../global/component/go2j-popover";
+@import "../global/component/g2j-basic-modal";
+@import "../global/component/go2j-time-picker";
+@import "./../global/component/modal-verify-code";
+//===================
+// partial payment page
+//===================
+@import "./_payment-page";
+
+//===================
+// partial payment page modal
+//===================
+@import "./change-room-modal";
+@import "./select-product-modal";
+@import "./phone-modal";
+@import "./error-modal";

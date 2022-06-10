@@ -1,0 +1,111 @@
+//====================================
+// modal-checkin-time
+//====================================
+// @import "../../vars";
+@import "../../vars";
+
+$bg-input: #fbf7f2;
+$primary-color: #ff6400;
+$h-md: 768px;
+.modal-checkin-time {
+  .modal-component__wrapper {
+    z-index: 100; //cheat nhe nhang thoi
+  }
+  .modal-component-class-custom {
+    max-height: 85vh;
+    top: 5vh;
+    border-radius: 12px;
+    overflow: hidden;
+    width: 100%;
+    z-index: 100;
+
+    .modal-component__main--body {
+      overflow: auto;
+      // overflow: hidden;
+    }
+  }
+  @media screen and(min-width:$g2j-grid-xxs-min ) {
+    .modal-component-class-custom {
+      top: 15vh;
+      height: auto;
+      max-height: 80vh;
+      // height: 620px;
+      width: fit-content;
+
+      .modal-component__main--body {
+        // overflow: auto;
+        overflow: hidden;
+      }
+      .modal-component__main--footer {
+        display: flex;
+        flex: 1;
+      }
+    }
+  }
+
+  &__header {
+    text-align: center;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    justify-content: center;
+    @media screen and(min-width:$g2j-grid-sm-min ) {
+      height: fit-content;
+      height: -webkit-fit-content;
+      // margin-top: 30px;
+      width: 350px;
+    }
+    &--title {
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 25px;
+      color: #000000;
+      text-align: center;
+    }
+    &--subtitle {
+      padding: 16px 0;
+      font-size: 14px;
+      line-height: 21px;
+      text-align: center;
+      color: #666666;
+    }
+    &--container-button {
+      .g2j-button-book-now {
+        &:hover {
+          background-color: $g2j-primary-color;
+          color: #ffffff;
+        }
+        &.active {
+          background-color: $g2j-primary-color;
+          color: #ffffff;
+        }
+        &:disabled {
+          cursor: not-allowed;
+          background: #dadada;
+          color: #ffffff;
+          border: 1px solid #dadada;
+          box-shadow: none;
+        }
+        background-color: #ffffff;
+        color: $g2j-primary-color;
+        border: 1px solid $g2j-primary-color;
+        font-weight: 600;
+        font-size: 14px;
+        padding: 10px 0;
+      }
+    }
+  }
+  &__footer {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: flex-end;
+    .g2j-button-book-now {
+      width: 100%;
+      margin: 0;
+    }
+  }
+}

@@ -1,0 +1,23 @@
+//===================
+// partial global
+//===================
+@import '../global/component/g2j-basic-modal';
+@import '../global/component/g2j-direct-app-notice-modal';
+@import '../global/component/g2j-hotel-product-card-horizontal';
+@import '../global/component/g2j-hotel-product-card-horizontal-loading';
+@import '../global/footer-section';
+
+//===================
+// partial home-page
+//===================
+@import './_home-page';
+@import './hotel-product-card-horizontal-swiper-container';
+@import './banner-section';
+@import './location-selection-section';
+@import './hot-deal-section';
+@import './top-pick-section';
+@import './special-offer-section';
+@import './new-hotel-section';
+@import './hot-promotion-section';
+@import './hotel-collection-section';
+@import './go2joy-gallery-section';

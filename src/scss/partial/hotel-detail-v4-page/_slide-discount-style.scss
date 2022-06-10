@@ -1,0 +1,44 @@
+.slide-discount{
+  display: block;
+  padding: 12px 0;
+  border-bottom: 1px solid #EAEAEA;
+  width: 100%;
+    .g2j-swiper-component .g2j-swiper-component-wrapper-outer {
+      overflow: hidden;
+      padding: 0px;
+  }
+  .slide-block{
+    width: 100%;
+    min-height: 94px;
+    border:1px solid #EAEAEA;
+    box-sizing: border-box;
+    border-radius: 8px;
+    white-space: normal;
+    display: flex;
+    flex-direction: column;
+    &__content{
+      padding: 12px;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      display: flex;
+      &--title{
+        width: 100%;
+        p{
+          font-size: 12px;
+          font-weight: 300;
+          color: #000000;
+        }
+      }
+      &--image{
+        width: 70px;
+        height: 70px;
+        flex: none;
+        img{
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+}

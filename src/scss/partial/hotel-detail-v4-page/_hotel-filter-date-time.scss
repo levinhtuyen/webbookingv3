@@ -1,0 +1,124 @@
+$space: 16px;
+@import "../global/component/g2j-select-date-time";
+@import "../global/component/g2j-calendar";
+.detail-v4-page {
+  &__filter {
+    margin-bottom: $space;
+    &--title {
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 25px;
+      margin-top: 8px;
+      @media (min-width: $g2j-grid-xxs-min) {
+        font-size: 18px;
+        line-height: 25px;
+        margin-top: 16px;
+      }
+    }
+    &--type {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin: $space 0;
+
+      .filter-type {
+        background: #f9f9f9;
+        &__item {
+          &.active {
+            background-color: rgba(255, 100, 0, 0.08);
+            color: $g2j-primary-color;
+          }
+          &:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+          }
+          border-radius: 32px;
+          display: flex;
+          align-items: center;
+          flex-direction: row;
+          justify-content: center;
+          flex: 0 0 33%;
+          padding: 4px 4px;
+          outline: none;
+          background: #f9f9f9;
+          border: none;
+          cursor: pointer;
+          color: #000000;
+          @media (min-width: $g2j-grid-xxs-min) {
+            flex: 0 0 30%;
+            padding: 8px 8px;
+          }
+          &--icon {
+            width: 16px;
+            margin-right: 2px;
+            @media (min-width: $g2j-grid-xxs-min) {
+              margin-right: 8px;
+            }
+          }
+          &--title {
+            font-style: normal;
+            font-weight: 600;
+            font-size: 12px;
+            line-height: 21px;
+            @media (min-width: $g2j-grid-sm-min) {
+              margin-right: 14px;
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
+    &--time {
+      display: flex;
+      flex-direction: row;
+      // justify-content: space-between;
+
+      .filter-time {
+        @mixin container-filter-time {
+          display: flex;
+          flex-direction: column;
+          flex: 0 0 48%;
+          @media (min-width: $g2j-grid-sm-min) {
+            flex-direction: row;
+            // align-items: center;
+          }
+          img {
+            width: 16px;
+            margin-right: 4px;
+          }
+          &--title {
+            display: flex;
+            align-items: center;
+            margin-right: 4px;
+          }
+          &--label {
+            font-style: normal;
+            font-weight: bold;
+            font-size: 12px;
+            line-height: 18px;
+            cursor: pointer;
+            @media (min-width: $g2j-grid-xxs-min) {
+              font-size: 18px;
+              line-height: 27px;
+            }
+          }
+        }
+        &__check-in {
+          cursor: pointer;
+          @include container-filter-time;
+        }
+        &__check-out {
+          cursor: pointer;
+
+          @include container-filter-time;
+        }
+      }
+    }
+  }
+  .hr-date-time {
+    opacity: 0.5;
+    margin: 20px -24px;
+    height: 2px;
+    background: #f3f3f3;
+  }
+}

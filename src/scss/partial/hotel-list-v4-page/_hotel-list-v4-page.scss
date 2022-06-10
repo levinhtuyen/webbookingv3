@@ -1,0 +1,14 @@
+@import '../../function/space';
+
+//====================================
+// .hotel-list-page
+//====================================
+.hotel-list-page {
+  background: #ffffff;
+  min-height: calc(100vh - 149px);
+  padding: get-space-from-base(8) 0;
+
+  .container {
+    padding: 0 get-space-from-base(12);
+  }
+}

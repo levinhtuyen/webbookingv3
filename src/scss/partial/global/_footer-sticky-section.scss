@@ -1,0 +1,116 @@
+@use "sass:math";
+
+@use "sass:map";
+@import '../../vars';
+@import '../../function/space';
+
+//================================================
+// .footer-sticky-section
+//================================================
+
+.footer-sticky-section {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: #ffffff;
+  z-index: 30;
+}
+
+.footer-sticky-block {
+  display: flex;
+  height: 80px;
+  margin: 0 -#{ get-space-from-base(8) };
+
+  @media (min-width: $g2j-grid-sm-min) {
+    margin: 0;
+  }
+
+  // NOTE - Define footer sticky icon list
+  $_footer-sticky-icon-list: (
+    'home': (
+      'normal': 'home-icon.svg',
+      'active': 'home-icon--active.svg',
+    ),
+    'promotion': (
+      'normal': 'promotion-icon.svg',
+      'active': 'promotion-icon--active.svg',
+    ),
+    'user': (
+      'normal': 'user-icon.svg',
+      'active': 'user-icon--active.svg',
+    ),
+  );
+
+  $_footer-sticky-block-class: &;
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    line-height: 1 !important;
+    background: center/contain no-repeat;
+    vertical-align: bottom;
+  }
+
+  @each $key, $icon-list in $_footer-sticky-icon-list {
+    #{$_footer-sticky-block-class}__#{$key}-icon {
+      background-image: url($g2j-icon-url + '/' + map.get($icon-list, 'normal'));
+    }
+  }
+
+  &__icon-title {
+    color: #989289;
+    font-weight: 600;
+  }
+
+  &__icon-shape {
+    width: 100%;
+    margin-bottom: get-space-from-base(3);
+  }
+
+  &__navigate-col {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex: 0 0 percentage(math.div(1, 3));
+    cursor: pointer;
+    height: 100%;
+
+    &.is-active {
+      @each $key, $icon-list in $_footer-sticky-icon-list {
+        #{$_footer-sticky-block-class}__#{$key}-icon {
+          background-image: url($g2j-icon-url + '/' + map.get($icon-list, 'active'));
+        }
+      }
+
+      #{$_footer-sticky-block-class}__icon-title {
+        color: #FF6400;
+      }
+    }
+
+    &.disable-click {
+      cursor: default;
+      pointer-events: none;
+    }
+
+    &.enable-hover {
+      @media (min-width: $g2j-grid-lg-min) {
+        &:hover {
+          @each $key, $icon-list in $_footer-sticky-icon-list {
+            #{$_footer-sticky-block-class}__#{$key}-icon {
+              background-image: url($g2j-icon-url + '/' + map.get($icon-list, 'active'));
+            }
+          }
+
+          #{$_footer-sticky-block-class}__icon-title {
+            color: #FF6400;
+          }
+        }
+      }
+    }
+  } // &__navigate-col
+} // .footer-sticky-block

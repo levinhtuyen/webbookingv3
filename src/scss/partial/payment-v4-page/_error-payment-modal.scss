@@ -1,0 +1,110 @@
+//====================================
+// coupon-modal on payment v4
+//====================================
+@import "../../vars";
+@import "../../mixin/limit-text-line";
+.error-payment-modal {
+  @mixin high-light {
+    &:hover {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+    color: $g2j-primary-color;
+  }
+  .modal-component-class-custom {
+    max-height: 75vh;
+    border-radius: 12px;
+    overflow: unset;
+    width: 100%;
+    min-width: 440px;
+    z-index: 100;
+    // .modal-component__main {
+    //   // overflow: auto;
+    //   // overflow: hidden;
+    //   position: relative;
+    // }
+    .modal-component__main {
+      &--header {
+        position: relative;
+      }
+      &--body {
+        // overflow: auto;
+        // overflow: hidden;
+        z-index: 99;
+      }
+    }
+  }
+  @media screen and(min-width:$g2j-grid-xxs-min ) {
+    .modal-component-class-custom {
+      height: auto;
+      max-height: 80vh;
+      // height: 620px;
+      width: fit-content;
+      .modal-component__main--body {
+        // overflow: auto;
+        // overflow: hidden;
+      }
+      .modal-component__main--footer {
+        display: flex;
+        flex: 1;
+      }
+    }
+  }
+
+  &__header {
+    text-align: center;
+
+    // margin-top: 5%;
+    position: absolute;
+    top: -65px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 100px;
+    height: 100px;
+    background-color: #ffffff;
+    border-top-left-radius: 0;
+    border-radius: 50px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    padding: 10px;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    justify-content: center;
+    align-items: center;
+    .error-payment-title {
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 25px;
+    }
+    .error-payment-content {
+      font-size: 14px;
+      line-height: 21px;
+      margin: 16px 0;
+      padding: 0 8px;
+      text-align: center;
+    }
+    @media screen and(min-width:$g2j-grid-sm-min ) {
+      height: fit-content;
+      height: -webkit-fit-content;
+      margin-top: 30px;
+      width: 440px;
+    }
+  }
+  &__footer {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: flex-end;
+    .g2j-button-book-now {
+      width: 80%;
+      &.disable {
+        opacity: 0.5;
+      }
+    }
+  }
+}

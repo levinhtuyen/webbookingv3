@@ -1,0 +1,43 @@
+$line-height-default: 1.5;
+$font-size-default: 14px;
+
+$g2j-total-padding-top-bottom: 148px;
+
+//===========================
+// color map
+//===========================
+$color-map: (
+  "gulp": #eb4a4b,
+  "nunjuck": #1c4913,
+  "sass": #cf649a,
+  "javascript": #fdd734,
+  "vuejs": #00c180,
+);
+
+// NOTE - Định nghĩa tên fontfamily
+$g2j-font-family-fa5: "Font Awesome 5 Pro";
+$g2j-font-family-open-sans: "Open Sans";
+
+// NOTE - Định nghĩa các breakpoint
+// (min-width: ...)
+//-------------------------------------------------
+$g2j-grid-xs: 320px;
+$g2j-grid-xxs-min: 425px;
+$g2j-grid-sm-min: 640px;
+$g2j-grid-md-min: 768px;
+$g2j-grid-lg-min: 992px;
+$g2j-grid-xl-min: 1360px;
+
+// (max-width: ...)
+//-------------------------------------------------
+$g2j-grid-xxs-max: $g2j-grid-xxs-min - 1;
+$g2j-grid-sm-max: $g2j-grid-sm-min - 1;
+$g2j-grid-md-max: $g2j-grid-md-min - 1;
+$g2j-grid-lg-max: $g2j-grid-lg-min - 1;
+$g2j-grid-xl-max: $g2j-grid-xl-min - 1;
+
+//(color)
+$g2j-primary-color: #fd6500;
+$g2j-background-page: #ffffff;
+//set min height page
+$min-height-page: calc(100vh - 148px);

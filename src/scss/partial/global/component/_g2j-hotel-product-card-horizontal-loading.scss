@@ -1,0 +1,91 @@
+@import "../../../vars";
+@import "../../../mixin/general";
+@import "../../../function/space";
+@import "../../../mixin/limit-text-line";
+
+//=============================
+// .g2j-hotel-product-card-horizontal
+//=============================
+.g2j-hotel-product-card-horizontal-loading {
+  position: relative;
+  width: 100%;
+  max-width: 375px;
+  margin-right: get-space-from-base(8);
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &:before {
+    content: "";
+    display: block;
+    width: 100%;
+    padding-bottom: percentage(1 * 0.5);
+  }
+
+  &-inner {
+    position: absolute;
+    display: flex;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #ffffff;
+    @include boxshadow(inset 0px 0px 0px 1px rgba(#bbbbbb, 0.5));
+  }
+
+  &__img-col {
+    flex: 0 0 30%;
+    height: 100%;
+    background: rgba(#bbbbbb, 0.5);
+  }
+
+  &__info-col {
+    padding: get-space-from-base(5);
+    flex: 1 1;
+    min-width: 0;
+
+    @media (min-width: $g2j-grid-xxs-min) {
+      padding: get-space-from-base(6);
+    }
+  }
+
+  &__info-line {
+    background: rgba(#bbbbbb, 0.5);
+    width: 100%;
+    height: 10px;
+    margin-bottom: get-space-from-base(6);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__sub-info-field {
+    display: flex;
+    margin-top: get-space-from-base(10);
+  }
+
+  &__sub-info-col {
+    display: inline-block;
+    width: 10%;
+    height: 5px;
+    background: rgba(#bbbbbb, 0.5);
+    vertical-align: bottom;
+    margin-right: get-space-from-base(4);
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  //them 1 ti
+  .w-80 {
+    width: 80%;
+  }
+  .w-60 {
+    width: 60%;
+  }
+}

@@ -1,0 +1,127 @@
+{% extends objGlobal.path.njk + '/_layout.njk' %}
+
+{# {% set resManagementData = data.response %} #}
+
+<!-- ===============Body=============== -->
+
+{% block header %}{% endblock %}
+
+{% block body %}
+<div class="main-container">
+  <section class="bon-buoc-ve-dem-cua-gioi-tre-section">
+    <div class="container">
+      <div class="bon-buoc-ve-dem-cua-gioi-tre-block">
+      <!-- Start Block Header -->
+        <div class="block-header">
+          <div class="block-header__logo">
+            <div class="block-header__logo--img">
+              <div class="logo-image">
+                <a href="/"><img src="{{ LAYOUT_CONFIG.imageUrl }}/image_landingpage/logo-landing.png" /></a>
+              </div>
+            </div>
+            <div></div>
+          </div>
+          <div class="block-header__banner">
+              <div class="block-header__banner--img">
+                <img src="{{ LAYOUT_CONFIG.imageUrl }}/image_landingpage/banner-landing.png" />
+              </div>
+          </div>
+        </div>
+        <!-- End Block Header -->
+
+        <!-- Start Block Increase 1 -->
+        <div class="block-increase-1">
+          <div class="block-increase-1__bg"></div>
+
+          <div class="block-increase-1__title">
+            <p class="title">CÔNG THỨC 4 BƯỚC VỀ ĐÊM CỦA GIỚI TRẺ SÀI THÀNH</p>
+          </div>
+          <div class="block-increase-1__block">
+            <div class="block-increase-1__block--text" >
+              <p class="increase">Tăng 1: Thỏa mãn cơn đói</p>
+              <p class="content">Mọi chiếc bụng đói sẽ được lấp đầy tại “lối nhỏ” ẩm thực nổi tiếng Sài Thành tại các con đường thần thánh như: Phan Xích Long, Nguyễn Gia Trí (D2 cũ), Sư Vạn Hạnh, Phan Văn Trị,... Không chỉ tụ họp nhiều nhà hàng đa dạng món ăn, các quán cafe nổi tiếng mà còn nhiều loại hình dịch vụ giải trí khác, đảm bảo bạn sẽ mê say quên lối về khi lỡ lạc chân đến chốn thiên đường này.</p>
+            </div>
+            <div class="block-increase-1__block--image">
+              <img src="{{ LAYOUT_CONFIG.imageUrl }}/image_landingpage/increase-1.png" alt="">
+            </div>
+          </div>
+        </div>
+        <!-- End Block Increase 1 -->
+
+        <!-- Start Block Increase 2 - 3 -->
+        <div class="block-increase-2-3">
+          <div class="block-increase-2-3__block">
+            <div class="block-increase-2-3__block--image">
+              <img class="increase-2-3-image-1" src="{{ LAYOUT_CONFIG.imageUrl }}/image_landingpage/increase-2-3_1.png" alt="">
+              <img class="increase-2-3-image-2" src="{{ LAYOUT_CONFIG.imageUrl }}/image_landingpage/increase-2-3_2.png" alt="">
+            </div>
+            <div class="block-increase-2-3__block--text">
+              <p class="increase">Tăng 2: Dessert nhé!</p>
+              <p class="content">Một chiếc view chill chill tại những quán coffee mới nổi như dabao, 11:11,.. cùng ly nước và bánh pancakes đã đặt sẵn trên bàn, đối diện là người ấy hay hội chị em bạn dì không dịp nào thiếu mặt thì không còn gì bằng.</p>
+              <p class="increase">Tăng 3: Đi quẩy hăng say</p>
+              <p class="content">Đêm nay mình lại quẩy cho say thì Phố Bùi Viện sẽ là điểm đến không khi nào khiến bạn thất vọng. Khu phố Tây nức tiếng về đêm “khoác” lên mình bộ áo mới dường như trở thành con đường bộ Nguyễn Huệ thứ hai. Nếu như 5 ngày đi làm phải khoác trên mình vỏ bọc công sở chính chuyên thì đây là lúc bạn phải cởi bỏ lớp vỏ ở ngoài và thể hiện con thú bên trong của bạn ra rồi đấy.</p>
+            </div>
+          </div>
+        </div>
+        <!-- End Block Increase 2 - 3 -->
+
+        <!-- Start Block Increase 4 -->
+        <div class="block-increase-4">
+          <div class="block-increase-4__block">
+            <div class="block-increase-4__block--text">
+              <p class="increase">Tăng 4: Ăn chơi no say, bên nhau đêm nay.</p>
+              <p class="content">Sau khi hăng say tội gì mình lại không bên nhau đêm nay? Cùng Go2Joy bung hết chất mình, đặt lẹ chiếc phòng hợp ý, cùng hội cạ cứng hoặc "người bạn đặc biệt" nào đó cùng nhau tỉ tê đến sáng. Thủ thỉ to nhỏ, chơi Board Game không chút lo lắng. Mọi chiếc phòng sẽ đều có hình ảnh và review đánh giá chất lượng từ Go2Joy. Chỉ cần thích thì việc chọn phòng không lo về giá cho đêm nay cứ để Go2Joy</p>
+            </div>
+            <div class="block-increase-4__block--image">
+              <img src="{{ LAYOUT_CONFIG.imageUrl }}/image_landingpage/increase-4.png" alt="Ăn chơi no say, bên nhau đêm nay">
+            </div>
+          </div>
+        </div>
+        <!-- End Block Increase 4 -->
+        <div class="block-increase-about">
+              <div class="block-increase-about__text">
+                <p class="content">***Go2Joy là ứng dụng đặt phòng theo giờ chất như nước cất đang nổi rần rần và được truyền tai nhau bởi các bạn trẻ bữa giờ đây. Vì sao chất hả? Đọc để biết tại sao nè. Book phòng nhanh chóng chỉ với vài bước chạm nhẹ. Được xem phòng trước với chế độ 360 không sợ nhận phòng trong "cơn sốc". Thanh toán đa dạng, có thể trả tiền mặt tại khách sạn hoặc thanh toán qua tài khoản ngân hàng, ví điện tử. Đã vậy còn có nhiều chương trình ưu đãi mỗi ngày cho bạn tha hồ lựa chọn. Dù có đi đến tăng 4 cũng không sợ eo hẹp ví tiền. Bảo mật thông tin tuyệt đối. Đã quá phải không, nhưng mà trước mắt phải tải app về đã rồi cùng trải nghiệm nha. Đi chơi tăng 4 không lo không có chốn về. Tải app đặt phòng Go2Joy tại đây.</p>
+              </div>
+        </div>
+        <div class="block-download-app">
+          <div class="block-download-app__image-phone">
+            <img src="{{ LAYOUT_CONFIG.imageUrl }}/image_landingpage/phone-landing.png" alt="">
+          </div>
+          <div class="block-download-app__download">
+            <div class="block-download-app__download--title">
+              <p>NHANH TAY TẢI APP ĐẶT PHÒNG VÀ NHẬN ƯU ĐÃI HẤP DẪN NGAY</p>
+            </div>
+            <div class="block-download-app__download--image">
+              <div class="image-android">
+                <img src="{{ LAYOUT_CONFIG.imageUrl }}/image_landingpage/AndroidDownload.svg" alt="">
+              </div>
+              <div class="image-ios">
+                <img src="{{ LAYOUT_CONFIG.imageUrl }}/image_landingpage/IOSDownload.svg" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="block-image-footer">
+          <div class="block-image-footer__image">
+              <img src="{{ LAYOUT_CONFIG.imageUrl }}/image_landingpage/banner-footer-landing.png" alt="">
+          </div>
+        </div>
+      </div> <!-- .bon-buoc-ve-dem-cua-gioi-tre-block -->
+    </div>
+  </section> <!-- .bon-buoc-ve-dem-cua-gioi-tre-section -->
+
+  {% include objGlobal.path.njk + "/partial/global/footer-section.njk" %}
+</div>
+{% endblock %}
+
+{% block footer %}{% endblock %}
+
+{% block script %}
+  <script type="text/javascript">
+    {% if resManagementData %}
+      window.PAGE_INFO.resManagementData = {{ resManagementData | json }};
+    {% endif %}
+
+    window.PAGE_INFO.image_url = "{{ LAYOUT_CONFIG.imageUrl }}";
+  </script>
+{% endblock %}

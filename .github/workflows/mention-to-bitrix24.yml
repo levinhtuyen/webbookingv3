@@ -1,0 +1,28 @@
+name: mention-to-bitrix24-actions
+
+on:
+  issues:
+    types: [opened, edited, deleted, closed, reopened, assigned, unassigned]
+  issue_comment:
+    types: [created, edited, deleted]
+  pull_request:
+    types: [opened, reopened, edited, closed, review_requested, assigned, unassigned]
+  pull_request_review:
+    types: [submitted]
+  pull_request_review_comment:
+    types: [created, edited]
+
+jobs:
+  mention-to-bitrix24:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mention to Bitrix24 Actions
+        uses: aeokiss/action-to-bitrix24@latest
+        with:
+          configuration-path: .github/mention-to-bitrix24.yml
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          bitrix24-webhook-url: ${{ secrets.BITRIX24_WEBHOOK_URL }}
+          chat-id: 7047
+          bot-name: ${{github.repository}}
+          run-id: ${{ github.run_id }}
+          debug-flag: false

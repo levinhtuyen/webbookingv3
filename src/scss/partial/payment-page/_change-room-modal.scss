@@ -1,0 +1,182 @@
+// @use "../../var/grid" as grid;
+@import "../../mixin/limit-text-line";
+@import "../../vars";
+.payment-page {
+  .modal-change-room {
+    .modal-section {
+      max-width: 515px;
+      padding-bottom: 18px;
+      .section-body {
+        height: 500px;
+        overflow-y: scroll;
+        background-color: #e9e9e9;
+        .room-list {
+          .room-item {
+            display: flex;
+            cursor: pointer;
+            flex-wrap: wrap;
+            margin: 8px;
+            padding: 8px;
+            background-color: #fff;
+            border-radius: 12px;
+            .room-image {
+              flex: 1 4;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              img {
+                display: inline-block;
+                width: auto;
+                height: 50%;
+                border-radius: 12px;
+                object-fit: cover;
+              }
+            }
+            .room-content {
+              flex: 3 4;
+              text-align: end;
+              .room-name {
+                text-align: right;
+                font-size: 14px;
+                line-height: 33px;
+                @include g2j-limit-text-line(14px, 2);
+              }
+              .room-price {
+                text-align: left;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+                .price-label {
+                  flex: 3 5;
+                }
+                .price-final,
+                .price-discount {
+                  flex: 1 5;
+                  margin-right: 2px;
+                }
+                .price-final {
+                  text-align: right;
+                  color: #ff6400;
+                  font-size: 12px;
+                  font-weight: 600;
+                }
+                .price-discount {
+                  text-align: left;
+                }
+              }
+            }
+          }
+          .room-bg {
+            background-color: #fbf7f2 !important;
+          }
+
+          //buồn lắm mới phải thêm
+          .p-20px {
+            padding-left: 8px;
+          }
+          .mb-4px {
+            margin-bottom: 4px;
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width: $g2j-grid-sm-min) {
+  .payment-page {
+    .modal-change-room {
+      .modal-section {
+        .section-body {
+          .room-list {
+            .room-item {
+              .room-image {
+                flex: 1 3;
+                img {
+                  display: inline-block;
+                  width: 100%;
+                  height: 100%;
+                  border-radius: 12px;
+                  object-fit: cover;
+                }
+              }
+              .room-content {
+                .room-name {
+                  text-align: right;
+                  font-size: 19px;
+                  line-height: 33px;
+                  @include g2j-limit-text-line(14px, 2);
+                }
+                .room-price {
+                  text-align: left;
+                  display: flex;
+                  flex-wrap: wrap;
+                  justify-content: space-around;
+                  .price-label {
+                    flex: 3 5;
+                  }
+                  .price-final,
+                  .price-discount {
+                    flex: 1 5;
+                    margin-right: 2px;
+                  }
+                  .price-final {
+                    text-align: right;
+                    color: #ff6400;
+                    font-size: 14px;
+                    font-weight: 600;
+                  }
+                  .price-discount {
+                    text-align: left;
+                  }
+                }
+              }
+            }
+            .room-bg {
+              background-color: #fbf7f2 !important;
+            }
+
+            //buồn lắm mới phải thêm
+            .p-20px {
+              padding: 20px;
+            }
+            .mb-4px {
+              margin-bottom: 4px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// @media (max-width: grid.$mz-grid-xxs-min) {
+//   .payment-page {
+//     .modal-change-room {
+//       .modal-section {
+//         .section-body {
+//           .room-list {
+//             .room-item {
+//               .room-image {
+//                 border-radius: 12px;
+//                 flex: 2 4;
+//               }
+//               .room-content {
+//                 flex: 2 4;
+//                 .room-price {
+//                   margin-bottom: 8px;
+//                   .price-label {
+//                     flex: none;
+//                     width: 100%;
+//                   }
+//                 }
+//                 .room-name {
+//                   font-size: 17px;
+//                 }
+//               }
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// }

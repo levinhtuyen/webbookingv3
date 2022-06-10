@@ -1,0 +1,117 @@
+//====================================
+// modal-verify-account
+//====================================
+// @import "../global/component/g2j-flags-component";
+// @import "../../vars";
+@import "vars";
+
+$bg-input: #fbf7f2;
+$primary-color: #ff6400;
+$h-md: 768px;
+.modal-verify-account {
+  .modal-component-class-custom {
+    max-height: 85vh;
+    top: 5vh;
+    border-radius: 12px;
+    overflow: hidden;
+    width: 100%;
+    z-index: 100;
+    .modal-component__main--body {
+      overflow: auto;
+      // overflow: hidden;
+    }
+  }
+  @media screen and(min-width:$g2j-grid-xxs-min ) {
+    .modal-component-class-custom {
+      top: 15vh;
+      height: auto;
+      max-height: 80vh;
+      // height: 620px;
+      width: fit-content;
+      .modal-component__main--body {
+        // overflow: auto;
+        overflow: hidden;
+      }
+      .modal-component__main--footer {
+        display: flex;
+        flex: 1;
+      }
+    }
+  }
+
+  &__header {
+    text-align: center;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    @media screen and(min-width:$g2j-grid-sm-min ) {
+      height: fit-content;
+      height: -webkit-fit-content;
+      // margin-top: 30px;
+      min-height: 320px;
+      // width: 400px;
+    }
+    .verify-account-container {
+      &__title {
+        font-style: normal;
+        font-weight: 300;
+        font-size: 24px;
+        &--account {
+          font-weight: 600;
+          font-size: 24px;
+        }
+      }
+      &__sub-title{
+        color: $g2j-primary-color;
+        font-size: 16px;
+        margin-top: 20px;
+        font-weight: 700;
+      }
+      &__content {
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 20px;
+        margin-bottom: 20px;
+      }
+      &__info {
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+  }
+  &__footer {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    flex-direction: column;
+    .verify-account-button {
+      border: 1px solid #ff6400;
+      box-sizing: border-box;
+      border-radius: 42px;
+      color: $primary-color;
+      background: #ffffff;
+      margin: 8px 0;
+      cursor: pointer;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 8px 12px;
+      font-weight: 600;
+      font-size: 14px;
+
+      &__title {
+        justify-content: center;
+        display: flex;
+        flex: 1;
+      }
+    }
+    .g2j-button-book-now {
+      width: 100%;
+      margin: 0;
+    }
+  }
+}

@@ -1,0 +1,2 @@
+@use '../../../../function/space' as space;
+.test {margin: space.get-space-from-base(3)}

@@ -1,0 +1,51 @@
+@import '../../vars';
+@import '../../function/space';
+
+//====================================
+// .date-selection-section
+//====================================
+.date-selection-section {
+  margin-top: get-space-from-base(8);
+}
+
+//====================================
+// .date-selection-block
+//====================================
+.date-selection-block {
+  display: flex;
+  flex-direction: row;
+
+  @mixin container-filter-time {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 50%;
+    cursor: pointer;
+
+    @media (min-width: 480px) {
+      flex-direction: row;
+      align-items: center;
+    }
+
+    img {
+      width: 16px;
+      margin-right: 4px;
+    }
+    &--title {
+      display: flex;
+      align-items: center;
+      margin-right: 4px;
+    }
+    &--label {
+      font-style: normal;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 18px;
+    }
+  }
+  &__check-in {
+    @include container-filter-time;
+  }
+  &__check-out {
+    @include container-filter-time;
+  }
+}

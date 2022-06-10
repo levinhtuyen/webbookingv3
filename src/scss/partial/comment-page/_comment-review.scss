@@ -1,0 +1,130 @@
+@use './../../var/grid' as grid;
+.comment-review{
+    border-bottom: 1px solid #dadada;
+    .comment-review-name-user{
+        font-size: 14px;
+        padding: 16px 0;
+    }
+    .comment-review-room{
+        display: grid;
+        grid-template-columns: 4fr 6fr;
+        @media (min-width: grid.$mz-grid-xs)  and (max-width: grid.$mz-grid-sm-max){
+            grid-template-columns: 2fr 6fr;
+        }
+        &__name-room{
+            font-size: 14px;
+            font-weight: bold;
+            @media (min-width: grid.$mz-grid-xs)  and (max-width: grid.$mz-grid-sm-max){
+                font-size: 12px;
+            }
+        }
+        &__name-review{
+            display: grid;
+            text-align: center;
+            grid-template-columns: 1fr 1fr 1fr;
+            &__name-review1{
+                display: flex;
+                @media (min-width: grid.$mz-grid-xs)  and (max-width: grid.$mz-grid-sm-max){
+                    display: grid;
+                }
+                .align-item-comment{
+                    font-size: 17px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    @media (min-width: grid.$mz-grid-xs)  and (max-width: grid.$mz-grid-sm-max){
+                        font-size: 12px;
+                    }
+                }
+                &--orange{
+                    border-radius: 30px;
+                    width: 30px;
+                    height: 30px;
+                    text-align: center;
+                    border: 2px solid #ff6400;
+                    color: #ff6400;
+                    @media (min-width: grid.$mz-grid-xs)  and (max-width: grid.$mz-grid-sm-max){
+                        width: 25px;
+                        height: 25px;
+                    }
+                    .orange-text{
+                        color: #ff6400;
+                        font-size: 17px;
+                        @media (min-width: grid.$mz-grid-xs)  and (max-width: grid.$mz-grid-sm-max){
+                            font-size: 12px;
+                        }
+                    }
+                }
+                &--blue{
+                    border-radius: 30px;
+                    width: 30px;
+                    height: 30px;
+                    text-align: center;
+                    border: 2px solid #14d878;
+                    color: #14d878;
+                    @media (min-width: grid.$mz-grid-xs)  and (max-width: grid.$mz-grid-sm-max){
+                        width: 25px;
+                        height: 25px;
+                    }
+                    .blue-text{
+                        color: #14d878;
+                        font-size: 17px;
+                        @media (min-width: grid.$mz-grid-xs)  and (max-width: grid.$mz-grid-sm-max){
+                            font-size: 12px;
+                        }
+                    }
+                }
+                &--primary{
+                    border-radius: 30px;
+                    width: 30px;
+                    height: 30px;
+                    text-align: center;
+                    border: 2px solid #147ad8;
+                    color: #147ad8;
+                    @media (min-width: grid.$mz-grid-xs)  and (max-width: grid.$mz-grid-sm-max){
+                        width: 25px;
+                        height: 25px;
+                    }
+                    .primary-text{
+                        color: #147ad8;
+                        font-size: 17px;
+                        @media (min-width: grid.$mz-grid-xs)  and (max-width: grid.$mz-grid-sm-max){
+                            font-size: 10px;
+                        }
+                    }
+                }
+                &--text{
+                    color: #000;
+                    .text-review-number{
+                        margin: 3px 10px;
+                        font-size: 16px;
+                        @media (min-width: grid.$mz-grid-xs)  and (max-width: grid.$mz-grid-sm-max){
+                            font-size: 10px;
+                            margin: 3px 5px;
+                        }
+                    }
+                    
+                }
+            }
+        }
+    }
+    .comment-review-review-user{
+        padding: 20px 0;
+        &__text{
+
+        }
+    }
+    .comment-review-like-date{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        &__like-icon{
+
+        }
+        &__date{
+            width: 100%;
+            p{
+                float: right;
+            }
+        }
+    }
+}

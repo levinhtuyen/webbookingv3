@@ -1,0 +1,215 @@
+@import '../../vars';
+
+.point-page {
+    padding-top: 16px;
+    background: white;
+    min-height: calc(100vh - #{ $g2j-total-padding-top-bottom });
+
+    .point-block {
+        font-family: Open Sans;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .custom-card {
+        max-width: 100%;
+
+        .custom-row {
+            padding: 0 16px;
+
+            .title {
+                color: #686868;
+                font-family: Open Sans;
+                font-style: normal;
+                font-weight: 600;
+                font-size: 12px;
+            }
+
+            .flex-container {
+                font-family: Open Sans;
+                font-style: normal;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+
+                border-bottom: 1px solid #E0DBD7;
+                padding: 16px 0;
+
+                color: #686868;
+                font-family: Open Sans;
+                font-style: normal;
+                font-weight: 600;
+                font-size: 12px;
+
+                .text-bold-red {
+                    color: red;
+                    font-family: Open Sans;
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 16px;
+                }
+
+                .text-bold {
+                    font-weight: 600;
+                    font-size: 14px;
+                }
+
+                .inside {
+                    list-style: inside;
+                    padding-left: 12px;
+
+                    li {
+                        font-family: Open Sans;
+                        font-style: normal;
+                        font-weight: normal;
+                    }
+                }
+
+                .money{
+                    display: inline-block;
+                    text-align: center;
+                    font-family: Open Sans;
+                    font-style: normal;
+                    font-weight: bold;
+                    font-size: 24px;
+                    color: #504B47;
+
+                    img{
+                        margin-bottom: 12px;
+                    }
+
+                    .span {
+                        font-size: 14px;
+                    }
+
+                    span:last-child {
+                        margin-left: 6px;
+                    }
+
+                    .text-orange {
+                        color: #FF6400;
+                    }
+
+                    b {
+                        color: #504B47;
+                    }
+                }
+
+                .g2j-tooltip-outline {
+                    margin-left: 4px;
+                    margin-bottom: auto;
+                }
+            }
+
+            .info-outer {
+                display: flex;
+                justify-content: space-between;
+                text-align: center;
+                padding: 16px 0;
+
+                .price {
+                    font-family: Open Sans;
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 16px;
+                }
+
+                .title-total {
+                    font-family: Open Sans;
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 12px;
+                    text-align: center;
+                    color: #7E7E7E;
+                }
+            }
+
+            .progress{
+                display:flex;
+                justify-content: flex-start;
+                align-items : center;
+                padding: 16px 0;
+
+                .input{
+                    width: 100%;
+                }
+            }
+
+            .text-redeem{
+                font-family: Open Sans;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 16px;
+                color: #686868;
+                text-align: center;
+            }
+        }
+    }
+
+    .slider {
+        width: 100%;
+        height: 7px;
+        border-radius: 10px;
+        background: #D8D8D8;
+        outline: none;
+        -webkit-transition: .2s;
+        transition: opacity .2s;
+        background-image: linear-gradient(
+            90deg,
+            var(--progressBg) var(--webkitProgressPercent),
+            var(--trackBg) var(--webkitProgressPercent)
+        );
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        height: var(--thumbSize);
+        width: 100%;
+        margin: 0;
+        padding: 0;
+
+        --thumbSize: 7px;
+        --trackSize: 8px;
+        --thumbBg: #fff;
+        --trackBg: #f2f2f2;
+        --progressBg: #FF6400;
+
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+
+        &:focus {
+          touch-action: none;
+          outline: none !important;
+        }
+    }
+
+    .slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: #FF6400;
+        outline: none !important;
+        border: none !important;
+    }
+
+    .slider::-moz-range-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: #FF6400;
+        outline: none !important;
+        border: none !important;
+    }
+
+    .slider::-moz-range-progress {
+        background-color: #FF6400;
+        height: 7px;
+        border-radius: 10px;
+    }
+}

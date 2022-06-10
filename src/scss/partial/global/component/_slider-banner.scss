@@ -1,0 +1,69 @@
+// @import "../../function/space";
+@import "../../../function/space";
+@import "../../../vars";
+
+.slider-banner {
+  //  height: inherit;
+  // .slider-banner-img-outer{
+  //     height: inherit ;
+  //   }
+  &__wrapper {
+    // height: inherit;
+    // display:none
+    &--item {
+      // height: inherit;
+      .height-banner {
+        // height: inherit;
+      }
+      .slider-banner-img-outer {
+        // height: 200px;
+        img {
+          object-fit: fill;
+          border-radius: 15px;
+        }
+      }
+    }
+  }
+  &__banner-button-prev,
+  &__banner-button-next {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(31, 45, 61, 0.11);
+    z-index: 10;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    cursor: pointer;
+  }
+
+  &__banner-button-prev {
+    left: get-space-from-base(8);
+  }
+
+  &__banner-button-next {
+    right: get-space-from-base(8);
+  }
+}
+@media (max-width: $g2j-grid-sm-min) {
+  .slider-banner {
+    &__wrapper {
+      &--item {
+        .height-banner {
+          height: 200px;
+        }
+        .slider-banner-img-outer {
+          // height: inherit;
+          // height: 400px;
+          img {
+            // height: inherit !important;
+          }
+        }
+      }
+    }
+  }
+}

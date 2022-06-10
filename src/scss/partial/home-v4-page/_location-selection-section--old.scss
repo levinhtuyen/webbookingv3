@@ -1,0 +1,230 @@
+@import '../../function/space';
+@import '../../mixin/limit-text-line';
+
+//================================
+// location-selection-section
+//================================
+.location-selection-section {
+  margin-top: get-space-from-base(8);
+  padding: get-space-from-base(10) 0 get-space-from-base(15);
+  background: #ffffff;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+//================================
+// location-selection-block
+//================================
+.location-selection-block {
+  .block-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: get-space-from-base(8);
+  }
+
+  .block-head-title-col {
+    flex: 1 1;
+    min-width: 0;
+    margin-right: get-space-from-base(4);
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .block-head-title {
+    display: inline-block;
+    max-width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+    vertical-align: bottom;
+
+    @media (min-width: $g2j-grid-xxs-min) {
+      font-size: 2rem;
+    }
+  }
+
+  .block-head-selection-field {
+    display: inline-flex;
+    align-items: center;
+    line-height: 1;
+    cursor: pointer;
+
+    .field-icon-shape {
+      display: inline-flex;
+      margin-right: get-space-from-base(3);
+      align-items: center;
+      color: #f57632;
+    }
+
+    .field-title {
+      white-space: nowrap;
+      margin-right: get-space-from-base(3);
+    }
+
+    .field-arrow-icon-shape {
+      display: inline-flex;
+      align-items: center;
+
+      i {
+        position: relative;
+        top: -2px;
+      }
+    }
+  }
+} // .location-selection-block
+
+//================================
+// location-selection-default-wrap
+//================================
+.location-selection-default-wrap-outer {
+  overflow: hidden;
+  margin: 0 -#{ get-space-from-base(8) };
+  padding: 0 get-space-from-base(8);
+
+  &:before,
+  &:after {
+    position: absolute;
+    content: '';
+    display: block;
+    height: 100%;
+    width: 40px;
+    z-index: 10;
+    top: 0;
+  }
+
+  &:before {
+    left: 0;
+
+    background: -moz-linear-gradient(
+      left,
+      #ffffff 0,
+      #ffffff 20%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    background: -webkit-linear-gradient(
+      left,
+      #ffffff 0,
+      #ffffff 20%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    background: linear-gradient(
+      to right,
+      #ffffff 0,
+      #ffffff 20%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  }
+
+  &:after {
+    right: 0;
+
+    background: -moz-linear-gradient(
+      right,
+      #ffffff 0,
+      #ffffff 20%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    background: -webkit-linear-gradient(
+      right,
+      #ffffff 0,
+      #ffffff 20%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    background: linear-gradient(
+      to left,
+      #ffffff 0,
+      #ffffff 20%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  }
+
+  &.is-beginning {
+    &:before {
+      display: none;
+    }
+
+    &:after {
+      display: block;
+    }
+  }
+
+  &.is-end {
+    &:before {
+      display: block;
+    }
+
+    &:after {
+      display: none;
+    }
+  }
+
+  &.disable-readmore {
+    &:before,
+    &:after {
+      display: none;
+    }
+  }
+}
+
+.location-selection-default-wrap {
+  display: flex;
+
+  &.is-center {
+    justify-content: center;
+  }
+
+  .default-item {
+    display: inline-block;
+    width: 90px;
+    margin-right: get-space-from-base(15);
+    cursor: pointer;
+
+    .item-head {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 90px;
+      height: 90px;
+      background: #fee6cd;
+      overflow: hidden;
+      border-radius: 50%;
+      margin-bottom: get-space-from-base(6);
+
+      i {
+        font-size: 4rem;
+        color: #e48228;
+      }
+    }
+
+    .item-img {
+      object-fit: cover;
+      max-width: none;
+      max-height: none;
+    }
+
+    .title-label-field {
+      display: flex;
+      text-align: center;
+      justify-content: center;
+    }
+
+    .title-label {
+      display: inline-block;
+      max-width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      @include g2j-limit-text-line(14px, 2);
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

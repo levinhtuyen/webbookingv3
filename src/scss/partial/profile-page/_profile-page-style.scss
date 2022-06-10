@@ -1,0 +1,270 @@
+@import "../../vars";
+.main-profile-page {
+  background: #ffffff;
+}
+.profile-page {
+  display: block;
+  padding: 16px 0;
+  min-height: calc(100vh - #{$g2j-total-padding-top-bottom});
+  &__title {
+    text-align: center;
+    font-weight: 700;
+    font-size: 24px;
+  }
+  &__content {
+    .profile-page__content--content {
+      border-bottom: 1px solid #e0dbd7;
+    }
+    &--content-line {
+      display: grid;
+      grid-template-columns: 33% 67%;
+      padding: 16px 0;
+
+      align-items: center;
+      @media screen and(min-width:$g2j-grid-xxs-min) {
+        grid-template-columns: 40% 60%;
+      }
+      .content-title {
+        font-size: 12px;
+        font-weight: 600;
+        @media screen and(min-width:$g2j-grid-xxs-min) {
+          font-size: 14px;
+        }
+        @media screen and(min-width:$g2j-grid-sm-min) {
+          font-size: 16px;
+        }
+        .color-red {
+          color: red;
+        }
+      }
+      .content-gender-info {
+        height: 30px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        &__filter {
+          width: 100%;
+        }
+        .el-select {
+          width: 100%;
+          .el-input__inner {
+            border: none;
+            padding: 0;
+            background: #fbf7f2;
+            border-radius: 8px;
+            padding-left: 16px;
+            height: 48px;
+          }
+        }
+      }
+      .content-info {
+        display: flex;
+        .flag {
+          padding-right: 16px;
+        }
+        input {
+          border: none;
+          outline: none;
+          background: #fbf7f2;
+          border-radius: 8px;
+          padding-left: 16px;
+          height: 48px;
+          width: 100%;
+        }
+        input:focus-visible {
+          border: none;
+          outline: none;
+        }
+        .input-info:focus {
+          border: none;
+          outline: none;
+        }
+        &__icon {
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          width: 100%;
+          i {
+            float: right;
+            font-size: 10px;
+          }
+        }
+      }
+      .content-email {
+        border: none;
+        outline: none;
+        background: #fbf7f2;
+        border-radius: 8px;
+        padding-left: 16px;
+        height: 48px;
+        width: 100%;
+        .input-info {
+          display: flex;
+          align-items: center;
+          color: #b9afa3;
+        }
+      }
+      .content-date-of-birth-info {
+        display: flex;
+        .el-date-editor.el-input,
+        .el-date-editor.el-input__inner {
+          width: 100%;
+        }
+        .content-date-of-birth__icon {
+          padding: 0 5px;
+          width: 30px;
+        }
+        .el-input__inner {
+          border: none;
+          background: #fbf7f2;
+          border-radius: 8px;
+          padding-left: 16px;
+          height: 48px;
+          width: 100% !important;
+        }
+        .el-input__suffix-inner {
+          display: none;
+        }
+        .el-input__prefix {
+          display: flex;
+          justify-content: flex-end;
+          align-items: end;
+          width: 40px;
+          padding-right: 16px;
+          margin-left: 80%;
+          @media screen and(min-width:$g2j-grid-xxs-min) {
+            margin-left: 80%;
+          }
+          @media screen and(min-width:$g2j-grid-sm-min) {
+            margin-left: 90%;
+          }
+          .el-input__icon {
+            display: none;
+          }
+        }
+        .el-input__prefix::before {
+          content: url("/image/svg/calendar1.svg");
+          margin: auto 0;
+        }
+      }
+    }
+    .is-number-phone {
+      display: grid;
+      grid-template-columns: 1fr;
+      padding: 16px 0;
+
+      align-items: center;
+      @media screen and(min-width:$g2j-grid-xxs-min) {
+        grid-template-columns: 40% 60%;
+      }
+    }
+  }
+  &__button-update {
+    padding: 44px 0;
+    width: 100%;
+    &--button {
+      width: 100%;
+      background-color: #ff6400;
+      border: none;
+      border-radius: 30px;
+      min-height: 35px;
+      font-size: 14px;
+      color: #ffffff;
+      cursor: pointer;
+      @media screen and(min-width:$g2j-grid-xxs-min) {
+        min-height: 56px;
+        font-size: 16px;
+      }
+    }
+  }
+  &__display-mesage-error {
+    color: red;
+    text-align: left;
+  }
+  &__display-mesage-error-center {
+    color: red;
+    text-align: center;
+  }
+  &__password-line {
+    border-bottom: 1px solid #e0dbd7;
+    &--content-line {
+      display: grid;
+      grid-template-columns: 45% 55%;
+      padding: 16px 0;
+      align-items: center;
+
+      .content-title {
+        font-size: 12px;
+        font-weight: 600;
+        @media screen and(min-width:$g2j-grid-xxs-min) {
+          font-size: 14px;
+        }
+        @media screen and(min-width:$g2j-grid-sm-min) {
+          font-size: 16px;
+        }
+        .color-red {
+          color: red;
+        }
+      }
+      .content-info {
+        background: #fbf7f2;
+        border-radius: 8px;
+        padding: 16px;
+        height: 48px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        input {
+          border: none;
+          outline: none;
+          background: #fbf7f2;
+          width: 90%;
+          @media screen and(min-width:$g2j-grid-xxs-min) {
+            width: 95%;
+          }
+          &::-webkit-input-placeholder {
+            transform: translateY(3px);
+          }
+        }
+        input:focus-visible {
+          border: none;
+          outline: none;
+        }
+        .input-info:focus {
+          border: none;
+          outline: none;
+        }
+        .input-info-password {
+          font-size: 12px;
+          @media screen and(min-width:$g2j-grid-xxs-min) {
+            font-size: 14px;
+          }
+          @media screen and(min-width:$g2j-grid-sm-min) {
+            font-size: 16px;
+          }
+        }
+        .input-font-size {
+          font-size: 16px;
+        }
+        .input-info-password:focus {
+          border: none;
+          outline: none;
+        }
+        .content-info-icon {
+          display: flex;
+          justify-content: flex-end;
+        }
+        .toggle-password {
+          padding: 3px;
+          color: #bab1a6;
+        }
+      }
+    }
+  }
+  .displayButton {
+    opacity: 1;
+  }
+  .noneDisplayButton {
+    opacity: 0.5;
+  }
+}

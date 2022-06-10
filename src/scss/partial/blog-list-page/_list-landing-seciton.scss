@@ -1,0 +1,16 @@
+@import '../../function/space';
+
+//=============================
+// .list-landing-section
+//=============================
+.list-landing-section {
+  background: #ffffff;
+  margin-bottom: get-space-from-base(8);
+}
+
+//=============================
+// .list-landing-block
+//=============================
+.list-landing-block {
+  position: relative;
+}

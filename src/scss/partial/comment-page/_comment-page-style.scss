@@ -1,0 +1,41 @@
+.comment-page {
+  max-width: 768px;
+  background: #fff;
+  margin: 0 auto;
+  .comment-page-back {
+    padding: 16px;
+  }
+  &__big-comment {
+    text-align: center;
+    width: 100%;
+    position: relative;
+    &--number-start {
+      .total-start {
+        text-align: center;
+        .style-start {
+          font-size: 140px;
+          color: #ff6400;
+          position: relative;
+        }
+        .big-number {
+          position: absolute;
+          color: #fff;
+          font-size: 40px;
+          top: 40%;
+          left: 35%;
+          width: 50px;
+          text-align: center;
+        }
+      }
+    }
+    &--number-review {
+      padding: 10px;
+      font-size: 18px;
+      .number {
+      }
+    }
+  }
+  &__content-start {
+    padding: 15px;
+  }
+}

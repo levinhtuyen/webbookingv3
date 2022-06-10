@@ -1,0 +1,35 @@
+@use '../../var/grid' as grid;
+@use '../../function/space' as space;
+
+.navigation-section {}
+
+.navigation-block {
+  margin-bottom: space.get-space-from-base(12);
+
+  @media screen and (min-width: grid.$mz-grid-lg-min) {
+    margin-bottom: space.get-space-from-base(16);
+  }
+
+  &__wrap {
+    white-space: norwrap;
+
+    .navigation-item {
+      display: inline-block;
+      margin-right: space.get-space-from-base(6);
+      text-decoration: none;
+      font-size: 2rem;
+      color: #303846;
+      background: #CCD2DC;
+      padding: space.get-space-from-base(4) space.get-space-from-base(8);
+
+      &.is-active {
+        color: #ffffff;
+        background: #0080FF;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  } // .navigation-block__wrap
+} // .navigation-block

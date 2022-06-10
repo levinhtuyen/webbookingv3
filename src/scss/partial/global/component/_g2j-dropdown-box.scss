@@ -1,0 +1,56 @@
+@use '../../../function/space' as space;
+
+.g2j-dropdown-box {
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+
+  &__body {
+    position: absolute;
+    top: 100%;
+    opacity: 0;
+    display: none;
+    z-index: 10;
+    transition: opacity 0.3s ease;
+    left: 0;
+    min-width: calc(100% + 20px);
+    padding-top: space.get-space-from-base(4);
+  }
+
+  &__body-inner {
+    background: #ffffff;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 12px 0px;
+    border-radius: 4px;
+  }
+
+  &.is-show{
+    .g2j-dropdown-box__body {
+      display: block;
+      opacity: 1;
+    }
+  }
+
+  &.enable-hover {
+    cursor: default;
+
+    &:hover {
+      .g2j-dropdown-box__body {
+        display: block;
+        opacity: 1;
+      }
+    }
+  }
+
+  &.is-right-side {
+    .g2j-dropdown-box__body {
+      right: 0;
+      left: auto;
+    }
+  }
+
+  &.is-center {
+    .g2j-dropdown-box__body {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}

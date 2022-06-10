@@ -1,0 +1,56 @@
+@import '../../vars';
+@import '../../function/space';
+
+//==============================
+// hotel-list-head-section
+//==============================
+.hotel-list-head-section {}
+
+//==============================
+// hotel-list-navigate-block
+//==============================
+.hotel-list-navigate-block {
+  display: flex;
+  justify-content: space-between;
+}
+
+//==============================
+// hotel-list-navigate-field
+//==============================
+.hotel-list-navigate-col {
+  .back-navigate-field {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .back-icon-shape {
+    line-height: 1 !important;
+    margin-right: get-space-from-base(8);
+
+    i {
+      font-size: 2rem;
+    }
+  }
+
+  .title-label {
+    font-size: 2.5rem;
+    font-weight: 600;
+    line-height: 1 !important;
+  }
+} // .hotel-list-navigate-col
+
+//==============================
+// hotel-list-description-block
+//==============================
+.hotel-list-description-block {
+  margin-top: get-space-from-base(3);
+  padding-left: get-space-from-base(12);
+
+  .description-label {
+    display: inline-block;
+    border-left: 4px solid #FF6400;
+    font-size: 1.5rem;
+    padding-left: get-space-from-base(4);
+  }
+} // .hotel-list-description-block

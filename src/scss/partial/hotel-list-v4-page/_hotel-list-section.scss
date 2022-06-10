@@ -1,0 +1,78 @@
+//===================================
+// .hotel-list-section
+//===================================
+@import "../../vars";
+@import "../../function/space";
+
+.hotel-list-section {
+  padding-bottom: 83px;
+
+  @media (min-width: $g2j-grid-sm-min) {
+    padding-bottom: 0;
+  }
+}
+
+//===================================
+// .hotel-list-block
+//===================================
+.hotel-list-block {}
+
+//===================================
+// .hotel-list-wrap
+//===================================
+.hotel-list-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -#{ get-space-from-base(8) } -#{ get-space-from-base(4) } 0;
+}
+
+//===================================
+// .hotel-list-empty-block
+//===================================
+.hotel-list-empty-block {
+  display: flex;
+  min-height: calc(100vh - 376px);
+  align-items: center;
+  justify-content: center;
+
+  .empty-content {
+    display: inline-block;
+    text-align: center;
+  }
+
+  .hotel-list-empty-img {
+    max-height: none;
+    max-width: none;
+    vertical-align: top;
+    margin-bottom: get-space-from-base(5);
+    width: 125px;
+    height: 110px;
+
+    @media (min-width: 500px) {
+      margin-bottom: get-space-from-base(15);
+      width: 150px;
+      height: 135px;
+    }
+  }
+
+  .main-empty-label {
+    margin-bottom: get-space-from-base(3);
+    font-size: 1.75rem;
+    font-weight: 600;
+
+    @media (min-width: 500px) {
+      font-size: 2rem;
+    }
+  }
+
+  .sub-empty-label {
+    color: #9B9B9B;
+  }
+} // .hotel-list-empty-block
+
+//===================================
+// .infinite-loading-block
+//===================================
+.infinite-loading-block {
+  margin-top: get-space-from-base(8);
+}

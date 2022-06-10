@@ -1,0 +1,31 @@
+// @use "../../../vars";
+.book-now-button {
+  height: auto;
+  // &__button {
+  //   // padding: 0.2rem 0 2rem;
+  //   text-align: center;
+
+  //   &--btn {
+  //     &:hover {
+  //       font-size: 18px;
+  //       transition: 0.2s;
+  //     }
+  //     cursor: pointer;
+  //     background-color: #e08809;
+  //     background: -ms-linear-gradient(right, #ffbd56 50%, #e08809 50%);
+  //     background: -webkit-gradient(linear, right top, left top, color-stop(0.4, #ffbd56), color-stop(0.6, #e08809));
+  //     color: #fff;
+  //     width: 100%;
+  //     border: #ffdead;
+  //     border-radius: 25px;
+  //     height: 35px;
+  //     font-weight: 700;
+  //   }
+  // }
+  .disable-button {
+    background: #dadada;
+    // pointer-events: none;
+    box-shadow: none;
+    cursor: not-allowed;
+  }
+}

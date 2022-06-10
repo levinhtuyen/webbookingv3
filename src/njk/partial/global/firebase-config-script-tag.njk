@@ -1,0 +1,85 @@
+<!-- Firebase Code Config -->
+<script id="firebase-config__script-tag">
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const elFirebaseAppScriptTag = document.querySelector('[src$="firebase-app.min.js"]');
+  const elFirebaseAnalyticsScriptTag = document.querySelector('[src$="firebase-analytics.min.js"]');
+  const elFirebaseAuthsScriptTag = document.querySelector('[src$="firebase-auth.min.js"]');
+
+  let isFirebaseScriptLoaded = false;
+
+  if(
+    elFirebaseAppScriptTag &&
+    elFirebaseAnalyticsScriptTag &&
+    elFirebaseAuthsScriptTag
+  ) {
+    elFirebaseAppScriptTag.onload = elFirebaseAnalyticsScriptTag.onload = elFirebaseAuthsScriptTag.onload = function() {
+      isFirebaseScriptLoaded = true;
+    };
+  }
+
+  const tmpInitFirebaseconfigScriptTag = function() {
+    const firebaseConfig = {
+      apiKey: "AIzaSyDAXZPpfl9oNF-MpeglPBuSE1yuadS_BcA",
+      authDomain:
+        {% if condition %}
+          window.location.host
+        {% else %}
+          'go2joy-2d23b.firebaseapp.com'
+        {% endif %}
+      ,
+      databaseURL: "https://go2joy-2d23b.firebaseio.com",
+      projectId: "go2joy-2d23b",
+      storageBucket: "go2joy-2d23b.appspot.com",
+      messagingSenderId: "170640652110",
+      appId: "1:170640652110:web:081ad119c6b992f215901f",
+      measurementId: "G-71BT46V5KD"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+    firebase.analytics().logEvent('notification_received');
+
+    firebase.isInit = true;
+
+    asyncFireBaseConfigExecuteTimeout = null;
+  }; // tmpInitFirebaseconfigScriptTag()
+
+  window.initFirebaseConfigScriptTag = function() {
+    if(
+      elFirebaseAppScriptTag &&
+      elFirebaseAnalyticsScriptTag &&
+      elFirebaseAuthsScriptTag
+    ) {
+      if(isFirebaseScriptLoaded) {
+        tmpInitFirebaseconfigScriptTag();
+      } else {
+        let asyncFireBaseConfigExecuteTimeout = null;
+
+        elFirebaseAppScriptTag.onload = elFirebaseAnalyticsScriptTag.onload =
+        elFirebaseAuthsScriptTag.onload = function() {
+          if(firebase.isInit) {
+            return;
+          }
+
+          if(asyncFireBaseConfigExecuteTimeout) {
+            clearTimeout(asyncFireBaseConfigExecuteTimeout);
+            asyncFireBaseConfigExecuteTimeout = null;
+          }
+
+          asyncFireBaseConfigExecuteTimeout = setTimeout(function() {
+            tmpInitFirebaseconfigScriptTag();
+          } , 20);
+        };
+      }
+    }
+
+    const elFirebaseConfigScriptTag = document.getElementById('firebase-config__script-tag');
+
+    if(elFirebaseConfigScriptTag) {
+      elFirebaseConfigScriptTag.remove();
+    }
+  };
+</script>
+<!-- Firebase Code Config End -->

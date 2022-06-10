@@ -1,0 +1,41 @@
+//====================================
+// g2j style button book now
+//====================================
+@import "../../vars";
+$primary-color: #ff6400;
+.g2j-button-book-now {
+  align-items: center;
+  border: none;
+  background-color: $primary-color;
+  border-radius: 28px;
+  box-shadow: 3px 5px 12px -3px rgba(255, 100, 0, 0.43);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 36px;
+  margin: 10px 0;
+  font-size: 14px;
+  font-weight: bold;
+  color: #ffffff;
+  p,
+  span {
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffff;
+  }
+  @media (min-width: $g2j-grid-sm-min) {
+    height: 40px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    margin: 20px 0;
+
+    p,
+    span {
+      font-size: 16px;
+      font-weight: bold;
+      color: #ffffff;
+    }
+  }
+}

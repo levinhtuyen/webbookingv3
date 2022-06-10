@@ -1,0 +1,179 @@
+@import '../../vars';
+@import '../../function/space';
+
+.bat-mi-diem-hen-ho-ly-tuong-section {
+  background: #ffffff;
+  margin-bottom: get-space-from-base(8);
+}
+
+.block-header{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    padding: 16px;
+    &__logo{
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        min-height: 100px;
+        img{
+            border: 1px solid #ff6400;
+        }
+    }
+}
+.block-banner{
+    &__image{
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+.block-content-sub{
+    padding: 16px;
+    &__title{
+        font-weight: bold;
+        font-size: 3rem;
+        text-align: center;
+        color: #ff6400;
+        padding: 16px 0;
+        @media (max-width: $g2j-grid-xxs-min) {
+            font-size: 2.5rem;
+        }
+    }
+    &__content{
+        text-align: justify;
+        font-size: 2rem;
+    }
+}
+.block-content-about{
+    background-color: #ff6400;
+    &__text{
+        padding: 16px;
+        text-align: justify;
+        color: white;
+        font-size: 2rem;
+    }
+    &__video{
+        padding: 16px;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        &--iframe{
+            width: 500px;
+            height: 350px;
+            @media (max-width: $g2j-grid-xxs-min) {
+                width: 250px;
+                height: 150px;
+            }
+        }
+    }
+}
+.block-content-content1{
+    padding: 16px;
+    display: grid;
+    grid-template-columns: 4fr 5fr;
+    @media (max-width: $g2j-grid-xxs-min) {
+        grid-template-columns: 1fr
+    }
+    &__image{
+        width: 100%;
+        height: auto;
+    }
+    &__text{
+        padding: 0 16px;
+        @media (max-width: $g2j-grid-xxs-min) {
+            padding: 0;
+        }
+        &--title{
+            font-size: 2rem;
+            color: #ff6400;
+            font-weight: bold;
+            text-align: center;
+            padding: 16px 0;
+        }
+        &--content{
+            .increase{
+                font-size: 2rem;
+                font-weight: 550;
+            }
+            .content{
+                text-align: justify;
+                font-size: 2rem;
+            }
+        }
+        &__image{
+            display: grid;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}
+.block-content-content2{
+    padding: 16px;
+    &__increase{
+        font-weight: bold;
+        font-size: 2rem;
+    }
+    &__content{
+        font-size: 2rem;
+    }
+}
+.block-content-download-app{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    &__image-phone{
+        margin: 0 25%;
+        @media (max-width: $g2j-grid-xxs-min) {
+            margin: 0 5%;
+        }
+    }
+    &__download{
+        padding: 15px;
+        @media (max-width: $g2j-grid-xxs-min) {
+            padding: 8px;
+        }
+        &--title{
+            font-weight: bold;
+            font-size: 20px;
+            color: #ff6400;
+            text-align: center;
+            @media (max-width: $g2j-grid-xxs-min) {
+                font-size: 12px;
+            }
+        }
+        &--image{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            .image-android{
+                padding: 15px;
+                align-items: center;
+                justify-content: center;
+                display: flex;
+                @media (max-width: $g2j-grid-xxs-min) {
+                    padding: 8px;
+                }
+                img{
+                    width: 100%;
+                    height: auto;
+                }
+            }
+            .image-ios{
+                padding: 15px;
+                align-items: center;
+                justify-content: center;
+                display: flex;
+                @media (max-width: $g2j-grid-xxs-min) {
+                    padding: 8px;
+                }
+                img{
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        }
+
+    }
+}

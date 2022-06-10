@@ -1,0 +1,12 @@
+{
+  "title": "Booking Information",
+  "sub_title": "Payment must be completed before expiry time.",
+  "payment_code": "PAYMENT CODE",
+  "note_expire": "Transaction will expire at ",
+  "step": "Step",
+  "note_step_1": "Go to any convenience store having Payoo service and make payment with Payment Code",
+  "link_step_1": "Click to search for convenience stores having Payoo service",
+  "note_step_2": "Provide mobile phone number to finish payment process.",
+  "note_step_3": "After a successful payment, please check notification sent by Go2Joy and your email to transaction details.",
+  "booking_detail": "Booking details"
+}

@@ -1,0 +1,244 @@
+@import "../../vars";
+@import "../../mixin/general";
+@import "../../function/space";
+@import "../../mixin/limit-text-line";
+$primary-color: #ff6500;
+
+//=============================
+// .block-room
+//=============================
+.book-room-hotel-detail {
+  max-width: max-content;
+}
+.block-room {
+  position: relative;
+  // width: 100%;
+  max-width: 360px;
+  margin-right: get-space-from-base(8);
+  cursor: pointer;
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &:before {
+    content: none;
+    display: block;
+    width: 100%;
+    padding-bottom: percentage(1 * 0.5);
+  }
+
+  &-inner {
+    // position: absolute;
+
+    display: flex;
+    contain: content;
+    left: 0;
+    top: 0;
+    width: 100%;
+    min-height: 160px;
+    position: static;
+    height: auto;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #ffffff;
+    @include boxshadow(inset 0px 0px 0px 1px rgba(#bbbbbb, 0.5));
+  }
+
+  &__img-col {
+    flex: 0 0 30%;
+    height: 100%;
+    height: auto;
+    overflow: hidden;
+    img {
+      cursor: pointer;
+      object-fit: cover;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  &__title {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    align-items: baseline;
+  }
+  &__title-book-now {
+    text-align: end;
+    color: #ff6400;
+    cursor: pointer;
+    font-size: 1.4rem;
+    width: auto;
+    white-space: nowrap;
+
+    &__label {
+      display: inline-block;
+      white-space: nowrap;
+      padding: 4px 0px;
+    }
+
+    span {
+      text-decoration: underline;
+    }
+  }
+  &__info-col {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: get-space-from-base(5);
+    // flex: 1 1;
+    min-width: 0;
+
+    @media (min-width: $g2j-grid-xxs-min) {
+      padding: get-space-from-base(6);
+    }
+  }
+
+  &__title-field {
+    &:hover {
+      color: $primary-color;
+    }
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: get-space-from-base(4);
+    @include g2j-limit-text-line(14px, 2);
+    @media (min-width: $g2j-grid-xxs-min) {
+      margin-bottom: get-space-from-base(6);
+      @include g2j-limit-text-line(14px, 2);
+      // display: inline-block;
+      // max-width: 100%;
+      // overflow: hidden;
+      // text-overflow: ellipsis;
+      // white-space: nowrap;
+    }
+  }
+
+  &__meta-info-field {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: get-space-from-base(4);
+    line-height: 1;
+    font-size: 1.5rem;
+
+    @media (min-width: 375px) {
+      font-size: 1.75rem;
+    }
+  }
+
+  &__rating-col {
+    display: inline-flex;
+    align-items: center;
+    line-height: 1;
+    color: #ff6500;
+  }
+
+  &__star-icon-shape {
+    display: inline-block;
+    margin-right: get-space-from-base(3);
+  }
+
+  &__score-label {
+    display: inline-block;
+    margin-right: get-space-from-base(3);
+  }
+
+  &__location-col {
+    display: inline-flex;
+    align-items: center;
+    line-height: 1;
+    color: #bbbbbb;
+  }
+
+  &__map-icon-shape {
+    display: inline-block;
+    margin-right: get-space-from-base(3);
+  }
+
+  &__sale-off-info-row {
+    // display: flex;
+    // justify-content: flex-end;
+
+    .label-room-component-item {
+      margin-bottom: 0;
+    }
+    &--label-room {
+      margin-bottom: 5px;
+    }
+  }
+
+  &__flash-sale-field {
+    display: flex;
+    overflow: hidden;
+    border-radius: 6px;
+    @include boxshadow(inset 0px 0px 0px 1px rgba(#ff6500, 1));
+    margin-bottom: get-space-from-base(4);
+    width: 100%;
+    font-size: 1.5rem;
+
+    @media (min-width: 375px) {
+      font-size: 1.75rem;
+    }
+  }
+
+  &__flash-sale-mask-col {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    padding: get-space-from-base(3) get-space-from-base(4);
+    background: #ff6500;
+    color: #ffffff;
+  }
+
+  &__flash-sale-icon-shape {
+    display: inline-block;
+    margin-right: get-space-from-base(3);
+  }
+
+  &__flash-sale-info-col {
+    display: inline-flex;
+    flex: 1 1;
+    min-width: 0;
+    align-items: center;
+    padding: get-space-from-base(3) get-space-from-base(4);
+  }
+
+  &__flash-sale-info-label {
+    display: inline-block;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__price-type-label {
+    margin-bottom: get-space-from-base(2);
+    font-size: 1.5rem;
+    float: right;
+    text-align: right;
+    @media (min-width: 375px) {
+      font-size: 1.75rem;
+    }
+  }
+
+  &__price-field-inner {
+    display: flex;
+    align-items: center;
+    line-height: 1;
+  }
+
+  &__origin-price-label {
+    display: inline-block;
+    margin-right: get-space-from-base(4);
+    text-decoration: line-through;
+    color: #bbbbbb;
+  }
+
+  &__current-price-label {
+    color: #ff6500;
+  }
+}
+.label-small {
+}

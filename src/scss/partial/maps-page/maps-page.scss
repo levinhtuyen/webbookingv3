@@ -1,0 +1,17 @@
+@import "./maps-page-style";
+$bg-page: #ffffff;
+
+.maps-page {
+  background-color: $bg-page;
+  // padding-top: 32px;
+  // min-height: calc(100vh - 150px);
+  &__head {
+    margin-bottom: 20px;
+  }
+  &__map {
+    margin: 0 -16px;
+    // margin: auto;
+    width: auto;
+    height: calc(100vh - 148px);
+  }
+}

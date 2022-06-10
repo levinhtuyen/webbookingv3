@@ -1,0 +1,89 @@
+@import '../../vars';
+@import '../../function/space';
+@import '../../mixin/limit-text-line';
+
+//=============================
+// .about-us-page
+//=============================
+.about-us-page {
+  height: calc(100vh - #{ $g2j-total-padding-top-bottom });
+  background: #ffffff;
+}
+.about-us-page-content{
+  padding: 32px 0;
+  &__title{
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+  }
+  &__company{
+    &--title{
+      padding: 8px 0;
+      font-size: 14px;
+      font-weight: 600;
+      color: #FD6500;
+      @media (min-width: $g2j-grid-xxs-min) {
+        font-size: 14px;
+      }
+      @media (min-width: $g2j-grid-sm-min) {
+        font-size: 20px;
+      }
+    }
+    &--text{
+      font-size: 12px;
+      @media (min-width: $g2j-grid-xxs-min) {
+        font-size: 12px;
+      }
+      @media (min-width: $g2j-grid-sm-min) {
+        font-size: 14px;
+      }
+      b{
+        font-weight: 600;
+          a:hover{
+            color: #FD6500;
+          }
+      }
+
+    }
+  }
+  &__provice{
+    &--name{
+      font-size: 14px;
+      color: #FD6500;
+      font-weight: 600;
+      padding: 8px 0;
+      @media (min-width: $g2j-grid-xxs-min) {
+        font-size: 14px;
+      }
+      @media (min-width: $g2j-grid-sm-min) {
+        font-size: 16px;
+      }
+    }
+    &--text{
+      font-size: 12px;
+      font-weight: 400;
+      @media (min-width: $g2j-grid-xxs-min) {
+        font-size: 12px;
+      }
+      @media (min-width: $g2j-grid-sm-min) {
+        font-size: 14px;
+      }
+      b{
+        font-weight: 600;
+      }
+      p{
+        b{
+          a:hover{
+            color: #FD6500;
+          }
+        }
+      }
+    }
+  }
+}
+.title-content{
+  color: #989289;
+}
+//=============================
+// .about-us-section
+//=============================

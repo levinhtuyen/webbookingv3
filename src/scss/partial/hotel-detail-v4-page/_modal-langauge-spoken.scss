@@ -1,0 +1,67 @@
+.select-modal-langauage-spoken {
+  .modal-component-class-custom {
+    width: calc(768px - 200px);
+    .modal-component__main--button{
+      display: none;
+    }
+    @media (max-width: 640px) {
+      top: 0;
+      height: 100%;
+      width: 100%;
+      max-width: unset;
+    }
+  }
+
+  &__header {
+    position: absolute;
+    top: 30px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  &__body {
+    &--heading {
+      height: 65px;
+      box-shadow: 0px 6px 12px rgba(56, 56, 56, 0.06);
+      margin: 0 -20px;
+      background: #FFFFFF;
+      h2 {
+        text-align: center;
+        font-weight: 600;
+        font-size: 18px;
+      }
+
+      .sub-title {
+        font-weight: 300;
+        font-size: 14px;
+        margin: 1em 0;
+      }
+    }
+
+    &--content {
+      padding-top: 24px;
+      max-height: 65vh;
+      .block {
+        flex: 1;
+        display: flex;
+        justify-content: space-between;
+        font-size: 16px;
+        line-height: 22px;
+        align-items: center;
+        .is-name-country {
+          padding: 8px 0;
+          font-size: 14px;
+          font-weight: 400;
+          color: #494949;
+        }
+        .is-flage-image {
+          max-height: 25px;
+          img {
+            max-width: 25px;
+            max-height: 25px;
+          }
+        }
+      }
+    }
+  }
+}

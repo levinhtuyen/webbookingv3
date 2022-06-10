@@ -1,0 +1,107 @@
+@import "../../../function/space";
+@import "../../../vars";
+
+//==============================
+// .g2j-direct-app-notice-modal
+//==============================
+.g2j-direct-app-notice-modal {
+  .modal-section {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    width: calc(100% - 32px);
+    max-width: 400px;
+    min-height: auto;
+  }
+
+  .section-head {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    width: auto;
+    border-bottom: none;
+  }
+
+  .section-body {
+    background: #fff5ee;
+    min-height: 100%;
+    padding: get-space-from-base(16) get-space-from-base(8);
+  }
+
+  &__img-outer {
+    text-align: center;
+    margin-bottom: get-space-from-base(4);
+  }
+
+  &__content {
+    &--title {
+      text-align: center;
+      font-weight: 700;
+      font-size: 18px;
+      color: $g2j-primary-color;
+    }
+    &--first {
+      margin: 20px 17%;
+      text-align: center;
+      margin-bottom: get-space-from-base(8);
+    }
+
+    &--second {
+      text-align: center;
+      font-weight: 600;
+    }
+  }
+  &__container-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: get-space-from-base(8);
+    img {
+      margin-right: get-space-from-base(4);
+    }
+  }
+  &__btn-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  &__btn-item {
+    position: relative;
+    margin-bottom: get-space-from-base(4);
+    flex: 0 0 50%;
+    max-width: 120px;
+    border-radius: 8px;
+    overflow: hidden;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    img {
+      vertical-align: bottom;
+    }
+
+    &:before {
+      position: absolute;
+      content: "";
+      display: block;
+      background: #ffffff;
+      opacity: 0;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+    }
+
+    @media (min-width: $g2j-grid-lg-min) {
+      &:hover {
+        &:before {
+          opacity: 0.2;
+        }
+      }
+    } // &__btn-item
+  }
+} // .g2j-direct-app-notice-modal

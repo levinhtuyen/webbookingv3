@@ -1,0 +1,31 @@
+@import '../../../lib/grid/var/grid';
+@import '../../../lib/grid/function/grid';
+@import "../../../vars";
+
+.main-container {
+  max-width: 768px;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 768px;
+  padding: 0 get-space-from-base(3);
+  margin: 0 auto;
+
+  // @media (min-width: grid.$break-point-lg) {
+  //   max-width: 768px;
+  // }
+
+  // @media (min-width: grid.$break-point-lg) {
+  //   max-width: 768px;
+  // }
+
+  // @media (min-width: grid.$break-point-lg) {
+  //   max-width: 1024px;
+  // }
+
+  // @media (min-width: grid.$break-point-xl) {
+  //   max-width: 1280px;
+  // }
+}

@@ -1,0 +1,134 @@
+@import '../../vars';
+@import '../../function/space';
+@import '../../mixin/limit-text-line';
+
+.article-detail-section {
+  background: #ffffff;
+  padding: get-space-from-base(8) 0;
+  margin-bottom: get-space-from-base(8);
+}
+
+.article-detail-page{
+    &__content{
+
+        &--date-time{
+            font-weight: 550;
+            padding: 16px 0;
+            display: flex;
+            .time-ago{
+                padding-left: 35px;
+                ul{
+                    li{
+                        list-style-type: disc;
+                    }
+                }
+            }
+        }
+        &--title{
+            .content-title{
+                padding: 16px 0;
+                font-size: 35px;
+                font-weight: bold;
+                text-align: center;
+            }
+        }
+        &--sub{
+            .content-sub{
+                font-weight: bold;
+                padding: 16px 0;
+            }
+        }
+        &--content{
+            .content-content{
+                text-align: justify;
+            }
+        }
+    }
+    &__share{
+        width: 100%;
+        padding: 16px 0;
+        &--container-button{
+            display: flex;
+            .button-share-facebook{
+                border: none;
+                height: 36px;
+                padding: 9px 38px 8px;
+                border-radius: 2.8px;
+                background-color: #45629f;
+                margin-right:10px;
+                @media  (max-width:$g2j-grid-xxs-min) {
+                    padding: 0 4px;
+                }
+                .text-icon-facebook{
+                    font-size: 14px;
+                    font-weight: 550;
+                    letter-spacing: normal;
+                    text-align: center;
+                    color: #fff;
+                    @media  (max-width:$g2j-grid-xxs-min) {
+                        font-size: 10px;
+                    }
+                }
+                &:hover{
+                    transition: transform .3s ease-in-out,-webkit-transform .3s ease-in-out;
+                    -webkit-transform: scale(1.06);
+                    transform: scale(1.06);
+                }
+            }
+            .button-share-twitter{
+                border: none;
+                margin: 0 10px;
+                height: 36px;
+                padding: 9px 38px 8px;
+                border-radius: 2.8px;
+                background-color: rgb(94, 178, 239);
+                @media  (max-width:$g2j-grid-xxs-min) {
+                    padding: 0 4px;
+                }
+                .text-icon-twitter{
+                    font-size: 14px;
+                    font-weight: 550;
+                    letter-spacing: normal;
+                    text-align: center;
+                    color: #fff;
+                    @media  (max-width:$g2j-grid-xxs-min) {
+                        font-size: 10px;
+                    }
+                }
+                &:hover{
+                    transition: transform .3s ease-in-out,-webkit-transform .3s ease-in-out;
+                    -webkit-transform: scale(1.06);
+                    transform: scale(1.06);
+                }
+            }
+            .button-copy{
+                width: 70px;
+                border: none;
+                margin: 0 10px;
+                border-radius: 2.8px;
+                &:hover{
+                    transition: transform .3s ease-in-out,-webkit-transform .3s ease-in-out;
+                    -webkit-transform: scale(1.06);
+                    transform: scale(1.06);
+                    background: #909399;
+                    border-color: #909399;
+                    color: #fff;
+                }
+            }
+        }
+    }
+    &__category{
+        .title-category{
+            font-size: 15px;
+            text-transform: uppercase;
+            p{
+                padding-bottom: 10px;
+            }
+            &__border{
+                width: 150px;
+                height: 1px;
+                background-color: #ff6400;
+            }
+        }
+    }
+}

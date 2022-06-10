@@ -1,0 +1,58 @@
+@use "sass:math";
+
+@import '../../../vars';
+@import '../../../function/space';
+
+//=================================
+// .g2j-promotion-card
+//=================================
+.g2j-promotion-card {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  min-width: 216px;
+  max-width: 352px;
+  margin-right: get-space-from-base(8);
+  z-index: 0;
+
+  overflow: hidden;
+  border-radius: 8px;
+
+  background: url($g2j-image-url + '/g2j-lazy-loading--sm.png?v=' + $g2j-cache-ver-suffix) center/cover no-repeat;
+
+  &:before {
+    content: '';
+    display: block;
+    width: 100%;
+    padding-bottom: percentage(math.div(560, 1000));
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  @media (min-width: $g2j-grid-sm-min) {
+    width: 328px;
+  }
+
+  &__img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    border-radius: 8px;
+    z-index: -1;
+    left: 0;
+    top: 0;
+
+    &[src^=http] {
+      opacity: 1;
+    }
+
+    &.is-image-error {
+      display: none;
+    }
+  }
+}

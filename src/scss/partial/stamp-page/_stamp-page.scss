@@ -1,0 +1,333 @@
+@import "../../vars";
+
+.stamp-page {
+  padding-top: 16px;
+  background: white;
+  min-height: calc(100vh - #{$g2j-total-padding-top-bottom});
+
+  .uppercase {
+    text-transform: uppercase;
+  }
+
+  .stamp-block {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .stamp-paginate {
+    padding: 10px 0;
+  }
+
+  .tooltip-stamp {
+    width: 25px;
+    height: 25px;
+    position: relative;
+    width: auto;
+
+    img {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+    .tooltip {
+      position: relative;
+      width: 100%;
+      padding-top: 30px;
+
+      .tooltip-content {
+        position: absolute;
+      }
+    }
+  }
+
+  .custom-card {
+    max-width: 100%;
+    background: #ffffff;
+    border: 1px solid #dcdcdc;
+    box-sizing: border-box;
+    border-radius: 10px;
+    margin-top: 12px;
+    box-shadow: 0px 8px 16px rgb(0 0 0 / 6%);
+
+    @media (min-width: $g2j-grid-sm-min) {
+    }
+
+    .custom-row {
+      padding: 16px 21px;
+
+      .title {
+        color: #686868;
+        font-family: Open Sans;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 12px;
+
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        position: relative;
+
+        span:last-child {
+          margin-left: 10px;
+        }
+
+        .margin-title {
+          margin-right: 10px;
+        }
+
+        .text-bold-red {
+          color: red;
+          font-size: 14px;
+        }
+
+        .text-normal {
+          font-family: Open Sans;
+          font-style: normal;
+          font-weight: normal;
+        }
+
+        .inside {
+          list-style: inside;
+          margin-left: 10px;
+
+          li {
+            font-family: Open Sans;
+            font-style: normal;
+
+            .inside-child {
+              list-style: inside;
+              margin-left: 16px;
+              font-weight: normal;
+            }
+          }
+        }
+      }
+
+      .flex-container {
+        font-family: Open Sans;
+        font-style: normal;
+        display: block;
+        flex-wrap: wrap;
+        align-items: center;
+
+        .money-point-outer {
+          display: flex;
+          justify-content: space-between;
+
+          .money {
+            color: #000000;
+            font-family: Open Sans;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 24px;
+            @media (min-width: $g2j-grid-sm-min) {
+            }
+          }
+
+          .point {
+            letter-spacing: 2px;
+            margin-top: auto;
+
+            .tomato {
+              color: #ff6400;
+            }
+
+            span {
+              font-family: Open Sans;
+              font-style: normal;
+              font-weight: normal;
+              font-size: 20px;
+              color: #504b47;
+            }
+          }
+        }
+
+        .time {
+          margin-right: auto;
+          min-width: 50%;
+          display: flex;
+          justify-content: flex-start;
+          flex-wrap: wrap;
+          padding: 8px 0;
+
+          .black {
+            color: #686868;
+            border-color: #686868;
+          }
+
+          span {
+            color: #ff6400;
+            font-weight: 600;
+            font-size: 12px;
+            text-align: center;
+            border: 1px solid #ff6400;
+            box-sizing: border-box;
+            border-radius: 16px;
+
+            padding: 1px 15px;
+            margin-right: 5px;
+          }
+
+          span:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .custom-booking-stamp {
+    .title {
+      font-family: Open Sans;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 32px;
+      text-align: center;
+    }
+
+    .text-outer {
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    .flex-container-booking-stamp {
+      font-family: Open Sans;
+      font-style: normal;
+      display: block;
+      flex-wrap: wrap;
+      align-items: center;
+
+      border: 1px solid #e0dbd7;
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.06);
+      border-radius: 8px;
+
+      .time-price-outer {
+        padding-top: 20px;
+        padding-bottom: 16px;
+
+        .time {
+          margin-right: auto;
+          min-width: 50%;
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
+          padding: 8px 0;
+
+          .black {
+            color: #686868;
+            border-color: #686868;
+          }
+
+          span {
+            color: #ff6400;
+            font-weight: 600;
+            font-size: 12px;
+            text-align: center;
+            border: 1px solid #ff6400;
+            box-sizing: border-box;
+            border-radius: 16px;
+
+            padding: 1px 15px;
+            margin-right: 5px;
+          }
+
+          span:last-child {
+            margin-right: 0;
+          }
+        }
+
+        .price {
+          text-align: center;
+          font-size: 32px;
+
+          .number-price {
+            font-family: Open Sans;
+            font-style: normal;
+            font-weight: bold;
+            color: #ff6400;
+          }
+        }
+      }
+    }
+
+    .shape-outer {
+      display: flex;
+      justify-content: space-evenly;
+      width: 100%;
+      max-width: 518px;
+      margin: auto;
+
+      .shape-wrapper {
+        margin-top: auto;
+        margin: 20px;
+        padding: 1px;
+        text-align: center;
+
+        @media (min-width: 375px) {
+          margin: 21px;
+          text-align: unset;
+        }
+
+        .image-wraper {
+          margin: 10px;
+          width: 126px;
+          height: 126px;
+          display: inline-flex;
+          position: relative;
+
+          @media (min-width: $g2j-grid-sm-min) {
+            margin: 14px;
+          }
+
+          // Để chữ nằm giữa bức hình
+          .text-image {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+
+            font-family: Open Sans;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 10px;
+            color: #ffffff;
+
+            .text-bold {
+              font-weight: 600;
+              font-size: 19.8667px;
+            }
+          }
+        }
+      }
+    }
+
+    .btn-redeem {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+
+      button {
+        width: 320px;
+        height: 56px;
+
+        background: #ff6400;
+        opacity: 0.4;
+        border-radius: 28px;
+        border: none;
+
+        color: #ffffff;
+        font-family: Open Sans;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+.review__rating-star {
+  -webkit-transform: scaleX(-1);
+  -moz-transform: scaleX(-1);
+  -ms-transform: scaleX(
+    -1
+  ); /* Only for graceful degradation in IE9, cannot be transitioned */
+  -o-transform: scaleX(-1);
+  transform: scaleX(-1);
+  .star-icon {
+    cursor: pointer;
+    color: #ff6400;
+    font-size: 1.3em;
+    margin-right: 8px;
+    &:last-child {
+      margin-right: 0;
+    }
+    &.is-active,
+    &:hover {
+      &,
+      & ~ .star-icon {
+        color: #ff6400;
+        font-weight: 900;
+        &:before {
+          content: "\f005";
+        }
+      }
+    }
+  } // .star-icon
+} // .feedback-form-modal__body__rating-field__rating-star

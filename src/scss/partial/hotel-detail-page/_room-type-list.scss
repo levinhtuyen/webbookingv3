@@ -1,0 +1,52 @@
+@use './../../var/grid' as grid;
+.section-room-type {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  @media (min-width: grid.$mz-grid-xs) and (max-width: grid.$mz-grid-sm-max) {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  &__item {
+    padding: 5px 0;
+    margin: 15px;
+    .g2j-hotel-product-card-horizontal {
+      position: relative;
+      width: 100%;
+      max-width: 359px;
+      margin-right: 16px;
+      padding: 10px 0px;
+    }
+    &--label {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      max-width: 375px;
+      padding: 0 15px;
+      .label-addition {
+        background-color: #f5ffdc;
+        border: 1px solid #aaf103;
+        // background-color: #8bb821;
+        border-radius: 10px;
+        // margin: 5px 10px 5px 0;
+        margin-top: 8px;
+        p {
+          padding: 0 15px;
+          color: #006f09;
+        }
+      }
+      .style-lock-room {
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center;
+        background-color: #ffefe5;
+        border-radius: 10px;
+        // margin: 5px 10px 5px 0;
+        margin-top: 8px;
+        .style-lock-room-p {
+          color: #edb305;
+          padding: 5px 15px;
+        }
+      }
+    }
+  }
+}

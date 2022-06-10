@@ -1,0 +1,65 @@
+@import "../../vars";
+
+$primary-color: #ff6400;
+
+.modal-component-class-custom {
+  border-radius: 15px;
+}
+.status-modal {
+  &__title {
+    font-size: 2.5rem;
+    i.success {
+      color: $primary-color;
+    }
+    i.fail {
+      color: red;
+    }
+    i {
+      margin-right: 5px;
+    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @media screen and(min-width:$g2j-grid-xxs-min) {
+      font-size: 3rem;
+    }
+  }
+  &__body {
+    color: #000000;
+    font-size: 16px;
+    justify-content: center;
+    margin-top: 10px;
+    text-align: center;
+    word-break: break-word;
+    &--title-hotel {
+      color: $primary-color;
+    }
+  }
+  &__footer {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    &--button {
+      &.btn-detail {
+        color: $primary-color;
+        border:2px solid $primary-color;
+        background-color: #ffffff ;
+      }
+      border-radius: 20px;
+      background-color: $primary-color;
+      border: none;
+      color: #ffffff;
+      box-shadow: 3px 5px 12px -3px rgb(255 100 0 / 43%);
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 500;
+      height: 40px;
+      -webkit-box-shadow: 3px 5px 12px -3px rgb(255 100 0 / 43%);
+      text-align: center;
+      width: 70%;
+      margin-bottom: 20px;
+    }
+  }
+}

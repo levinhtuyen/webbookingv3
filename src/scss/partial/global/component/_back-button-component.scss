@@ -1,0 +1,20 @@
+//====================================
+// back-button-component
+//====================================
+$primary-color: #ff6400;
+$btn-size: 30px;
+$bg-color: #efefef;
+.back-button-component {
+  button {
+    &:hover {
+      color: $primary-color;
+    }
+    border-radius: 50%;
+    height: $btn-size;
+    width: $btn-size;
+    cursor: pointer;
+    border: none;
+    // background-color: $bg-color;
+    background-color: transparent;
+  }
+}

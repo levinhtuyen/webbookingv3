@@ -1,0 +1,98 @@
+.stamp-card{
+  width: 100%;
+  padding-top: 13.5px;
+
+  &__item{
+    width: 100%;
+    background: #F6F8FB;
+    border-radius: 8px;
+    height: 84px;
+    padding:12px;
+    .slide-stamp{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-bottom: 13px;
+      &__slide{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding-right: 20px;
+        .core-active-slide{
+          background: #FFD2B4;
+          border-radius: 16px 0 0 16px;
+          height: 5px;
+          width: 50%;
+        }
+        .core-slide{
+          background: #E5E5E5;
+          border-radius: 0 16px 16px 0;
+          height: 5px;
+          width: 50%;
+        }
+        .dot-slide{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+      &__total-stamp{
+
+        display: flex;
+        .is-total-stamp{
+          font-size: 16px;
+          color: #ff6400;
+          font-weight: 700;
+        }
+        .is-text-stamp{
+          font-size: 12px;
+          font-weight: 400;
+          color: #424242;
+          display: flex;
+          padding: 0 4px;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+    .confirm-stamp{
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      .is-note{
+        font-size: 12px;
+        font-weight: 400;
+      }
+      .is-number-stamp{
+        font-size: 12px;
+        font-weight: 600;
+      }
+    }
+    .sign-in{
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      &__button-sign-in{
+        cursor: pointer;
+        height: 24px;
+        border-radius: 24px;
+        border: 1px solid #ff6400;
+        padding: 3px 12px;
+        text-align: center;
+        p{
+          font-size: 12px;
+          font-weight: 600;
+          color: #ff6400;
+
+        }
+      }
+      &--is-text-sign-in{
+        padding-left: 10px;
+        font-size: 12px;
+        font-weight: 400;
+      }
+    }
+  }
+}

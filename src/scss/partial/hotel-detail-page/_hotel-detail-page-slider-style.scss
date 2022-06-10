@@ -1,0 +1,44 @@
+@use './../../var/grid' as grid;
+.banner-section {}
+
+.banner-block {
+  padding: 15px 0;
+  .banner-wrapper-outer {
+    overflow: hidden;
+  }
+
+  .banner-wrapper {
+    white-space: nowrap;
+  }
+  .banner-wrapper-item {
+    overflow: hidden;
+    border-radius: 8px;
+    width: 100%;
+    height: 350px;
+    display: inline-block;
+    vertical-align: bottom;
+    @media (max-width: grid.$mz-grid-sm-min) {
+      height: 175px;
+    }
+  }
+
+  .banner-img-outer {
+    position: relative;
+    width: 100%;
+
+    &:before {
+      content: '';
+      display: block;
+      width: 100%;
+    }
+  }
+
+  .banner-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    left: 0;
+    top: 0;
+  }
+}

@@ -1,0 +1,271 @@
+//====================================
+// coupon-modal on payment v4
+//====================================
+@import "../../vars";
+@import "../../mixin/limit-text-line";
+.coupon-payment {
+  @mixin high-light {
+    &:hover {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+    color: $g2j-primary-color;
+  }
+  .modal-component-class-custom {
+    max-height: 75vh;
+    border-radius: 12px;
+    // overflow: hidden;
+    width: 100%;
+    z-index: 100;
+    .modal-component__main--body {
+      overflow: auto;
+      // overflow: hidden;
+    }
+  }
+  @media screen and(min-width:$g2j-grid-xxs-min ) {
+    .modal-component-class-custom {
+      height: auto;
+      max-height: 80vh;
+      // height: 620px;
+      width: fit-content;
+      min-width: 440px;
+
+      .modal-component__main--body {
+        overflow: auto;
+        // overflow: hidden;
+      }
+      .modal-component__main--footer {
+        display: flex;
+        flex: 1;
+      }
+    }
+  }
+
+  &__header {
+    text-align: center;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+    margin-top: 5%;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px;
+    overflow: auto;
+
+    @media screen and(min-width:$g2j-grid-sm-min ) {
+      height: fit-content;
+      height: -webkit-fit-content;
+      margin-top: 30px;
+      width: 440px;
+    }
+    .coupon-item {
+      &.disable {
+        opacity: 0.5;
+        cursor: not-allowed;
+        pointer-events: none;
+      }
+
+      &::before {
+        content: "";
+        top: 50%;
+        left: 0px;
+        width: 20px;
+        height: 35px;
+        background-color: #ffffff;
+        position: absolute;
+        border-radius: 20px;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        border: 2px solid #eaeaea;
+        border-left: none;
+        overflow: hidden;
+        z-index: 199;
+      }
+      &.loading-content {
+        border: 2px solid #eaeaea;
+        min-height: 150px;
+        &::before {
+          content: "";
+          top: 50%;
+          left: -2px;
+          width: 20px;
+          height: 35px;
+          background-color: #ffffff;
+          position: absolute;
+          border-radius: 20px;
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
+          border: 2px solid #eaeaea;
+          border-left: none;
+          overflow: hidden;
+          z-index: 199;
+        }
+      }
+      display: flex;
+      width: 90%;
+      flex-direction: column;
+      z-index: 99;
+      position: relative;
+      margin-bottom: 20px;
+      @media screen and(min-width:$g2j-grid-sm-min ) {
+        width: 330px;
+      }
+      &__header {
+        display: flex;
+        flex: 1;
+        &--left {
+          background-color: #000000;
+          color: #ffffff;
+          justify-content: center;
+          padding: 8px 4px;
+          .title {
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 12px;
+            line-height: 18px;
+            text-align: center;
+            @include g2j-limit-text-line(12px, 1);
+          }
+        }
+        &--right {
+          background-color: $g2j-primary-color;
+          justify-content: center;
+          text-align: center;
+          display: flex;
+          align-items: center;
+          .number {
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 14px;
+            line-height: 19px;
+          }
+        }
+      }
+      &__body {
+        display: flex;
+        position: relative;
+        flex: 1;
+        border: 2px solid #eaeaea;
+
+        &--left {
+          flex-direction: column;
+          padding: 8px 32px 8px;
+          .title {
+            .high-light {
+              @include high-light;
+            }
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 21px;
+            padding: 4px 0;
+            @media screen and(min-width:$g2j-grid-sm-min ) {
+              font-weight: 600;
+              font-size: 16px;
+            }
+          }
+          .container-tag {
+            display: flex;
+            .tag {
+              color: $g2j-primary-color;
+              background-color: #ffffff;
+              border: 1px solid $g2j-primary-color;
+              width: max-content;
+              padding: 2px 4px;
+              margin-bottom: 8px;
+              margin-right: 4px;
+              font-weight: 600;
+              font-size: 10px;
+              line-height: 14px;
+            }
+          }
+
+          .date,
+          .description {
+            font-size: 12px;
+            line-height: 18px;
+            color: #434343;
+            margin-bottom: 4px;
+          }
+        }
+        &--right {
+          flex-direction: column;
+          border-left: 2px dashed #eaeaea;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          img {
+            &.disable {
+              filter: grayscale(1);
+            }
+
+            width: 30px;
+          }
+          .img-select-coupon,
+          .img-save-coupon {
+            // opacity: 0.5;
+            cursor: pointer;
+
+            // &.is-active {
+            //   opacity: 1;
+            //   filter: grayscale(0);
+            // }
+          }
+        }
+      }
+      &__footer {
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 18px;
+        color: #676767;
+        background: #dcdcdc;
+        display: flex;
+        justify-content: center;
+        padding: 4px 0;
+      }
+      .content-left {
+        // flex: 3;
+        display: flex;
+        flex-grow: 1;
+      }
+      .content-right {
+        flex: none;
+        width: 51px;
+      }
+    }
+    .container-nodata {
+      text-align: center;
+      h3 {
+        font-size: 16px;
+        font-weight: 600;
+        text-align: center;
+        padding-top: 10px;
+        padding-bottom: 5px;
+      }
+      .nodata-coupon {
+        max-width: 120px;
+      }
+      .nodata-description {
+        color: #9b9b9b;
+      }
+    }
+  }
+  &__footer {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: flex-end;
+    .g2j-button-book-now {
+      width: 80%;
+      &.disable {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+    }
+  }
+}

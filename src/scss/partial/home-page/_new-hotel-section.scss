@@ -1,0 +1,64 @@
+@import '../../vars';
+@import '../../function/space';
+@import '../../mixin/limit-text-line';
+
+//=============================
+// .new-hotel-section
+//=============================
+.new-hotel-section {
+  margin-top: get-space-from-base(8);
+  padding: get-space-from-base(10) 0;
+  background: #ffffff;
+}
+
+//=============================
+// .new-hotel-block
+//=============================
+.new-hotel-block {
+  .block-head {
+    margin-bottom: get-space-from-base(8);
+  }
+
+  .head-main-title {
+    font-size: 2;
+    margin-bottom: get-space-from-base(5);
+    text-transform: uppercase;
+
+    @media (min-width: $g2j-grid-xxs-min) {
+      font-size: 2.25rem;
+    }
+  }
+
+  .head-title-field {
+    display: flex;
+    align-items: center;
+
+    .title-label {
+      margin-right: get-space-from-base(8);
+      text-transform: uppercase;
+      flex: 0 0 50%;
+      color: #ff6400;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      @media (min-width: $g2j-grid-xxs-min) {
+        font-size: 2rem;
+      }
+    } // .title-label
+
+    .readmore-link {
+      display: inline-block;
+      margin-left: auto;
+    } // .readmore-link
+  } // .head-title-field
+}
+
+//=============================
+// .new-hotel-swiper-wrapper
+//=============================
+.new-hotel-swiper-wrapper {
+  display: flex;
+  align-items: center;
+}

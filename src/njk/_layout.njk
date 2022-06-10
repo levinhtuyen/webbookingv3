@@ -1,0 +1,381 @@
+{% set objResource = objGlobal['resource'] %}
+
+{% if objResource[namepage]['arrCssFile']['common'] | isEmpty %}
+  {% set cssGlobal = objResource['common']['arrCssFile'] %}
+  {% set cssOnPage = objResource[namepage]['arrCssFile'] %}
+{% else %}
+  {% set cssGlobal = objResource[namepage]['arrCssFile']['common'] %}
+  {% set cssOnPage = objResource[namepage]['arrCssFile']['main'] %}
+{% endif %}
+
+{% if objResource[namepage]['arrJsFile']['common'] | isEmpty %}
+  {% set jsGlobal = objResource['common']['arrJsFile'] %}
+{% else %}
+  {% set jsGlobal = objResource[namepage]['arrJsFile']['common'] %}
+{% endif %}
+
+{% if objResource[namepage]['arrJsFile']['main'] | isEmpty %}
+  {% set jsOnPage = objResource[namepage]['arrJsFile'] %}
+{% else %}
+  {% set jsOnPage = objResource[namepage]['arrJsFile']['main'] %}
+{% endif %}
+
+{% if not jsOnPage | isEmpty %}
+  {% if not jsOnPage['body'] | isEmpty  %}
+    {% set jsOnHeaderPage = jsOnPage['header'] %}
+    {% set jsOnBodyPage = jsOnPage['body'] %}
+  {% else %}
+    {% set jsOnHeaderPage = [] %}
+    {% set jsOnBodyPage = jsOnPage %}
+  {% endif %}
+{% endif %}
+
+<!DOCTYPE html>
+<html lang="{{ HTML_LANGUAGE }}{{ '-'+IP_INFO.country if IP_INFO else '' }}">
+  <head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="https://i.ibb.co/hMYHtjn/go2oy-logo.png">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- SEO meta tags -->
+    {% if BOT_INFO.nameBot !== 'G2JBot' %}
+      {% include "./partial/global/original-comment-seo-tag.njk" %}
+      {% include "./partial/global/original-seo-tag.njk" %}
+    {% endif %}
+    <!-- #end SEO meta tags -->
+
+    <!-- script tag setup for canonical -->
+    {% include "./partial/global/canonical-dynamic-script-tag.njk" %}
+    <!-- #end script tag setup for canonical -->
+
+    <!-- gtm-script-tag region -->
+    {% if ENV_APPLICATION === PRODUCTION and not BOT_INFO.isBot %}
+      {% include "./partial/global/gtm-script-tag.njk" %}
+    {% endif %}
+    <!-- #end gtm-script-tag region -->
+
+    <!-- gtm-script-tag region -->
+    {% if ENV_APPLICATION === PRODUCTION and not BOT_INFO.isBot %}
+      {% include "./partial/global/gtag-script-tag.njk" %}
+    {% endif %}
+    <!-- #end gtm-script-tag region -->
+
+    <!-- dable-pixel-script-tag region -->
+    {% if ENV_APPLICATION === PRODUCTION and not BOT_INFO.isBot %}
+      {% include "./partial/global/dable-pixel-script-tag.njk" %}
+    {% endif %}
+    <!-- #end dable-pixel-script-tag region -->
+
+    <!-- facebook-pixel-script-tag region -->
+    {% if ENV_APPLICATION === PRODUCTION and not BOT_INFO.isBot %}
+      {% include "./partial/global/facebook-pixel-script-tag.njk" %}
+    {% endif %}
+    <!-- #end facebook-pixel-script-tag region -->
+
+    <!-- hotjar-tracking-script-tag region -->
+    {% if ENV_APPLICATION === PRODUCTION and not BOT_INFO.isBot %}
+      {% include "./partial/global/hotjar-tracking-script-tag.njk" %}
+    {% endif %}
+    <!-- #end hotjar-tracking-script-tag region -->
+
+    <!-- adjust-tracking-script-tag region -->
+    {% if ENV_APPLICATION === PRODUCTION and not BOT_INFO.isBot %}
+      {% include "./partial/global/adjust-tracking-script-tag.njk" %}
+    {% endif %}
+    <!-- #end adjust-tracking-script-tag region -->
+
+    <!-- tiktok-pixel-script-tag region -->
+    {% if ENV_APPLICATION === PRODUCTION and not BOT_INFO.isBot %}
+      {% include "./partial/global/tiktok-pixel-script-tag.njk" %}
+    {% endif %}
+    <!-- #end tiktok-pixel-script-tag region -->
+
+    <!-- prefetch -->
+    {% if MODE_APPLICATION === 'normal' %}
+      {% for prefetchItem in objResource[namepage]['arrPrefetch'] %}
+        <link
+          rel="prefetch"
+          href="{{ prefetchItem['getHref']() + '?v=' + CACHE_VERSION }}"
+          as="{{ prefetchItem['as'] }}"
+          {% if not prefetchItem['type'] | isEmpty %}
+            type="{{ prefetchItem['type'] }}"
+          {% endif %}
+        />
+      {% endfor %}
+    {% endif %}
+
+    <!-- preload -->
+    {% if ENV_APPLICATION !== DEVELOPMENT %}
+      {% for preloadItem in objResource[namepage]['arrPreload'] %}
+        <link
+          rel="preload"
+          href="{{ preloadItem['getHref']() + '?v=' + CACHE_VERSION }}"
+          as="{{ preloadItem['as'] }}"
+          {% if not preloadItem['type'] | isEmpty %}
+            type="{{ preloadItem['type'] }}"
+          {% endif %}
+        />
+      {% endfor %}
+    {% endif %}
+
+    <!-- global css file -->
+    {% for cssFile in cssGlobal %}
+      {% if cssFile['href'] | isString %}
+        {% if cssFile['env'] | isEmpty or ENV_APPLICATION in cssFile['env'] %}
+          {% if not cssFile['preconnect'] | isEmpty %}
+            <link
+              rel="preconnect"
+              href="{{ cssFile['preconnect'] }}"
+            >
+          {% endif %}
+
+          {% if not cssFile['dns-prefetch'] | isEmpty %}
+            <link
+              rel="dns-prefetch"
+              href="{{ cssFile['dns-prefetch'] }}"
+              {% if not cssFile['crossorigin'] | isEmpty and cssFile['crossorigin']['show'] %}
+                {% if not cssFile['crossorigin']['value'] | isEmpty %}
+                  origin="{{ cssFile['crossorigin']['value'] }}"
+                {% else %}
+                  origin
+                {% endif %}
+              {% endif %}
+            >
+          {% endif %}
+
+          <link
+            rel="preload"
+            href="{{ cssFile['href'] }}"
+            as="style"
+            onload="this.onload=null;this.rel='stylesheet'"
+          >
+          <noscript><link rel="stylesheet" href="{{ cssFile['href'] }}"></noscript>
+        {% endif %}
+      {% else %}
+        <link
+          rel="preload"
+          href="{{ LAYOUT_CONFIG.cssUrl + '/' + cssFile + '.css' + '?v=' + CACHE_VERSION }}"
+          as="style"
+          onload="this.onload=null;this.rel='stylesheet'"
+        >
+        <noscript><link rel="stylesheet" href="{{ cssFile['href'] }}"></noscript>
+      {% endif %}
+    {% endfor %}
+
+    <!-- preconnect | dns-prefetch -->
+    {% for preconnectItemInfo in objResource[namepage]['arrPreconnect'] %}
+      {% set _preconnectItem = preconnectItemInfo() %}
+      {% if not _preconnectItem | isEmpty %}
+        <link rel="preconnect" href="{{ _preconnectItem }}">
+        <link rel="dns-prefetch" href="{{ _preconnectItem }}">
+      {% endif %}
+    {% endfor %}
+
+    <!-- global css file -->
+    {% for cssFile in cssOnPage %}
+      <link rel="stylesheet" href="{{ LAYOUT_CONFIG.cssUrl + '/' + cssFile + '.css' + '?v=' + CACHE_VERSION }}">
+    {% endfor %}
+
+    <!-- compile loading style -->
+    {% if MODE_APPLICATION === 'fast' and ENV_APPLICATION === DEVELOPMENT and not BOT_INFO.isBot %}
+      {% include "./partial/global/glax-compile-process-loading-style-tag.njk" %}
+    {% endif %}
+
+    <!-- global js file -->
+    {% for jsFile in jsGlobal %}
+      {% if jsFile['src'] | isString and (jsFile.ignore_bot or []).indexOf(BOT_INFO.nameBot) === -1 %}
+        {% if jsFile['env'] | isEmpty or ENV_APPLICATION in jsFile['env'] %}
+          {% if not jsFile['preconnect'] | isEmpty %}
+            <link rel="preconnect" href="{{ jsFile['preconnect'] }}">
+          {% endif %}
+
+          {% if not jsFile['dns-prefetch'] | isEmpty %}
+            <link
+              rel="dns-prefetch"
+              href="{{ jsFile['dns-prefetch'] }}"
+              {% if not jsFile['crossorigin'] | isEmpty and jsFile['crossorigin']['show'] %}
+                {% if not jsFile['crossorigin']['value'] | isEmpty %}
+                  origin="{{ jsFile['crossorigin']['value'] }}"
+                {% else %}
+                  origin
+                {% endif %}
+              {% endif %}
+            >
+          {% endif %}
+          <script
+            defer
+            type="text/javascript"
+            src="{{ jsFile['src'] }}"
+            {% if jsFile['integrity'] | isString and not BOT_INFO.isBot %}
+              integrity="{{ jsFile['integrity'] }}"
+              crossorigin="anonymous"
+            {% endif %}
+            {% if not jsFile['referrerpolicy'] | isEmpty and jsFile['referrerpolicy']['show'] %}
+              {% if not jsFile['referrerpolicy']['value'] | isEmpty %}
+                referrerpolicy="{{ jsFile['referrerpolicy']['value'] }}"
+              {% else %}
+                referrerpolicy
+              {% endif %}
+            {% endif %}
+          >
+          </script>
+        {% endif %}
+      {% else %}
+        <script defer type="text/javascript" src="{{ LAYOUT_CONFIG.jsUrl + '/' + jsFile + '.js' }}"></script>
+      {% endif %}
+    {% endfor %}
+
+    <!-- firebase config region -->
+    <!-- NOTE - Firebase config must run after all firebase lib start loading -->
+    {% if not BOT_INFO.isBot %}
+      {% include "./partial/global/firebase-config-script-tag.njk" %}
+    {% endif %}
+    <!-- #end firebase config region -->
+
+    <!-- header page js file -->
+    {% if MODE_APPLICATION === 'fast' %}
+      {% set curInitKey = [] %}
+    {% endif %}
+    {% for jsFile in jsOnHeaderPage %}
+      {% if MODE_APPLICATION === 'fast' and jsFile | isVendor %}
+        {% set curInitKey = (curInitKey.push(jsFile) , curInitKey) %}
+      {% endif %}
+      <script
+        defer
+        type="text/javascript"
+        src="{{ LAYOUT_CONFIG.jsUrl + '/' + jsFile + '.js' + '?v=' + CACHE_VERSION }}"
+      ></script>
+    {% endfor %}
+  </head>
+  <body>
+    <!-- header region -->
+    {% block header %}
+      {% include "./partial/global/header-sticky-section.njk" %}
+    {% endblock %}
+    <!-- #end header region -->
+
+    <!-- body region -->
+    {% block body %}{% endblock %}
+    <!-- #end body region -->
+
+    <!-- footer region -->
+    {% block footer %}
+      {% include "./partial/global/footer-sticky-section.njk" %}
+    {% endblock %}
+    <!-- #end footer region -->
+
+    <!-- glax-compile-process-loading-layout region -->
+    {% if MODE_APPLICATION === 'fast' and ENV_APPLICATION === DEVELOPMENT and not BOT_INFO.isBot %}
+      {% include "./partial/global/glax-compile-process-loading-layout.njk" %}
+    {% endif %}
+    <!-- #end glax-compile-process-loading-layout region -->
+
+    <!-- other js file -->
+    <script type="text/javascript">
+      let _generateReadOnlyObject = function(obj) {
+        if(typeof obj === 'object') {
+          for(const key in obj) {
+            Object.defineProperty(
+              obj,
+              key, {
+                value: obj[key],
+                writable: false
+              }
+            );
+          }
+        } // endfor
+      }; // _generateReadOnlyObject()
+
+      let _PAGE_INFO = {
+        js_url: "{{ LAYOUT_CONFIG.jsUrl }}",
+        image_url: "{{ LAYOUT_CONFIG.imageUrl }}",
+        language_url: "{{ LAYOUT_CONFIG.languageUrl }}",
+        cache_version: "{{ CACHE_VERSION }}",
+        assets_service_url: "{{ BASE_ASSETS_SERVICE_URL }}",
+        base_url: "{{ BASE_URL }}",
+        env: "{{ ENV_APPLICATION }}",
+        env_api: "{{ ENV_API }}",
+        type: "{{ TYPE_APPLICATION }}",
+        get_api_url: function(
+          version,
+          env
+        ) {
+          {% if ENV_API === STAGING or ENV_API === PRODUCTION %}
+            env = "{{ ENV_API }}";
+          {% else %}
+            env = env || "{{ ENV_API }}";
+          {% endif %}
+
+          // NOTE - Just use ENV_API at the moment instead use env param
+          const baseApiUrl = {{ BASE_API_ENV | json }}['{{ENV_API}}'];
+          const apiVersion = {{ API_VERSION | json }};
+
+          return (
+            apiVersion[version] ?
+            baseApiUrl + '/' + apiVersion[version] :
+            baseApiUrl
+          );
+        },
+      };
+
+      {% set resManagementData = data.response %}
+
+      // NOTE - Setup BOT_INFO if exist
+      {% if BOT_INFO %}
+        _PAGE_INFO.bot_info = {{ BOT_INFO | json }};
+      {% endif %}
+
+      // NOTE - Setup IP_INFO if exist
+      {% if IP_INFO %}
+        _PAGE_INFO.ip_info = {{ IP_INFO | json }};
+      {% endif %}
+
+      {% if resManagementData %}
+        _PAGE_INFO.resManagementData = {{ resManagementData | json }};
+      {% endif %}
+
+      _generateReadOnlyObject(_PAGE_INFO);
+
+      Object.defineProperty(
+        window,
+        'PAGE_INFO', {
+          value: _PAGE_INFO,
+          writable: false
+        }
+      );
+
+      _PAGE_INFO = undefined;
+      _generateReadOnlyObject = undefined;
+    </script>
+
+    {% block script %}{% endblock %}
+
+    <!-- body page js file -->
+    {% set strAppFileName = '' %}
+
+    {% for jsFile in jsOnBodyPage %}
+      {% if MODE_APPLICATION === 'fast' and jsFile | isApp %}
+        {% set curInitKey = (curInitKey.push(jsFile), curInitKey) %}
+        {% set strAppFileName = jsFile + '-script' %}
+
+        <script
+          id="{{ strAppFileName }}"
+          defer
+          type="text/javascript"
+          src="{{ LAYOUT_CONFIG.jsUrl + '/' + jsFile + '.js' + '?v=' + CACHE_VERSION }}"
+        ></script>
+      {% else %}
+        <script
+          defer
+          type="text/javascript"
+          src="{{ LAYOUT_CONFIG.jsUrl + '/' + jsFile + '.js' + '?v=' + CACHE_VERSION }}"
+        ></script>
+      {% endif %}
+    {% endfor %}
+
+    <!-- script for connect with browsersync to support dev mode fast -->
+    {% if MODE_APPLICATION === 'fast' %}
+      {% include "./partial/global/fast-mode-compile-script.njk" %}
+    {% endif %}
+  </body>
+</html>

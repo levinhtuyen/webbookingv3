@@ -1,0 +1,44 @@
+//====================================
+// modal-error-payment
+//====================================
+@import "../global/component/g2j-flags-component";
+@import "../../vars";
+
+$bg-input: #fbf7f2;
+$primary-color: #ff6400;
+.modal-error-payment {
+  .modal-component-class-custom {
+    max-height: 70vh;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  @media screen and(min-width:$g2j-grid-xxs-min ) {
+    .modal-component-class-custom {
+      height: auto;
+      min-width: 200px;
+    }
+  }
+
+  &__header {
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  &__body {
+    width: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    @media screen and(min-width:$g2j-grid-sm-min ) {
+      width: 560px;
+      height: fit-content;
+      height: -webkit-fit-content;
+    }
+  }
+  &__footer {
+    margin-top: 10px;
+    text-align: center;
+  }
+}

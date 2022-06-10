@@ -1,0 +1,106 @@
+@use '../../function/space' as space;
+@use '../../var/grid' as grid;
+
+.list-task-section {}
+
+.list-task-block {
+  .task-wrap {
+  } // .task-wrap
+
+  .task-item {
+    $_task-item-color: (
+      'learning': #FFA500,
+      'working': #29C979,
+      'sporting': #2A96D2,
+    );
+
+    position: relative;
+    margin-bottom: space.get-space-from-base(12);
+
+    @each $_task-item-type, $_task-item-type-color in $_task-item-color {
+      &--#{$_task-item-type} {
+        .head-title {
+          &:before {
+            background: $_task-item-type-color;
+          }
+        }
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  } // .task-item
+
+  .item-head {
+    margin-bottom: space.get-space-from-base(5);
+  }
+
+  .head-title {
+    position: relative;
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: 600;
+    z-index: 0;
+
+    position: relative;
+    padding-bottom: space.get-space-from-base(1);
+    padding-left: space.get-space-from-base(4);
+
+    &:before {
+      position: absolute;
+      content: '';
+      height: 8px;
+      width: calc(100% + 12px);
+      left: 0;
+      bottom: 6px;
+      z-index: -1;
+      opacity: 0.3;
+    }
+  }
+
+  .task-tag-wrap {
+    overflow-y: hidden;
+    overflow-x: auto;
+    margin: 0 -#{ space.get-space-from-base(8) };
+    padding: 0 space.get-space-from-base(8);
+
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  } // .task-tag-wrap
+
+  .task-tag-slider {
+    white-space: nowrap;
+    margin: 0 -#{ space.get-space-from-base(4) };
+
+    @media screen and (min-width: grid.$mz-grid-md-min) {
+      white-space: normal;
+      margin-top: -#{ space.get-space-from-base(4) };
+    }
+  }
+
+  .task-tag-outer {
+    display: inline-block;
+    padding: 0 space.get-space-from-base(4);
+    vertical-align: bottom;
+
+    @media screen and (min-width: grid.$mz-grid-md-min) {
+      margin-top: space.get-space-from-base(4);
+    }
+  }
+
+  .task-tag {
+    white-space: nowrap;
+    max-width: 200px;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    padding: space.get-space-from-base(4) space.get-space-from-base(6);
+    background: #EAEDF1;
+    color: #303846;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+} // .list-task-block

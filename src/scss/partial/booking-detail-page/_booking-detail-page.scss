@@ -1,0 +1,299 @@
+@import "../../vars";
+.booking-detail-page {
+  .go2joy {
+    &__user {
+      margin: 0 1.5em;
+
+      @media (min-width: 640px) {
+        margin: 0 2em;
+      }
+      h2 {
+        text-transform: uppercase;
+        margin: 0.4em 0;
+      }
+
+      &--border {
+        margin: 1em 0;
+        span {
+          padding: 8px 16px;
+        }
+
+        .spending {
+          background: #f3f7fe;
+          color: #4485f6;
+        }
+        .confirmed {
+          background: #f1f9f2;
+          color: #14af1f;
+        }
+        .cancelled {
+          background: #fff4f4;
+          color: #ff0000;
+        }
+        .checked-in {
+          background: #fcebce;
+          color: #ff6400;
+        }
+
+        .noshow {
+          background: #fafafa;
+          color: #979899;
+        }
+
+        .status-error {
+          background: #ff5959;
+          color: #ffffff;
+        }
+      }
+
+      &--address {
+        i {
+          color: #696969;
+        }
+
+        span {
+          margin-left: 0.5em;
+        }
+      }
+
+      &--flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        p {
+          margin: 0.5em 0;
+        }
+
+        .block-payment {
+          font-weight: normal;
+          font-size: 14px;
+
+          background: #e5fca3;
+          border-radius: 4px;
+          padding: 4px;
+        }
+      }
+
+      &--table {
+        margin: 1em 0;
+
+        table,
+        td,
+        th {
+          border: 1px solid #c2c2c2;
+          padding: 1em 1.5em;
+        }
+        table {
+          border-collapse: collapse;
+          border-radius: 0.5em;
+          border-style: hidden; /* hide standard table (collapsed) border */
+
+          width: 100%;
+          box-shadow: 0 0 0 1px #c2c2c2; /* this draws the table border  */
+        }
+
+        .datetime {
+          display: flex;
+          gap: 6px;
+          align-items: center;
+
+          @media (max-width: 550px) {
+            display: table-caption;
+          }
+        }
+
+        p:last-child {
+          font-size: large;
+        }
+      }
+    }
+
+    &__refund {
+      margin: 0 1.5em;
+
+      @media (min-width: 640px) {
+        margin: 0 2em;
+      }
+    }
+
+    &__payment {
+      margin: 0 1.5em;
+
+      @media (min-width: 640px) {
+        margin: 0 2em;
+      }
+    }
+
+    &__policy {
+      margin: 0 1.5em;
+
+      @media (min-width: 640px) {
+        margin: 0 2em;
+      }
+
+      h2 {
+        font-size: 18px;
+      }
+
+      a {
+        font-weight: 600;
+        text-decoration: underline;
+      }
+
+      &--group {
+        padding: 1em 0;
+        h2 {
+          font-weight: 600;
+          font-size: 18px !important;
+        }
+
+        a {
+          text-decoration: none;
+        }
+      }
+
+      &--logo {
+        margin: 1em 0;
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+
+        img {
+          width: 100px;
+          height: 100px;
+
+          @media (min-width: 640px) {
+            width: 144px;
+            height: 144px;
+          }
+        }
+      }
+    }
+
+    &__button {
+      margin: 0 1.5em;
+
+      @media (min-width: 640px) {
+        margin: 0 2em;
+      }
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      button {
+        width: 100%;
+        height: 3em;
+
+        background: white;
+        border-radius: 2em;
+        border: 1px solid #a9a9a9;
+
+        font-weight: 600;
+        font-size: 16px;
+
+        cursor: pointer;
+        margin: 2em 0;
+      }
+    }
+
+    .modal-component-class-custom {
+      border-radius: 14px;
+    }
+
+    .modal-header {
+      text-align: center;
+      font-weight: 600;
+      font-size: 20px;
+    }
+
+    .modal-info-basic {
+      text-align: center;
+      font-weight: normal;
+      font-size: 14px;
+
+      .icon-error {
+        border: 1px solid #dc3545;
+        border-radius: 50%;
+
+        height: 24px;
+        width: 24px;
+
+        padding: 1px;
+        background: #dc3545;
+        color: white;
+      }
+
+      .icon-success {
+        border: 1px solid #28a745;
+        border-radius: 50%;
+        padding: 1px;
+
+        height: 24px;
+        width: 24px;
+
+        background: #28a745;
+        color: white;
+      }
+    }
+
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-btn-yes {
+      cursor: pointer;
+      position: static;
+
+      max-width: 368px;
+      height: 48px;
+      width: 100%;
+      left: 16px;
+      top: 317.44px;
+
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.06);
+      border-radius: 28px;
+
+      background: #ff6400;
+      color: white;
+
+      margin-top: 10px;
+      border: none;
+
+      text-align: center;
+      font-weight: 600;
+      font-size: 16px;
+    }
+
+    .modal-btn-no {
+      cursor: pointer;
+      position: static;
+
+      max-width: 368px;
+      height: 48px;
+      width: 100%;
+      left: 16px;
+      top: 317.44px;
+      margin-top: 10px;
+
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.06);
+      border-radius: 28px;
+      background: #ffffff;
+      color: #ff6400;
+      border: 2px solid #ff6400;
+
+      text-align: center;
+      font-weight: 600;
+      font-size: 16px;
+    }
+  } // go2joy
+
+  .cancel-error-modal {
+    .modal-component__main--button {
+      display: none;
+    }
+  } // .cancel-error-modal
+} // booking-detail-page

@@ -1,0 +1,277 @@
+@import '../../vars';
+@import './function/space';
+
+.bon-buoc-ve-dem-cua-gioi-tre-section {
+  background: #ffffff;
+  margin-bottom: get-space-from-base(8);
+  padding-bottom: get-space-from-base(8);
+}
+
+.block-header{
+    // padding: 16px 0;
+    &__logo{
+        position: relative;
+        height: 75px;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        @media (max-width: $g2j-grid-xxs-max) {
+            height: 56px;
+        }
+        &--img{
+            display: grid;
+            justify-content: center;
+            align-items: center;
+
+            .logo-image{
+                width: 115px;
+                height: 100%;
+                @media (max-width: $g2j-grid-xxs-max) {
+                    width: 76px;
+                }
+            }
+        }
+    }
+    &__banner{
+        width: auto;
+        height: auto;
+        margin: 0 -#{ get-space-from-base(8) };
+
+        &--img{
+            vertical-align: bottom;
+            img{
+                vertical-align: bottom;
+            }
+        }
+    }
+
+}
+.block-increase-1{
+    position: relative;
+    padding: get-space-from-base(8) 0 get-space-from-base(18);
+    z-index: 0;
+
+    @media (max-width: $g2j-grid-xxs-max) {
+        background-size: 100% 475px;
+        background-repeat: no-repeat;
+    }
+
+    &__bg {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      height: 100%;
+      background: #f46226;
+      z-index: -1;
+      margin: 0 -#{ get-space-from-base(8) };
+      overflow: hidden;
+
+      &:before {
+        position: absolute;
+        content: '';
+        display: block;
+        position: absolute;
+        border-style: solid;
+        border-right-width: 100vw;
+        border-top-width: 60px;
+        border-color: #ffffff;
+        border-top-color: transparent;
+        border-left: none;
+        border-bottom: none;
+        z-index: -1;
+        bottom: 0;
+        right: 0;
+      }
+    }
+
+    &__title{
+        font-size: 18px;
+        font-weight: bold;
+        text-align: center;
+        color: white;
+        margin-bottom: get-space-from-base(8);
+
+        @media (max-width: $g2j-grid-xxs-max) {
+            font-size: 16px;
+            padding: 8px 0;
+        }
+    }
+    &__block{
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+
+        @media (max-width: $g2j-grid-xxs-max) {
+            grid-template-columns:1fr;
+        }
+        &--text{
+            color: white;
+            padding: 0 16px;
+            margin-bottom: get-space-from-base(8);
+
+            @media (max-width: $g2j-grid-xxs-max) {
+                padding: 0;
+            }
+            .increase{
+                color: #fff;
+                font-size: 16px;
+                font-weight: 600;
+                padding-bottom: 16px;
+                @media (max-width: $g2j-grid-xxs-max) {
+                    padding-bottom: 8px;
+                }
+            }
+            .content{
+                font-size: 14px;
+                text-align: justify;
+            }
+        }
+        &--image{
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+.block-increase-2-3{
+    padding: 32px;
+    @media (max-width: $g2j-grid-xxs-max) {
+        padding: 16px;
+    }
+    &__block{
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        @media (max-width: $g2j-grid-xxs-max) {
+            grid-template-columns: 1fr;
+        }
+        &--image{
+            padding: 0 16px;
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            @media (max-width: $g2j-grid-xxs-max) {
+                padding: 0 8px;
+            }
+            .increase-2-3-image-1{
+
+            }
+            .increase-2-3-image-2{
+                padding: 16px 0;
+                @media (max-width: $g2j-grid-xxs-max) {
+                    padding: 0 8px;
+                }
+            }
+        }
+        &--text{
+            .increase{
+                font-size: 16px;
+                font-weight: 600;
+                padding: 16px 0;
+                @media (max-width: $g2j-grid-xxs-max) {
+                    padding: 16px 0;
+                }
+            }
+            .content{
+                font-size: 14px;
+                text-align: justify
+            }
+        }
+    }
+}
+.block-increase-4{
+    padding: 0 16px;
+    &__block{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        @media (max-width: $g2j-grid-xxs-max) {
+            grid-template-columns: 1fr;
+        }
+        &--text{
+            padding: 16px;
+            .increase{
+                font-size: 16px;
+                font-weight: 600;
+                padding-bottom: 16px;
+            }
+            .content{
+                font-size: 14px;
+                text-align: justify
+            }
+        }
+        &--image{
+            padding: 0 16px;
+        }
+    }
+}
+.block-increase-about{
+    padding: 0 32px;
+    &__text{
+        padding: 16px 0;
+        .content{
+            text-align: justify;
+        }
+    }
+}
+.block-download-app{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    &__image-phone{
+        margin: 0 25%;
+        @media (max-width: $g2j-grid-xxs-max) {
+            margin: 0 5%;
+        }
+    }
+    &__download{
+        padding: 15px;
+        @media (max-width: $g2j-grid-xxs-max) {
+            padding: 8px;
+        }
+        &--title{
+            font-weight: bold;
+            font-size: 20px;
+            color: #ff6400;
+            text-align: center;
+            @media (max-width: $g2j-grid-xxs-max) {
+                font-size: 12px;
+            }
+        }
+        &--image{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            .image-android{
+                padding: 15px;
+                align-items: center;
+                justify-content: center;
+                display: flex;
+                @media (max-width: $g2j-grid-xxs-max) {
+                    padding: 8px;
+                }
+                img{
+                    width: 100%;
+                    height: auto;
+                }
+            }
+            .image-ios{
+                padding: 15px;
+                align-items: center;
+                justify-content: center;
+                display: flex;
+                @media (max-width: $g2j-grid-xxs-max) {
+                    padding: 8px;
+                }
+                img{
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        }
+
+    }
+}
+.block-image-footer{
+    margin: 0 -#{ get-space-from-base(8) };
+
+    &__image{
+        width: 100%;
+        height: auto;
+    }
+}

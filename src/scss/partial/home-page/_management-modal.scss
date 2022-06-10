@@ -1,0 +1,71 @@
+@use '../../vars' as vars;
+@use '../../function/space' as space;
+
+.management-modal {
+  .section-body {
+    padding: space.get-space-from-base(8);
+    // background: url($g2j-logo-url + '/dr-plastic-logo.png' + $g2j-cache-ver-suffix);
+  }
+
+  &__form {
+  } // .management-modal__form
+
+  &__input-group {
+    margin-bottom: space.get-space-from-base(6);
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__input-title {
+    margin-bottom: space.get-space-from-base(4);
+  }
+
+  &__input-field {}
+
+  &__input-item {
+    border: none;
+    border-bottom: 1px solid #CCD2DC;
+    width: 100%;
+    padding-bottom: space.get-space-from-base(4);
+
+    outline: none;
+
+    &:focus {
+      border-bottom-color: #0080FF;
+    }
+
+    &.is-error {
+      border-bottom-color: #CD353B;
+    }
+  }
+
+  &__input-error {
+    margin-top: space.get-space-from-base(4);
+    color: #CD353B;
+    font-size: 1.75rem;
+  }
+
+  textarea.management-modal__input-item {
+    height: 100px;
+    resize: none;
+  }
+
+  &__control-group {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__btn {
+    padding: space.get-space-from-base(4) space.get-space-from-base(6);
+    border: none;
+    background: none;
+    outline: none;
+    cursor: pointer;
+  }
+
+  &__btn[type="submit"] {
+    background: #0080FF;
+    color: #ffffff;
+  }
+} // .management-modal

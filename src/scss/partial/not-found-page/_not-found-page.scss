@@ -1,0 +1,6 @@
+@import '../../vars';
+
+.not-found-page {
+  background: #ffffff;
+  min-height: calc(100vh - #{ $g2j-total-padding-top-bottom });
+}

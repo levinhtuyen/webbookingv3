@@ -1,0 +1,67 @@
+@use "sass:math";
+
+@import '../../vars';
+@import '../../function/space';
+
+//=====================================
+// not-found-section
+//=====================================
+.not-found-section {
+  &__bg-outer {
+    position: relative;
+    margin: 0 auto get-space-from-base(4);
+    max-width: 626px;
+
+    &:before {
+      content: '';
+      display: block;
+      width: 100%;
+      padding-bottom: percentage(math.div(378, 626));
+    }
+  } // .not-found-block__bg-outer
+
+  &__bg-inner {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  } // .not-found-block__bg-inner
+}
+
+//=====================================
+// not-found-block
+//=====================================
+.not-found-block {
+  &__content {
+    @media (min-width: $g2j-grid-md-min) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  } // .not-found-block__content
+
+  &__oops-label {
+    font-size: 3rem;
+    margin-bottom: get-space-from-base(8);
+    line-height: 1 !important;
+
+    @media (min-width: $g2j-grid-md-min) {
+      font-size: 3.5rem;
+      margin-bottom: 0;
+      margin-right: get-space-from-base(8);
+    }
+  } // .not-found-block__oops-label
+
+  &__notice-content {
+    font-size: 2rem;
+  } // .not-found-block__notice-content
+
+  &__notice-label {
+    margin-bottom: get-space-from-base(2);
+  } // .not-found-block___notice-label
+
+  &__back-home-link {
+    color: #ff6400;
+  }
+}

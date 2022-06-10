@@ -1,0 +1,310 @@
+@import '../../../vars';
+@import '../../../mixin/general';
+@import '../../../function/space';
+@import '../../../mixin/limit-text-line';
+
+//=============================
+// .g2j-hotel-product-card-horizontal
+//=============================
+.g2j-hotel-product-card-horizontal-outer {
+  position: relative;
+  margin-right: get-space-from-base(8);
+  cursor: pointer;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  flex: 1 1;
+  width: auto;
+  max-width: 100%;
+
+  @media (min-width: 624px) {
+    max-width: calc(50% - 8px);
+  }
+
+  &:before {
+    content: '';
+    display: block;
+    width: 100%;
+    padding-bottom: percentage(1*0.5);
+  }
+}
+
+.g2j-hotel-product-card-horizontal {
+  &-inner {
+    position: absolute;
+    display: flex;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #ffffff;
+    @include boxshadow(inset 0px 0px 0px 1px rgba(#bbbbbb, 0.5));
+  }
+
+  &__img-col {
+    flex: 0 0 30%;
+    height: 100%;
+    overflow: hidden;
+
+    background: url($g2j-image-url + '/g2j-lazy-loading--sm.png?v=' + $g2j-cache-ver-suffix) center/cover no-repeat;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+    overflow: hidden;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+
+    &[src^=http] {
+      opacity: 1;
+    }
+
+    &.is-image-error {
+      display: none;
+    }
+  }
+
+  &__info-col {
+    padding: get-space-from-base(4) get-space-from-base(5);
+    flex: 1 1;
+    min-width: 0;
+  }
+
+  &__title-field {
+    margin-bottom: get-space-from-base(4);
+    text-transform: uppercase;
+    @include g2j-limit-text-line(14px, 1);
+  }
+
+  &__meta-info-field {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: get-space-from-base(4);
+    line-height: 1;
+    font-size: 1.5rem;
+  }
+
+  &__rating-col {
+    display: inline-flex;
+    align-items: center;
+    line-height: 1;
+    color: #ff6500;
+  }
+
+  &__star-icon-shape {
+    display: inline-block;
+    margin-right: get-space-from-base(3);
+  }
+
+  &__score-label {
+    display: inline-block;
+    margin-right: get-space-from-base(3);
+  }
+
+  &__location-col {
+    display: inline-flex;
+    align-items: center;
+    line-height: 1;
+    color: #bbbbbb;
+  }
+
+  &__map-icon-shape {
+    display: inline-block;
+    margin-right: get-space-from-base(3);
+  }
+
+  &__sale-off-info-row {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: get-space-from-base(4);
+
+    .label-room-component-item {
+      margin-bottom: 0;
+    }
+  }
+
+  &__flash-sale-field {
+    display: flex;
+    overflow: hidden;
+    border-radius: 6px;
+    // @include boxshadow(inset 0px 0px 0px 1px rgba(#ff6500, 1));
+    box-shadow: inset 0px 0px 0px 1px rgba(#ff0000, 1);
+    width: 100%;
+    font-size: 1.5rem;
+  }
+
+  &__flash-sale-mask-col {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    padding: get-space-from-base(3) get-space-from-base(4);
+    background: #ff0000;
+    color: #ffffff;
+  }
+
+  &__flash-sale-icon-shape {
+    display: inline-block;
+    margin-right: get-space-from-base(3);
+  }
+
+  &__flash-sale-info-col {
+    display: inline-flex;
+    flex: 1 1;
+    min-width: 0;
+    align-items: center;
+    padding: get-space-from-base(3) get-space-from-base(4);
+  }
+
+  &__flash-sale-info-label {
+    display: inline-block;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__price-type-label {
+    margin-bottom: get-space-from-base(2);
+    font-size: 1.5rem;
+  }
+
+  &__price-field-inner {
+    display: flex;
+    align-items: center;
+    line-height: 1;
+  }
+
+  &__origin-price-label {
+    display: inline-block;
+    margin-right: get-space-from-base(4);
+    text-decoration: line-through;
+    color: #bbbbbb;
+  }
+
+  &__current-price-label {
+    color: #ff6500;
+  }
+
+  @media (min-width: 375px) {
+    &__info-col {
+      padding: get-space-from-base(6);
+    }
+
+    &__title-field {
+      margin-bottom: get-space-from-base(4);
+      @include g2j-limit-text-line(14px, 1);
+    }
+
+    &__meta-info-field {
+      margin-bottom: get-space-from-base(4);
+      font-size: 1.75rem;
+    }
+
+    &__sale-off-info-row {
+      margin-bottom: get-space-from-base(4);
+    }
+
+    &__flash-sale-field {
+      font-size: 1.75rem;
+    }
+
+    &__price-type-label {
+      font-size: 1.75rem;
+    }
+  } // media min-width: 375px
+
+  @media (min-width: 624px) {
+    &__info-col {
+      padding: get-space-from-base(4) get-space-from-base(5);
+    }
+
+    &__title-field {
+      margin-bottom: get-space-from-base(2);
+    }
+
+    &__meta-info-field {
+      margin-bottom: get-space-from-base(2);
+      font-size: 1.5rem;
+    }
+
+    &__sale-off-info-row {
+      margin-bottom: get-space-from-base(4);
+    }
+
+    &__flash-sale-field {
+      font-size: 1.5rem;
+    }
+
+    &__price-type-label {
+      font-size: 1.5rem;
+    }
+  } // media min-width: 624px
+
+  @media (min-width: 680px) {
+    &__info-col {
+      padding: get-space-from-base(4) get-space-from-base(6);
+    }
+
+    &__meta-info-field {
+      margin-bottom: get-space-from-base(4);
+      font-size: 1.75rem;
+    }
+
+    &__flash-sale-field {
+      font-size: 1.75rem;
+    }
+
+    &__price-type-label {
+      font-size: 1.75rem;
+    }
+  } // media min-width: 375px
+}
+
+//=============================
+// .g2j-hotel-product-card-horizontal.is-slide
+//=============================
+.g2j-hotel-product-card-horizontal-outer {
+  $_g2j-hotel-product-card-horizontal-prefix: &;
+
+  &.swiper-slide {
+    flex: 0 0 375px;
+    max-width: none;
+
+    #{$_g2j-hotel-product-card-horizontal-prefix}__info-col {
+      padding: get-space-from-base(6);
+    }
+
+    #{$_g2j-hotel-product-card-horizontal-prefix}__title-field {
+      margin-bottom: get-space-from-base(2);
+      @include g2j-limit-text-line(14px, 2);
+    }
+
+    #{$_g2j-hotel-product-card-horizontal-prefix}__meta-info-field {
+      margin-bottom: get-space-from-base(4);
+      font-size: 1.75rem;
+    }
+
+    #{$_g2j-hotel-product-card-horizontal-prefix}__sale-off-info-row {
+      margin-bottom: get-space-from-base(4);
+    }
+
+    #{$_g2j-hotel-product-card-horizontal-prefix}__flash-sale-field {
+      font-size: 1.75rem;
+    }
+
+    #{$_g2j-hotel-product-card-horizontal-prefix}__price-type-label {
+      font-size: 1.75rem;
+    }
+  }
+}

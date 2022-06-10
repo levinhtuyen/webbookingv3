@@ -1,0 +1,29 @@
+<!-- Dable Pixel Code Start -->
+<script id="dable-pixel__script-tag">
+  window.initDablePixelScriptTag = function() {
+    (function (d, a, b, l, e, _) {
+      d[b] = d[b] || function () { (d[b].q = d[b].q || []).push(arguments) }; e = a.createElement(l);
+      e.async = 1; e.charset = 'utf-8'; e.src = '//static.dable.io/dist/dablena.min.js';
+      _ = a.getElementsByTagName(l)[0]; _.parentNode.insertBefore(e, _);
+    })(window, document, 'dablena', 'script');
+
+    const elDableScriptTag = document.querySelector('[src$="dablena.min.js"]');
+
+    elDableScriptTag.onload = function() {
+      dablena('init', '005-002-983');
+      dablena('track', 'PageView');
+
+      window.dablena = {
+        isInit: true,
+        handle: dablena,
+      };
+    };
+
+    const elDablePixelScriptTag = document.getElementById('dable-pixel__script-tag');
+
+    if(elDablePixelScriptTag) {
+      elDablePixelScriptTag.remove();
+    }
+  };
+</script>
+<!-- Dable Pixel Code End -->

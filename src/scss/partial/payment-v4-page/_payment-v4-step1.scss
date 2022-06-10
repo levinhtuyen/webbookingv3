@@ -1,0 +1,204 @@
+.payment-v4-step1 {
+  &__content {
+    padding: 24px 8px;
+    @media screen and(min-width:$g2j-grid-sm-min) {
+      padding: 32px 64px;
+    }
+    .is-title {
+      font-size: 20px;
+      font-weight: 600;
+      @media screen and(min-width:$g2j-grid-xxs-min) {
+        font-size: 24px;
+      }
+    }
+    .date-time {
+      margin: 32px 0 24px 0;
+      width: 100%;
+      height: 106px;
+      align-items: center;
+      border-radius: 8px;
+      border: 1px solid $line-border;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      @media screen and(min-width:$g2j-grid-xxs-min) {
+        height: 91px;
+      }
+      &__check-in {
+        padding: 10px 18px;
+        border-right: 1px solid $line-border;
+
+        @media screen and(min-width:$g2j-grid-xxs-min) {
+          padding: 15px 30px;
+        }
+        &--is-text-check-in {
+          font-size: 16px;
+          font-weight: 400;
+        }
+        &--time-check-in {
+          width: 100%;
+          display: flex;
+          flex-direction: column-reverse;
+          height: auto;
+          align-items: baseline;
+          @media screen and(min-width:$g2j-grid-xxs-min) {
+            flex-direction: unset;
+
+            height: 32px;
+          }
+          .is-time-check-in {
+            font-size: 20px;
+            font-weight: 700;
+            padding-right: 6px;
+            @media screen and(min-width:$g2j-grid-sm-min) {
+              font-size: 24px;
+            }
+          }
+          .is-date-check-in {
+            font-size: 14px;
+            font-weight: 700;
+            @media screen and(min-width:$g2j-grid-sm-min) {
+              font-size: 16px;
+            }
+          }
+        }
+      }
+      &__check-out {
+        padding: 6px 18px;
+        @media screen and(min-width:$g2j-grid-xxs-min) {
+          padding: 15px 30px;
+        }
+
+        &--is-text-check-out {
+          font-size: 16px;
+          font-weight: 400;
+        }
+
+        &--time-check-out {
+          width: 100%;
+          display: flex;
+          flex-direction: column-reverse;
+          height: auto;
+
+          align-items: baseline;
+
+          @media screen and(min-width:$g2j-grid-xxs-min) {
+            flex-direction: unset;
+            height: 32px;
+          }
+          .is-time-check-out {
+            font-size: 20px;
+            font-weight: 700;
+            padding-right: 6px;
+            @media screen and(min-width:$g2j-grid-sm-min) {
+              font-size: 24px;
+            }
+          }
+
+          .is-date-check-out {
+            font-size: 14px;
+            font-weight: 700;
+            @media screen and(min-width:$g2j-grid-sm-min) {
+              font-size: 16px;
+            }
+          }
+        }
+      }
+    }
+    .info-room {
+      margin: 32px 0 24px 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      color: #676767;
+      &__title {
+        text-align: left;
+        .is-text-info {
+          font-size: 14px;
+          font-weight: 400;
+          padding: 8px 0;
+          color: #676767;
+          @media screen and(min-width:$g2j-grid-xxs-min) {
+            font-size: 16px;
+          }
+        }
+
+      }
+      &__data {
+        text-align: right;
+        .is-text-data {
+          font-size: 14px;
+          font-weight: 600;
+          padding: 8px 0;
+          height: 40px;
+          color: #000000;
+          @media screen and(min-width:$g2j-grid-xxs-min) {
+            font-size: 16px;
+          }
+        }
+        .is-uppercase {
+          text-transform: uppercase;
+        }
+      }
+    }
+    .info-user {
+      border-top: 1px solid #dcdcdc;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      &__title {
+        text-align: left;
+        padding-top: 24px;
+        .is-text-info {
+          font-size: 14px;
+          font-weight: 400;
+          padding: 8px 0;
+          color: #676767;
+          @media screen and(min-width:$g2j-grid-xxs-min) {
+            font-size: 16px;
+          }
+        }
+      }
+
+      &__data {
+        text-align: right;
+        padding-top: 24px;
+        .is-text-data {
+          font-size: 14px;
+          font-weight: 600;
+          height: 40px;
+          padding: 8px 0;
+          @media screen and(min-width:$g2j-grid-xxs-min) {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+    .info-user-agoda {
+      width: 100%;
+      &__item {
+        display: flex;
+        justify-content: space-between;
+        .is-title {
+          font-size: 14px;
+          font-weight: 400;
+          height: 40px;
+          padding: 8px 0;
+          color: #676767;
+          @media screen and(min-width:$g2j-grid-xxs-min) {
+            font-size: 16px;
+          }
+        }
+        .is-data{
+          font-size: 14px;
+          font-weight: 600;
+          height: 40px;
+          padding: 8px 0;
+          color: #000000;
+          @media screen and(min-width:$g2j-grid-xxs-min) {
+            font-size: 16px;
+          }
+        }
+      }
+
+    }
+  }
+}

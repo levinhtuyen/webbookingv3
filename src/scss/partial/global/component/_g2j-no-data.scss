@@ -1,0 +1,31 @@
+.custome-no-stamp{
+    padding: 16px 0;
+    .img-container-block {
+        text-align: center;
+        
+        img {
+            width: 200px;
+            height: auto;
+        }
+    }
+
+    .text-title {
+        p {
+            font-family: Open Sans;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 24px;
+            text-align: center;
+            padding:8px 0;
+        }
+
+        p:last-child {
+            font-family: Open Sans;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 20px;
+            color: #9B9B9B;
+            font-weight: 400;
+        }
+    }
+}

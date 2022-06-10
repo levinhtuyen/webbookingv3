@@ -1,0 +1,67 @@
+/*
+DOC:
+- Tạo bộ khung cơ bản cho 1 icon
+*/
+@mixin make-icon-ready() {
+  display: inline-block;
+  font-style: normal;
+  line-height: 1;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*
+	Exam use:
+
+	@include placeholder {
+    font-style:italic;
+    color: white;
+    font-weight:100;
+	}
+*/
+
+@mixin placeholder {
+  &::-webkit-input-placeholder {@content};
+  &:-moz-placeholder           {@content};
+  &::-moz-placeholder          {@content};
+  &:-ms-input-placeholder      {@content};
+}
+
+@mixin boxshadow($_box-shadow-value) {
+  -webkit-box-shadow: $_box-shadow-value;
+  -moz-box-shadow: $_box-shadow-value;
+  box-shadow: $_box-shadow-value;
+}
+
+@mixin translate($_translate-value) {
+  -webkit-transform: translate($_translate-value); /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
+      -ms-transform: translate($_translate-value); /* IE 9 */
+          transform: translate($_translate-value); /* IE 10, Fx 16+, Op 12.1+ */
+}
+
+@mixin translate-x($_translate-value) {
+  -webkit-transform: translateX($_translate-value); /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
+      -ms-transform: translateX($_translate-value); /* IE 9 */
+          transform: translateX($_translate-value); /* IE 10, Fx 16+, Op 12.1+ */
+}
+
+@mixin translate-y($_translate-value) {
+  -webkit-transform: translateY($_translate-value); /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
+      -ms-transform: translateY($_translate-value); /* IE 9 */
+          transform: translateY($_translate-value); /* IE 10, Fx 16+, Op 12.1+ */
+}
+
+@mixin flex-direction($_flex-direction-value) {
+  -webkit-flex-direction: $_flex-direction-value;
+  -moz-flex-direction: $_flex-direction-value;
+  -ms-flex-direction: $_flex-direction-value;
+  -o-flex-direction: $_flex-direction-value;
+  flex-direction: $_flex-direction-value;
+}
+
+@mixin block-center-transform {
+  left: 50%;
+  top: 50%;
+  @include translate(-50%);
+}

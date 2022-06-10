@@ -1,0 +1,112 @@
+@import "../../../vars";
+$height-calendar: 760px;
+
+.g2j-calendar {
+  // width: 305px;
+  margin: 0 auto;
+  border: 1px solid $primary-color;
+  border-radius: 12px;
+  padding: 8px 12px;
+  margin-bottom: 10px;
+  @media (min-width: $g2j-grid-xxs-min) and (min-height: $height-calendar) {
+    // width: 392px;
+    padding: 16px 24px;
+    margin-bottom: 20px;
+  }
+  &__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    &--title {
+      color: $primary-color;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 21px;
+    }
+    &--date {
+      font-weight: 600;
+      font-size: 15px;
+      line-height: 20px;
+      cursor: pointer;
+    }
+  }
+  &__today {
+    display: flex;
+    justify-content: center;
+    margin: 4px auto;
+    @media (min-width: $g2j-grid-xxs-min) and (min-height: $height-calendar) {
+      margin: 16px auto;
+    }
+    &--item {
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 21px;
+      .btn-left,
+      .btn-right {
+        margin: 0 4px;
+        cursor: pointer;
+      }
+    }
+  }
+  &__hr {
+    opacity: 0.5;
+  }
+  &__main {
+    display: flex;
+    -webkit-flex: 1;
+    flex: 1;
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-flex: 1 1 auto;
+    @mixin container-item-calendar {
+      flex: 0 0 14%;
+      -webkit-flex: 0 0 14%;
+      display: flex;
+      display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+      display: -ms-flexbox; /* TWEENER - IE 10 */
+      display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+      justify-content: center;
+      padding: 6px;
+      color: #000000;
+      width: 40px;
+      &:disabled {
+        color: #b2b2b2;
+        cursor: not-allowed;
+      }
+      @media (min-width: $g2j-grid-xxs-min) and (min-height: $height-calendar) {
+        padding: 10px;
+      }
+    }
+    &--title-date {
+      &:nth-child(2) {
+        color: $primary-color;
+      }
+      @include container-item-calendar;
+      font-weight: 600;
+    }
+    &--item-date {
+      font: inherit;
+      padding: none;
+      margin: none;
+      &.active {
+        color: $primary-color;
+        color: #ffffff;
+        background-color: #fd6500;
+        border-radius: 40px;
+      }
+      &.disable-agoda,
+      &.disabled {
+        color: #b2b2b2;
+      }
+
+      @include container-item-calendar;
+      cursor: pointer;
+      border: none;
+      background-color: transparent;
+      outline: none;
+    }
+  }
+}

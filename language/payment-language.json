@@ -1,0 +1,60 @@
+{
+  "room_type": {
+    "hour"     : "Hourly",
+    "overnight": "OverNight",
+    "daily"    : "Daily",
+    "right_now": "Right now",
+    "tonight"  : "Tonight"
+  },
+  "check_in" : "Check In",
+  "check_out": "Check Out",
+  "promotion": {
+    "coupon": "Coupon",
+    "stamp": "Stamp",
+    "point": "Point",
+    "noteInstall": "Install App and enjoy member only benefits",
+    "subNote": "Install to experience a great booking app and receive more promotions",
+    "use_now": "Use now",
+    "cancel": "Cancel",
+    "valid": "Valid until",
+    "redeem": "Redeem",
+    "no_data": "No data",
+    "apply_error": "can't apply this coupon"
+  },
+  "payment_info": {
+    "hotel_fee": "Hotel fee",
+    "ex_ser_fee": "Extra service fee",
+    "high_demand": "High demand",
+    "discount": "Discount",
+    "coupon": "Coupon Reedem",
+    "stamp": "Stamp Reedem",
+    "point": "Point Reedem",
+    "total": "Total"
+  },
+  "book_now": "Book now",
+  "note_input_phone": "Please input phone number to confirm booking",
+  "next": "Next",
+  "please_input": "Please input phone number",
+  "flash_sale": "Flash sale",
+  "special": "Special",
+  "error": "Error!",
+  "error_payment": "Payment Method Error!",
+  "error_point": {
+    "input_number": "Please input number",
+    "minimum": "Minimum is",
+    "maximum": "Maximum is"
+  },
+  "my_point": "My Point",
+  "minimum_points_to_redeem": "Minimum points to redeem:",
+  "use_all": "Use all",
+  "use":"Use",
+  "redeem": "Redeem",
+  "special_offer": "Special offer",
+  "firsthour": "First hour(s)",
+  "additional": "Additional 1 hour(s)",
+  "extra_service": "Extra service",
+  "SPECIAL_PRODUCTS": "SPECIAL PRODUCTS",
+  "confirm": "Confirm",
+  "selected": "Selected",
+  "items": "items(s)"
+}

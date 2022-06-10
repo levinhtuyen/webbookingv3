@@ -1,0 +1,38 @@
+@import '../../function/space';
+
+//==============================
+// location-selection-section
+//==============================
+.location-selection-section {
+  background: #ffffff;
+  padding: get-space-from-base(8) 0;
+}
+
+//==============================
+// location-selection-block
+//==============================
+.location.selection-block {
+  display: flex;
+  align-items: center;
+}
+
+.location-selection-field {
+  display: inline-flex;
+  align-items: center;
+  color: #FF6400;
+  cursor: pointer;
+
+  .icon-shape {
+    font-size: 2.5rem;
+    margin-right: get-space-from-base(4);
+  }
+
+  .title-col {
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  .arrow-icon-shape {
+    margin-left: get-space-from-base(4);
+  }
+}

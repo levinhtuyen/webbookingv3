@@ -1,0 +1,81 @@
+@import "../../vars";
+@import "../../function/space";
+
+//====================================
+// partial global
+//====================================
+@import "../global/component/g2j-select-date-time";
+@import "../global/component/g2j-calendar";
+@import '../global/component/g2j-basic-modal';
+
+//====================================
+// partial hotel-list-v4-page
+//====================================
+@import './_hotel-list-v4-page';
+@import './hotel-list-head-section';
+@import './booking-type-selection-section';
+@import './date-selection-section';
+@import './category-filter-section';
+@import './hotel-list-section';
+@import './light-square-hotel-card';
+@import './filter-and-sort-segment';
+@import './filter-and-sort-modal';
+
+$space: 16px;
+.hotel-list-v4 {
+  background-color: $g2j-background-page;
+  min-height: $min-height-page;
+  height: auto;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  &__header {
+    display: flex;
+    flex-direction: row;
+    margin: $space 0;
+    &--btn-back {
+      flex: 0 0 30px;
+    }
+    &--label {
+      flex-grow: 1;
+      margin-left: 8px;
+      display: flex;
+      align-items: center;
+      .title-collection {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 27px;
+      }
+    }
+  }
+  &__options {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: $space 0;
+    &--item {
+      &:hover {
+        color: $g2j-primary-color;
+        border: 1px solid $g2j-primary-color;
+        // background-color: rgba(255, 100, 0, 0.08);
+      }
+      &.active {
+        color: $g2j-primary-color;
+        border: 1px solid $g2j-primary-color;
+        background-color: rgba(255, 100, 0, 0.08);
+      }
+      cursor: pointer;
+      width: max-content;
+      border-radius: 24px;
+      background: #ffffff;
+      border: 1px solid #dedede;
+      box-sizing: border-box;
+      padding: 6px 16px;
+      margin: 0px 6px;
+      margin-bottom: 8px;
+      background-color: transparent;
+      outline: none;
+      cursor: pointer;
+    }
+  }
+}

@@ -1,0 +1,594 @@
+// Payment step 2
+@import "../../vars";
+.payment-v4-step2 {
+  $margin: 20px;
+  margin-top: 30px;
+  transition: all 0.3s ease;
+  @mixin label-additional {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    // margin-bottom: 10px;
+  }
+  @mixin container-additional {
+    background: #f8f9fc;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    padding: 16px 16px;
+    margin-bottom: $margin;
+    @media (min-width: $g2j-grid-sm-min) {
+      padding: 16px 32px;
+    }
+  }
+  @mixin button-base {
+    &.disable {
+      opacity: 0.5;
+      background-color: #dadada;
+      cursor: not-allowed;
+    }
+    border-radius: 20px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    padding: 4px 12px;
+  }
+  @mixin high-light {
+    &:hover {
+      // text-decoration: underline;
+      // cursor: pointer;
+    }
+    color: $g2j-primary-color;
+  }
+  hr {
+    margin: $margin 0;
+    opacity: 0.5;
+  }
+  .text-sup {
+    vertical-align: text-bottom;
+  }
+  .mt-line {
+    margin-top: 16px;
+  }
+
+  &__title {
+    // hr {
+    //   margin: 20px 0;
+    //   opacity: 0.5;
+    // }
+    h2 {
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 27px;
+      @media (min-width: $g2j-grid-sm-min) {
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 27px;
+      }
+    }
+  }
+  &__additional {
+    .deal-additional {
+      @include container-additional;
+      &__title {
+        @include label-additional;
+      }
+      &__content {
+        display: flex;
+        flex: 1;
+        margin-top: $margin;
+        &--description {
+          flex-grow: 1;
+          .high-light {
+            // &:hover {
+            //   text-decoration: underline;
+            //   cursor: pointer;
+            // }
+            // color: $g2j-primary-color;
+            @include high-light;
+          }
+        }
+        &--img {
+          flex: none;
+          width: 65px;
+        }
+      }
+    }
+    .coupon-additional {
+      @include container-additional;
+      &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &--label {
+          font-weight: 600;
+          font-size: 18px;
+          line-height: 24px;
+        }
+        &--description {
+          font-size: 14px;
+          line-height: 21px;
+          flex: 0 0 70%;
+          display: flex;
+          justify-content: flex-end;
+        }
+      }
+      &__body {
+        display: flex;
+        justify-content: space-between;
+        &--content {
+          .title-coupon {
+            color: $g2j-primary-color;
+            margin: 16px 0;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 21px;
+            @media (min-width: $g2j-grid-sm-min) {
+              font-weight: 600;
+              font-size: 16px;
+              line-height: 24px;
+            }
+          }
+          .date-coupon {
+            font-size: 14px;
+            line-height: 21px;
+            @media (min-width: $g2j-grid-sm-min) {
+              font-size: 16px;
+              line-height: 24px;
+            }
+          }
+          .no-coupon {
+            .hight-light {
+              color: $g2j-primary-color;
+            }
+            // width: calc(100% - 140px);
+          }
+        }
+        &--select-button {
+          display: flex;
+          align-items: flex-end;
+          flex: none;
+          .select-coupon {
+            @include button-base();
+            border: 1px solid $g2j-primary-color;
+            // border-color: $g2j-primary-color;
+            background-color: transparent;
+            color: $g2j-primary-color;
+            font-size: 12px;
+            line-height: 18px;
+            @media (min-width: $g2j-grid-sm-min) {
+              font-size: 16px;
+              line-height: 24px;
+            }
+          }
+        }
+      }
+    }
+    .stamp-additional {
+      @include container-additional;
+      &__header {
+        display: flex;
+        justify-content: space-between;
+        &--label {
+          @include label-additional;
+        }
+        &--icon-total {
+          display: flex;
+          align-items: center;
+          img {
+            width: 32px;
+          }
+          .number-total {
+            margin-left: 4px;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 20px;
+            color: $g2j-primary-color;
+          }
+        }
+      }
+      &__body {
+        display: flex;
+        justify-content: space-between;
+        &--content {
+          .total-coupon {
+            padding: 4px 0;
+            font-size: 14px;
+            line-height: 25px;
+            .high-light {
+              @include high-light;
+            }
+            @media (min-width: $g2j-grid-sm-min) {
+              font-size: 16px;
+              line-height: 24px;
+            }
+          }
+          .description {
+            padding: 4px 0;
+            font-size: 14px;
+            line-height: 25px;
+            @media (min-width: $g2j-grid-sm-min) {
+              font-size: 16px;
+              line-height: 24px;
+            }
+          }
+          .sub-description {
+            font-size: 14px;
+            line-height: 24px;
+            color: #686868;
+            margin-top: $margin;
+          }
+        }
+        &--redeem-button {
+          display: flex;
+          align-items: flex-end;
+
+          .redeem-button {
+            @include button-base();
+            background-color: $g2j-primary-color;
+            color: #ffffff;
+            &:disabled {
+              // filter: grayscale(1);
+              background-color: #dadada;
+              cursor: not-allowed;
+            }
+          }
+          .redeem-cancel {
+            @include button-base();
+            border: 1px solid $g2j-primary-color;
+            background-color: transparent;
+            color: $g2j-primary-color;
+          }
+        }
+      }
+    }
+    .point-additional {
+      @include container-additional;
+      &__header {
+        display: flex;
+        justify-content: space-between;
+        &--label {
+          @include label-additional;
+        }
+        &--icon-total {
+          display: flex;
+          align-items: center;
+          img {
+            width: 32px;
+          }
+          .number-total {
+            margin-left: 4px;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 20px;
+            .high-light {
+              @include high-light();
+            }
+          }
+        }
+      }
+      &__body {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        &--content {
+          margin-bottom: $margin;
+          .description {
+            padding: 4px 0;
+            font-size: 12px;
+            line-height: 18px;
+            .high-light {
+              @include high-light;
+            }
+            @media (min-width: $g2j-grid-sm-min) {
+              font-size: 16px;
+              line-height: 24px;
+            }
+          }
+          .container-input-point {
+            padding: 4px 0px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            &__title {
+              font-size: 16px;
+              line-height: 24px;
+            }
+            &__input {
+              display: flex;
+              position: relative;
+
+              .input-point {
+                padding: 12px;
+                padding-right: 24px;
+                background: #ffffff;
+                border: 1px solid #dcdcdc;
+                box-sizing: border-box;
+                border-radius: 8px;
+                color: $g2j-primary-color;
+
+                &:disabled {
+                  background: #ebebeb;
+                  cursor: not-allowed;
+                }
+              }
+              .icon {
+                position: absolute;
+                right: 10px;
+                padding: 12px 0px;
+                font-weight: 600;
+                font-size: 16px;
+              }
+            }
+          }
+          .point-error {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            color: red;
+          }
+        }
+        &--redeem-button {
+          display: flex;
+          align-items: flex-end;
+          justify-content: flex-end;
+          .point-checkbox {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            // margin-right: 10px;
+            height: 28px;
+            .container {
+              display: block;
+              position: relative;
+              padding-left: 25px;
+              // margin-bottom: 12px;
+              cursor: pointer;
+              font-size: 12px;
+              line-height: 18px;
+              -webkit-user-select: none;
+              -moz-user-select: none;
+              -ms-user-select: none;
+              user-select: none;
+              @media (min-width: $g2j-grid-sm-min) {
+                font-size: 14px;
+                line-height: 18px;
+              }
+            }
+
+            /* Hide the browser's default checkbox */
+            .container input {
+              position: absolute;
+              opacity: 0;
+              cursor: pointer;
+              height: 0;
+              width: 0;
+            }
+
+            /* Create a custom checkbox */
+
+            .checkmark {
+              &.disabled {
+                border: none;
+                cursor: not-allowed;
+              }
+              position: absolute;
+              top: 0;
+              left: 0;
+              height: 17px;
+              width: 17px;
+              background-color: #ffffff;
+              border: 1px solid #676767;
+            }
+
+            /* On mouse-over, add a grey background color */
+            .container:hover input ~ .checkmark {
+              background-color: #ccc;
+            }
+
+            /* When the checkbox is checked, add a blue background */
+            .container input:checked ~ .checkmark {
+              // background-color: #2196f3;
+              background-color: #ffffff;
+            }
+
+            /* Create the checkmark/indicator (hidden when not checked) */
+            .checkmark:after {
+              content: "";
+              position: absolute;
+              display: none;
+            }
+
+            /* Show the checkmark when checked */
+            .container input:checked ~ .checkmark:after {
+              display: block;
+            }
+
+            /* Style the checkmark/indicator */
+            .container .checkmark:after {
+              left: 5px;
+              top: 1px;
+              width: 3px;
+              height: 8px;
+              border: solid $g2j-primary-color;
+              border-width: 0 3px 3px 0;
+              -webkit-transform: rotate(45deg);
+              -ms-transform: rotate(45deg);
+              transform: rotate(45deg);
+            }
+          }
+          .redeem-button {
+            @include button-base();
+            background-color: $g2j-primary-color;
+            color: #ffffff;
+            border: 1px solid $g2j-primary-color;
+            &:disabled {
+              // filter: grayscale(1);
+              background-color: #dadada;
+              cursor: not-allowed;
+              border: 1px solid #dadada;
+            }
+          }
+          .redeem-cancel {
+            @include button-base();
+            border: 1px solid $g2j-primary-color;
+            background-color: transparent;
+            color: $g2j-primary-color;
+          }
+        }
+      }
+    }
+  }
+  &__information {
+    &--group-content {
+      display: flex;
+      justify-content: space-between;
+      min-height: 40px;
+      align-items: center;
+
+      .content-key {
+        align-items: center;
+        color: #686868;
+        display: flex;
+        // font-family: sans-serif;
+        // line-height: 1.75;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 21px;
+        @media (min-width: $g2j-grid-sm-min) {
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 1.75;
+        }
+      }
+      .content-value {
+        &.success {
+          color: $g2j-primary-color;
+        }
+
+        align-items: center;
+        color: #000000;
+        display: flex;
+        word-break: break-word;
+        // font-family: sans-serif;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 21px;
+        @media (min-width: $g2j-grid-sm-min) {
+          font-size: 16px;
+          font-weight: 600;
+          line-height: 1.75;
+        }
+      }
+    }
+  }
+  &__method {
+    min-height: 90px;
+
+    .payment-method {
+      @include container-additional;
+      &__header {
+        &--label {
+          @include label-additional;
+        }
+      }
+      &__body {
+        &--select-method {
+          display: flex;
+          justify-content: space-between;
+          cursor: pointer;
+          margin: 8px 0;
+          align-items: center;
+
+          .hight-light {
+            @include high-light();
+          }
+          .container-selected-method {
+            display: flex;
+            align-items: center;
+            &__name {
+              margin-left: 8px;
+              font-size: 16px;
+              font-weight: 600;
+            }
+            img {
+              width: 30px;
+            }
+          }
+        }
+      }
+    }
+    .payment-total {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      &__label {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 28px;
+        color: #686868;
+        @media (min-width: $g2j-grid-sm-min) {
+          font-weight: 600;
+          font-size: 24px;
+          line-height: 28px;
+        }
+      }
+      &__value {
+        font-weight: 600;
+        font-size: 25px;
+        line-height: 28px;
+        color: $g2j-primary-color;
+        @media (min-width: $g2j-grid-sm-min) {
+          font-weight: 600;
+          font-size: 28px;
+          line-height: 42px;
+        }
+      }
+    }
+  }
+  &__cancel-policy {
+    .cancel-policy {
+      &__label {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 25px;
+      }
+      &__content {
+        margin-bottom: 10px;
+        color: #676767;
+        .high-light {
+          // @include high-light();
+          &:hover {
+            color: $g2j-primary-color;
+          }
+          color: #000000;
+          font-weight: 600;
+        }
+        &--title {
+          padding: 8px 0;
+          font-weight: 600;
+          font-size: 14px;
+          line-height: 20px;
+          color: #000000;
+        }
+        &--description {
+          .high-light {
+            cursor: pointer;
+          }
+          .font-bold {
+            font-weight: 600;
+          }
+        }
+      }
+    }
+  }
+  &__next {
+    .g2j-button-book-now {
+      font: inherit;
+    }
+  }
+}

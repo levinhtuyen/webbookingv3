@@ -1,0 +1,204 @@
+//====================================
+// coupon-modal on payment v4
+//====================================
+@import "../../vars";
+@mixin high-light {
+  &:hover {
+    // text-decoration: underline;
+    // cursor: pointer;
+  }
+  color: $g2j-primary-color;
+}
+.payment-method-modal {
+  .modal-component-class-custom {
+    max-height: 75vh;
+    border-radius: 12px;
+    // overflow: hidden;
+    width: 100%;
+    z-index: 100;
+    .modal-component__main--body {
+      overflow: auto;
+    }
+  }
+  @media screen and(min-width:$g2j-grid-xxs-min ) {
+    .modal-component-class-custom {
+      height: auto;
+      max-height: 80vh;
+      // height: 620px;
+      width: fit-content;
+      min-width: 440px;
+
+      .modal-component__main--body {
+        overflow: auto;
+        // overflow: hidden;
+      }
+      .modal-component__main--footer {
+        display: flex;
+        flex: 1;
+      }
+    }
+  }
+
+  &__header {
+    text-align: center;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+    margin-top: 5%;
+    &--title {
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 27px;
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+    @media screen and(min-width:$g2j-grid-sm-min ) {
+      height: fit-content;
+      height: -webkit-fit-content;
+      margin-top: 30px;
+      width: 440px;
+    }
+    &--group-content {
+      display: flex;
+      justify-content: space-between;
+      min-height: 40px;
+      align-items: center;
+      width: 100%;
+      &.active {
+        background: #fff6f0;
+        border-radius: 4px;
+      }
+      &.disable {
+        opacity: 0.5;
+        cursor: not-allowed;
+        pointer-events: none;
+      }
+      &.payment {
+        &:hover .content-key {
+          color: $g2j-primary-color;
+        }
+        .content-key {
+          // width: calc(100% -50px);
+          flex: 0 0 90%;
+          .container-content {
+            &__title {
+              font-weight: 600;
+              font-size: 14px;
+              line-height: 21px;
+              @media (min-width: $g2j-grid-sm-min) {
+                font-weight: 600;
+                font-size: 16px;
+                line-height: 21px;
+              }
+            }
+            &__discount {
+              color: $g2j-primary-color;
+              font-weight: 600;
+              font-size: 12px;
+              line-height: 16px;
+              @media (min-width: $g2j-grid-sm-min) {
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 19px;
+              }
+            }
+          }
+        }
+        cursor: pointer;
+        padding: 8px;
+      }
+
+      .content-key-attention {
+        &__img {
+          width: 40px;
+          display: flex;
+          justify-content: center;
+          margin-right: 25px;
+        }
+      }
+
+      .content-key {
+        .logo-payment {
+          margin-right: 25px;
+          width: 35px;
+          height: 35px;
+          object-fit: cover;
+        }
+        align-items: center;
+        color: #686868;
+        display: flex;
+        // font-family: sans-serif;
+        font-size: 12px;
+        line-height: 16px;
+        line-height: 1.75;
+        @media (min-width: $g2j-grid-sm-min) {
+          font-size: 16px;
+          line-height: 21px;
+        }
+        &.attention {
+          padding: 8px;
+          @include high-light;
+        }
+        .pay-at-store {
+          padding: 8px;
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 22px;
+        }
+      }
+      .content-value {
+        &.success {
+          color: $g2j-primary-color;
+        }
+
+        align-items: center;
+        color: #000000;
+        display: flex;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 1.75;
+        word-break: break-word;
+        // font-family: sans-serif;
+      }
+      .check-box {
+        background-color: #e3dedb;
+        border-radius: 12px;
+        height: 24px;
+        width: 24px;
+        &.active {
+          &::after {
+            background-color: #fafafa;
+            border-radius: 50%;
+            content: "";
+            height: 50%;
+            position: absolute;
+            left: 25%;
+            width: 50%;
+          }
+          background-color: #ff6400;
+          position: relative;
+        }
+      }
+    }
+  }
+  &__footer {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: flex-end;
+    button {
+      &:disabled {
+        background: #dadada;
+        box-shadow: none;
+        cursor: not-allowed;
+      }
+    }
+  }
+}
